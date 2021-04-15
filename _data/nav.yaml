@@ -1,10 +1,10 @@
 main:
   - dropdown-title: Dropdown
     dropdown-items:
-      - title: Drowdown item
-        subtitle: Subtitle
+      - title: Demo event
+        subtitle: Breaking Benjamin
         icon: far fa-smile
-        url: /
+        url: /149552859629-breaking-benjamin
       - title: Drowdown item
         subtitle: Subtitle
         icon: far fa-smile
