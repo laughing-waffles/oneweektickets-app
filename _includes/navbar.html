@@ -1,0 +1,58 @@
+<!-- header -->
+<div class="header fixed-top border-top-3 border-top border-primary {% if layout.dark-navbar == true %}bg-dark{% endif %}">
+  <!-- navigation start -->
+  <div class="container-lg">
+    <nav class="navbar navbar-expand-lg navbar-default">
+      <a class="navbar-brand" href="{{ site.url | relative_url }}">
+        <h1 class="font-weight-bolder d-block text-white h4 m-0">OneWeek</h1>
+      </a>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="icon-bar top-bar mt-0"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar-default">
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-times"></i>
+        </button>
+        <ul class="navbar-nav ml-auto mr-lg-3">
+          <li class="nav-item dropdown">
+            <a class="nav-link d-lg-none" href="#">
+              Menu
+            </a>
+          </li>
+          {% for item in site.data.nav.main %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="menu-{{ forloop.index }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{ item.dropdown-title }}
+            </a>
+            <ul class="dropdown-menu dropdown-menu-arrow dropdown-menu-right dropdown-menu-xl-left" aria-labelledby="menu-{{ forloop.index }}">
+              {% for entry in item.dropdown-items %}
+              <li>
+                <a class="dropdown-item" href="{{ entry.url | relative_url }}">
+                  <div class="d-flex align-items-center">
+                    <div class="mr-3 icon-shape icon-lg rounded-circle bg-light">
+                      <i class="{{ entry.icon }} font-24"></i>
+                    </div>
+                    <div>
+                      <h5 class="mb-0">{{ entry.title }}</h5>
+                      <span class="font-12 text-muted">
+                        {{ entry.subtitle }}
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+          </li>
+          {% endfor %}
+        </ul>
+        <div class="header-btn">
+          <a href="{{ 'sell' | relative_url }}" class="btn btn-primary btn-sm">Sell tickets <i class="fas fa-book"></i></a>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!-- navigation close -->
+</div>

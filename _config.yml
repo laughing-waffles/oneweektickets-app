@@ -1,0 +1,193 @@
+baseurl: ''
+permalink: ':title'
+title: OneWeek Tickets
+tagline: Price Discovery For the Primary Market
+description: >-
+  An innovative ticketing platform that helps venues, artists, promoters, and fans 
+  all have a better experience by enabling auction pricing in the primary market.
+url: 'https://www.oneweektickets.com'
+author: OneWeek
+logo: null
+lang: en_US
+favicon: /favicon.ico
+og_image: /assets/images/bg-hero.jpg
+mailchimp-list: >-
+  https://oneweektickets.us1.list-manage.com/subscribe/post?u=f0d949cdf0a6a387f7b55a173&amp;id=4f123ead61
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+gems:
+  - jekyll-paginate-v2
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-target-blank
+include:
+  - _pages
+  - _events
+exclude:
+  - .jekyll-cache
+  - Gemfile
+  - Gemfile.lock
+defaults:
+  - scope:
+      path: ''
+    values:
+      layout: page
+      author: oneweek
+  - scope:
+      path: ''
+      type: posts
+    values:
+      layout: blog-single
+      is_post: true
+  - scope:
+      path: _pages
+    values:
+      layout: autopage
+      permalink: '/:basename'
+  - scope:
+      path: _events
+    values:
+      layout: event-details
+      permalink: '/:basename'
+cloudinary:
+  cloud_name: judsonlmoore-com
+  only_prod: true
+  verbose: false
+  presets:
+    default:
+      gravity: auto
+      crop: fill
+      focus: auto
+      min_width: 256
+      max_width: 1024
+      figure: never
+      attributes:
+        class: img-fluid mb-2 mt-3 w-100
+        loading: lazy
+    post-image: 
+      gravity: auto
+      crop: fill
+      focus: auto
+      steps: 3
+      min_width: 290
+      min_height: 130
+      max_width: 930
+      max_height: 418
+      figure: never
+      attributes:
+        class: img-fluid rounded mb-2 mt-3 w-100
+        loading: lazy
+    postbox: 
+      gravity: auto
+      crop: fill
+      focus: auto
+      steps: 2
+      min_width: 330
+      min_height: 220
+      max_width: 350
+      max_height: 240
+      figure: never
+      attributes:
+        class: img-fluid rounded
+        loading: lazy
+    author:
+      gravity: auto
+      crop: fill
+      focus: auto
+      steps: 2
+      min_width: 70
+      min_height: 70
+      max_width: 70
+      max_height: 70
+      figure: never
+      attributes:
+        class: img-fluid avatar-xl rounded-circle mr-3
+        loading: lazy
+    logo:
+      gravity: auto
+      crop: fill
+      focus: auto
+      steps: 2
+      min_width: 150
+      min_height: 50
+      max_width: 200
+      max_height: 150
+      figure: never
+      attributes:
+        class: img-fluid h-100 w-100
+        loading: lazy
+compress_html:
+  clippings: all
+  comments:
+    - '<!-- '
+    - ' -->'
+  endings:
+    - html
+    - head
+    - body
+    - li
+    - dt
+    - dd
+    - rt
+    - rp
+    - optgroup
+    - option
+    - colgroup
+    - caption
+    - thead
+    - tbody
+    - tfoot
+    - tr
+    - td
+    - th
+  profile: false
+  blanklines: false
+  ignore:
+    envs: []
+contact:
+  speaking: support@oneweektickets.com
+  other: support@oneweektickets.com
+  whatsapp: +1.310.571.5210
+pagination:
+  enabled: true
+  per_page: 9
+  permalink: '/page-:num/'
+  title: ':title'
+  limit: 0
+  sort_field: date
+  sort_reverse: true
+  trail:
+    before: 2
+    after: 2
+autopages:
+  enabled: true
+  categories:
+    layouts:
+      - autopage.html
+    title: 'Posts in category :cat'
+    permalink: '/category/:cat'
+    slugify:
+      mode: default
+      case: true
+  tags:
+    layouts:
+      - autopage.html
+    title: 'Posts tagged with :tag'
+    permalink: '/tag/:tag'
+    slugify:
+      mode: default
+      case: true
+  collections:
+    layouts:
+      - autopage.html
+    title: 'Posts in collection :coll'
+    permalink: '/collection/:coll'
+    slugify:
+      mode: default
+      case: true

@@ -1,0 +1,67 @@
+main:
+  - dropdown-title: Dropdown
+    dropdown-items:
+      - title: Drowdown item
+        subtitle: Subtitle
+        icon: far fa-smile
+        url: /
+      - title: Drowdown item
+        subtitle: Subtitle
+        icon: far fa-smile
+        url: /
+footer:
+  - column-h: Links
+    links:
+      - title: Link
+        url: /
+      - title: Link
+        url: /
+      - title: Link
+        url: /
+      - title: Link
+        url: /
+      - title: Link
+        url: /
+  - column-h: Links
+    links:
+      - title: Link
+        url: /
+      - title: Link
+        url: /
+      - title: Link
+        url: /
+      - title: Link
+        url: /
+      - title: Link
+        url: /
+  - column-h: Links
+    links:
+      - title: Link
+        url: /
+      - title: Link
+        url: /
+      - title: Link
+        url: /
+      - title: Link
+        url: /
+      - title: Link
+        url: /
+  - column-h: Links
+    links:
+      - title: Link
+        url: /
+      - title: Link
+        url: /
+      - title: Link
+        url: /
+      - title: Link
+        url: /
+      - title: Link
+        url: /
+bottom-bar:
+  - title: Terms of Service
+    url: /terms
+  - title: Privacy Policy
+    url: /privacy
+  - title: Sitemap
+    url: /sitemap.xml

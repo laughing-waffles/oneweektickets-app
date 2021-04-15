@@ -1,0 +1,90 @@
+--- 
+layout: compress    
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  {% if jekyll.environment == 'production' %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-57FN2K5SH7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-57FN2K5SH7");
+  </script>
+  {% endif %}
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  {% seo %}
+
+  <!-- Libs CSS -->
+  <link rel="stylesheet" href="{{ '/assets/libs/ion-rangeslider/css/ion.rangeSlider.min.css'| relative_url }}">
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="{{'/assets/css/theme.min.css'| relative_url }}">
+
+  <!-- Site Icon -->
+  <link rel="icon" href="{{'/assets/images/favicon.png'| relative_url }}" />
+
+</head>
+
+  {% capture layout %}
+  {% if page.layout %}layout-{{ page.layout }}
+  {% endif %}
+  {% endcapture %}
+
+  <body class="{{layout}}">
+
+    {{ content }}
+
+    <!-- Optional JavaScript -->
+    {% if jekyll.environment == 'production' %}
+    <script src="//code.tidio.co/z2hn7p4qksjhv1nz8qnad2apogrp8jvj.js" async></script>
+    {% endif %}
+
+    <!-- Libs JS -->
+    <script src="{{'/assets/libs/jquery/dist/jquery.min.js' | relative_url }}"></script>
+    <script src="{{'/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js' | relative_url }}"></script>
+    <script src="{{'/assets/libs/jquery-slimscroll/jquery.slimscroll.min.js' | relative_url }}"></script>
+    <script src="{{'/assets/libs/magnific-popup/dist/jquery.magnific-popup.min.js' | relative_url }}"></script>
+    <script src="{{'/assets/libs/prismjs/prism.min.js' | relative_url }}"></script>
+    <script src="{{'/assets/libs/leaflet/dist/leaflet.js' | relative_url }}"></script>
+    <script src="{{'/assets/libs/moment/min/moment.min.js' | relative_url }}"></script>
+    <script src="{{'/assets/libs/lightpick/lightpick.min.js' | relative_url }}"></script>
+    <script src="{{'/assets/libs/ion-rangeslider/js/ion.rangeSlider.min.js' | relative_url }}"></script>
+    <script src="{{'/assets/libs/inputmask/dist/jquery.inputmask.min.js' | relative_url }}"></script>
+    <script src="{{'/assets/libs/lightbox/js/lightbox.min.js' | relative_url }}"></script>
+    
+    <!-- clipboard -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
+
+    <!-- Theme JS -->
+    <script src="{{'/assets/js/theme.min.js' | relative_url }}"></script>
+
+    <!-- Modal popup controll -->
+    <script type="text/javascript"> 
+      $(document).ready(function () {
+        if (!sessionStorage.adModal) {
+          setTimeout(function () {
+            $("#admodal").find(".modal");
+            $("#admodal").modal({
+              backdrop: "static",
+              keyboard: false,
+            });
+          }, 30000);
+          sessionStorage.adModal = 1;
+        }
+      });
+    </script>
+
+  </body>
+
+</html>

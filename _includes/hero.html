@@ -1,0 +1,119 @@
+<!-- hero section -->
+<div 
+  class="{% if page.layout != 'home' %}bg-shape bg-cover{% endif %} bg-dark" 
+  {% if page.image %}
+    style="
+      background-image: 
+        linear-gradient(180deg, rgba(30, 24, 53, 0.4) 0%, rgba(30, 24, 53, 0.4) 90.16%), 
+        url(
+          {% if jekyll.environment == 'production' %}https://res.cloudinary.com/judsonlmoore-com/image/fetch/c_fill,g_auto,f_auto,q_auto,w_1800/{% endif %}{{ page.image | relative_url }}
+          );
+      background-size: cover;
+      background-position: center;
+    "
+  {% endif %}
+>
+  <div class="container">
+    <div class="row">
+      <div class="offset-lg-2 col-lg-8 col-md-12 col-12">
+        <div class="py-13 pt-lg-16 pb-lg-14 text-center text-light">
+
+          <!-- If the homepage -->
+          {% if page.layout == 'home' %}
+
+          <!-- Hompage hero -->
+          <h2 class="display-3 font-weight-bold text-white mb-2">
+            {{ page.hero-title }}
+          </h2>
+          <p class="mb-4 lead">
+            {{ page.hero-subtitle }}
+          </p>
+
+          <!-- If not the homepage -->
+          {% else %}
+
+            <!-- Podcast name -->            
+            {% if page.is_post == true %}
+            {% if page.podcast-name %}
+            <h2 class="h5 mb-8 text-white">{{ page.podcast-name }}</h2>
+
+            <!-- Post category -->
+            {% elsif page.categories %}
+            {% assign sortedCategories = page.categories | sort_natural %}
+            {% for category in sortedCategories limit:1 %}
+            <a href="{{ category | slugify | prepend:'/category/' | relative_url }}/" class="text-info mb-3 font-14 d-inline-block font-weight-semi-bold">{{ category }}</a>
+            {% endfor %}
+            {% endif %}
+            {% endif %}
+
+            <!-- Post / page / podcast episode title -->
+            <h2 class="mb-3 display-4 text-white">
+              {% if page.episode-name %}
+                {{ page.episode-name }}
+              {% elsif page.autopages.display_name %}
+                {{ page.autopages.display_name | capitalize }}
+              {% else %}
+                {{ page.title }}
+              {% endif %}
+            </h2>
+
+            <!-- Page description -->
+            {% if page.description %}
+            <p class="lead mb-4">
+              {{ page.description }}
+            </p>
+            {% endif %}
+
+            <div class="font-14 text-light">
+
+              <!-- Page metadata -->
+              {% if page.is_post != true %}
+
+                <!-- Number of articles -->
+                {% if paginator.total_posts %}
+                <span class="px-2">{{ paginator.total_posts }} Articles</span>
+                {% endif %}
+
+                <!-- Number of paginated pages -->
+                {% if paginator.total_pages > 1 %}
+                <span class="px-2">Page {{ page.pagination_info.curr_page }} of {{ page.pagination_info.total_pages }}</span>
+                {% endif %}
+
+              {% endif %}
+
+              <!-- Post metadata -->
+              {% if page.is_post == true %}
+
+                <!-- Post date -->
+                {% if page.date %}
+                <span class="px-2"><time class="post-date" datetime="{{ page.date | date:"%B %e, %Y" }}">{{ page.date | date:"%B %e, %Y" }}</time></span>
+                {% endif %}
+
+                <!-- Post author metadata -->
+                {% if page.author %}
+                {% assign author = site.authors | where: 'short_name', page.author | first %}
+                <span class="mr-2">Posted by <a href="{{ author.url | relative_url }}">{{ author.name }}</a></span>
+                {% endif %}
+
+                <!-- Podcast duration -->
+                {% if page.duration %}
+                <span>{{ page.duration }}</span>
+                {% endif %}
+
+              {% endif %}
+
+            </div>
+
+          {% endif %}
+          <!-- End not the homepage -->
+
+          <!-- CTA Button -->
+          {% if page.hero-btn-link %}
+          <a href="{{ page.hero-btn-link | relative_url }}" class="btn btn-primary btn-lg">{{ page.hero-btn-text }}</a>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

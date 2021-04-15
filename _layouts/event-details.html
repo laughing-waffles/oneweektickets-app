@@ -1,0 +1,264 @@
+---
+layout: default
+---
+
+<div
+  class="fixed-top border-top-3 border-top border-primary bg-dark py-lg-8 py-12 pb-lg-0"
+  style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{ page.hero }}); background-position: center; background-repeat: no-repeat; background-size: cover; position: relative;"
+>
+  <div class="container">
+    <div class="row d-lg-flex align-items-center">
+      <div class="col-xl-5 col-lg-5 col-md-5 col-12">
+        <div class="mb-0 mb-lg-8">
+          <h1 class="text-white mb-3 display-4">
+            {{ page.artist }}
+          </h1>
+
+          <p class="mb-6 lead text-white">
+            {{ page.date }}<br />
+            {{ page.venue }} in {{ page.city }}, {{ page.state }}
+          </p>
+
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            More details
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenterTitle">{{ page.title }}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+
+                  <p>{{ page.description }}</p>
+                  <p>{{ page.doors }}</p>
+                  <p>{{ page.show }}</p>
+                  <p>{{ page.end }}</p>
+                  <p>{{ page.artist }}</p>
+                  <p>{{ page.support-1 }}</p>
+                  <p>{{ page.support-2 }}</p>
+                  <p>{{ page.support-3 }}</p>
+                  <p>{{ page.artist-thumb }}</p>
+                  <p>{{ page.support-1-thumb }}</p>
+                  <p>{{ page.support-2-thumb }}</p>
+                  <p>{{ page.support-3-thumb }}</p>
+            
+                  <p>{{ page.address }}</p>
+            
+                  <p>{{ page.postal }}</p>
+
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="offset-xl-2 offset-lg-1 col-xl-5 col-lg-5 col-md-5 col-12 d-block">
+        <div class="z-index-1">
+          <div class="bg-dark p-4 p-lg-8 rounded-lg opacity-1">
+            <form>
+              <h1 class="mb-2 text-white">Submit bid</h1>
+              <p class="mb-4">What would you like to pay for your tickets?</p>
+
+              <label for="password">Price per ticket</label>
+              <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                  <span class="input-group-text bg-white">$</span>
+                </div>
+                <input type="number" class="form-control" placeholder="0.00" required="" aria-label="Amount (to the nearest dollar)" />
+              </div>
+              <a class="btn btn-primary btn-block" href="/payment" type="submit">
+                Continue
+              </a>
+              <div class="d-lg-flex justify-content-between mt-4 mb-3">
+                <p class="font-14">
+                  <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="You should bid what you think is reasonable to pay for one ticket to this event.">What should I bid?</a>
+                </p>
+
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- page content -->
+<div class="py-lg-12 py-10">
+  <div class="container">
+    <div class="row">
+      <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="lead">{{ content }}</div>
+      </div>
+    </div>
+    <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="card rounded-lg mb-6 border-0">
+            <div class="card-body p-0">
+              <span class="mb-4 d-block"> <i class="fas fa-puzzle-piece text-primary font-42"></i> </span>
+              <h3 class="h-4 mb-4 font-weight-bolder"><a href="help-center-category.html" class="text-inherit"> Price Discovery </a></h3>
+              <p class="mb-0">
+                Knowing how to price your product is complex in any industry. The traditional methods of pricing event tickets do not allow for price discovery because of market and product desirability fluctuations between events. We built
+                OneWeek to solve this problem on behalf of venues, artists, and promoters.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="card rounded-lg mb-6 border-0">
+            <div class="card-body p-0">
+              <span class="mb-4 d-block"> <i class="fas fa-chart-line text-primary font-42"></i> </span>
+              <h3 class="h-4 mb-4 font-weight-bolder"><a href="help-center-category.html" class="text-inherit"> Revenue </a></h3>
+              <p class="mb-0">
+                OneWeek's unique 7-day rolling auction design allows for the optimal ticket price to be discovered by engaging buyers and sellers in a mutually-beneficial process to determine what price the market is willing to bear. When
+                the auction concludes, OneWeek continues to sell unsold tickets at the optimized price.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="card rounded-lg mb-6 border-0">
+            <div class="card-body p-0">
+              <span class="mb-4 d-block"> <i class="fas fa-ticket-alt text-primary font-42"></i> </span>
+              <h3 class="h-4 mb-4 font-weight-bolder"><a href="help-center-category.html" class="text-inherit"> Volume </a></h3>
+              <p class="mb-0">
+                Discovering the market-equilibrium price for your tickets means that any tickets left unsold at the end of the auction period can be sold at the optimized price that will give you the best chance at selling all of your
+                tickets without leaving money on the table from under-pricing your tickets.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="card rounded-lg mb-6 border-0">
+            <div class="card-body p-0">
+              <span class="mb-4 d-block"> <i class="fas fa-user-alt-slash text-primary font-42"></i> </span>
+              <h3 class="h-4 mb-4 font-weight-bolder"><a href="help-center-category.html" class="text-inherit"> Scalping </a></h3>
+              <p class="mb-0">
+                Scalpers and the secondary market lose their incentive to scoop up your tickets because real fans will outbid them. Any margin they might have hoped to garner by reselling your tickets at a higher price will be marginalized
+                by the market-equilibrium price discovered at the end of the auction period.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="card rounded-lg mb-6 border-0">
+            <div class="card-body p-0">
+              <span class="mb-4 d-block"> <i class="fas fa-door-open text-primary font-42"></i> </span>
+              <h3 class="h-4 mb-4 font-weight-bolder"><a href="help-center-category.html" class="text-inherit"> Accessible </a></h3>
+              <p class="mb-0">
+                Allowing fans to determine your tickets' fair market price means that they gain access to your event at a price they can bear. This prevents fans from being victimized in the secondary market and ensures that their money
+                supports the primary market directly.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="card rounded-lg mb-6 border-0">
+            <div class="card-body p-0">
+              <span class="mb-4 d-block"> <i class="fas fa-drum text-primary font-42"></i> </span>
+              <h3 class="h-4 mb-4 font-weight-bolder"><a href="help-center-category.html" class="text-inherit"> Artist Support </a></h3>
+              <p class="mb-0">
+                Fans want to support artists directly and are endlessly frustrated when forced to engage the secondary market to access events. Selling tickets through a primary-market auction ensures that fans can support artists directly
+                at a fair price.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h1 class="font-weight-bold mb-3">This is a H1, Perfect's for titles.</h1>
+        <p class="font-size-md mb-4">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Stress, for the United States element ante. Duis cursus, mi quis viverra ornare, eros pain, sometimes none at all, freedom of the living creature was as the profit and
+          financial security. Jasmine neck adapter and just running it lorem makeup sad smile of the television set.
+        </p>
+        <p class="mb-1 font-size-md"><span class="text-dark font-weight-semi-bold">Email: </span>hello@coach.com</p>
+        <p class="mb-1 font-size-md"><span class="text-dark font-weight-semi-bold">Address: </span>52, Komal Villas, Mansarovar Vadodara - 374321</p>
+        <!-- para -->
+        <div class="d-flex mt-5">
+          <div>
+            <h3 class="font-weight-bold">A</h3>
+          </div>
+          <div class="ml-3">
+            <h3 class="font-weight-bold">This is a H3's perfect for the titles.</h3>
+            <p class="font-size-md">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Stress, for the United States element ante. Duis cursus, mi quis viverra ornare, eros pain, none at all, freedom of the living creature was as the profit and financial
+              security. Jasmine neck adapter and just running it lorem makeup hairstyle. Now sad smile of the television set.
+            </p>
+          </div>
+        </div>
+        <!-- para -->
+        <div class="d-flex mt-3">
+          <div>
+            <h3 class="font-weight-bold">B</h3>
+          </div>
+          <div class="ml-3">
+            <h3 class="font-weight-bold">This is a H3's perfect for the titles.</h3>
+            <p class="font-size-md">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Stress, for the United States element ante. Duis cursus, mi quis viverra ornare, eros pain, none at all, freedom of the living creature was as the profit and financial
+              security. Jasmine neck adapter and just running it lorem makeup hairstyle. Now sad smile of the television set.
+            </p>
+          </div>
+        </div>
+        <!-- para -->
+        <div class="mt-5">
+          <h2 class="font-weight-bold">This is a H2's perfect for the titles.</h2>
+          <p class="font-size-md">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Stress, for the United States element ante. Duis cursus, mi quis viverra ornare, eros pain,
+            <a href="https://codescandy.com/coach/index.html">https://codescandy.com/coach/index.html</a> , sometimes none at all, freedom of the living creature was as the profit and financial security. Jasmine neck adapter and just
+            running it lorem makeup hairstyle. Now sad smile of the television set.
+          </p>
+          <ul class="font-size-md">
+            <li>More than 60+ components</li>
+            <li>Five ready tests</li>
+            <li>Coming soon page</li>
+            <li>Check list with left icon</li>
+            <li>And much more ...</li>
+          </ul>
+        </div>
+        <!-- para -->
+        <div class="mt-5">
+          <h2 class="font-weight-bold">This is a H2's perfect for the titles.</h2>
+          <p class="font-size-md">Coach ui takes the privacy of its users very seriously. For the current Linear Privacy Policy, please click <a href="https://codescandy.com/coach/index.html">here</a>.</p>
+          <p class="mb-6 font-size-md">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis cursus, mi quis viverra ornare, eros pain, sometimes none at all, freedom of the living creature was as the profit and financial security. Jasmine neck adapter and
+            just running it lorem makeup hairstyle. Now sad smile of the television set.
+          </p>
+          <h2 class="font-weight-bold">Changes about terms</h2>
+          <p class="font-size-md">If we change our terms of use we will post those changes on this page. Registered users will be sent an email that outlines changes made to the terms of use.</p>
+          <p class="font-size-md">Questions? Please email us at <a href="#">hello@example.com</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer py-3 bg-dark text-base">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="list-inline">
+          <li class="list-inline-item">© {{ site.time | date: '%Y' }} {{ site.title }}</li>
+          {% for item in site.data.nav.bottom-bar %}
+          <li class="list-inline-item"><a href="{{ item.url | relative_url }}" class="text-reset">{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
