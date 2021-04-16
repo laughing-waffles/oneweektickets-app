@@ -1,0 +1,67 @@
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#modal-event-bid">
+  Get tickets
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="modal-event-bid" tabindex="-1" role="dialog" aria-labelledby="modal-event-bid" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-4 col-12">
+
+              <!-- para -->
+              <div class="mt-5">
+                <h2 class="font-weight-bold">
+                  How does the auction work?
+                </h2>
+                <p class="font-size-md">
+                  You and everyone else who wants to go to the show places a bid. The top 1/7th of bids each day have their bids exchanged for tickets.
+                </p>
+                <p class="mb-3 font-size-md">
+                  To increase your opportunity of having a successful bid, we run this auction once a day for 7 days. If you bid on day 1, you’re bid will remain in the auction until you either get your ticket(s), or 7 days has passed.
+                </p>
+              </div>
+
+            </div>
+            <div class="col-md-6 col-12 ml-auto">
+
+              <div class="bg-dark p-3 p-md-4 p-lg-8 rounded-lg">
+                <form action="/payment">
+                  <h2 class="mb-2 text-white">Submit bid</h2>
+                  <p class="mb-4">What would you like to pay for your tickets?</p>
+      
+                  <label for="password">Price per ticket<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+                  <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text bg-white">$</span>
+                    </div>
+                    <input type="number" class="form-control" placeholder="0.00" value="1" min="1" max="999" aria-label="Amount (to the nearest dollar)" required />
+                  </div>
+                  <button class="btn btn-primary btn-block" href="/payment" type="submit">
+                    Continue
+                  </button>
+      
+                  <div class="d-lg-flex justify-content-between mt-4 mb-3">
+                    <p class="font-14">
+                      <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="You should bid what you think is reasonable to pay for one ticket to this event.">What should I bid?</a>
+                    </p>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

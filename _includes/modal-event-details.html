@@ -1,0 +1,58 @@
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#modal-event-details">
+  Event details
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="modal-event-details" tabindex="-1" role="dialog" aria-labelledby="modal-event-details" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-4 col-12">
+
+              <div class="row">
+                {% for performer in page.performers %}
+                <div class="col-lg-6 col-md-12 col-6">
+                  <div class="card mb-4">
+                    <div class="card-body text-center py-3">
+                      <img src="{{ performer.thumbnail }}" alt="{{ performer.name }}" class="rounded-circle avatar-xl mb-3">
+                      <h5 class="h6 mb-2" style="font-size: 15px;">
+                        {{ performer.name }}
+                      </h5>
+                      <p class="small mb-0">{{ performer.role }}</p>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+
+            </div>
+            <div class="col-md-8 col-12 ml-auto">
+              <h3 class="mb-3 h4">{{ page.title }}</h3>
+              <p class="small mb-2">
+                <span><i class="fas fa-calendar-alt mr-2 text-danger"></i></span>{{ page.event-date }} {{ page.doors }}
+              </p>
+              <p class="small mb-4">
+                <span><i class="fas fa-map-marker-alt mr-2 text-danger"></i></span>{{ page.venue }}, {{ page.city }}, {{ page.state }} <a href="https://goo.gl/maps/7wbBkGsPK2pfkz7W6" target="_blank">Google Maps <i class="fas fa-external-link-square-alt"></i></a>
+              </p>
+              {{ content }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#modal-event-bid">
+          Get tickets
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
