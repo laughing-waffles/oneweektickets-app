@@ -8,83 +8,33 @@ layout: default
 >
   <div class="container">
     <div class="row d-lg-flex align-items-center">
-      <div class="col-xl-5 col-lg-5 col-md-5 col-12">
+      <div class="col-xl-5 col-lg-5 col-md-5 col-12 p-4 p-lg-0">
         <div class="mb-0 mb-lg-8">
 
           <h1 class="text-white mb-3 display-4">
-            {{ page.artist }}
+            {{ page.title }}
           </h1>
 
           <p class="mb-3 lead text-white">
-            {{ page.date }}<br />
+            {{ page.event-date }}<br />
             {{ page.venue }} in {{ page.city }}, {{ page.state }}
           </p>
 
-          <!-- Button trigger modal -->
-          <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#exampleModalCenter">
-            More details
-          </button>
+          {% include modal-event-details.html %}
 
-          <!-- Modal -->
-          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalCenterTitle">{{ page.title }}</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  {% if page.  %}{{ page.content }}{% endif %}
-                  <p>{% if page.description %}{{ page.description }}{% endif %}</p>
-                  <p>{% if page.doors %}{{ page.doors }}{% endif %}</p>
-                  <p>{% if page.show %}{{ page.show }}{% endif %}</p>
-                  <p>{% if page.end %}{{ page.end }}{% endif %}</p>
-                  <p>{% if page.artist %}{{ page.artist }}{% endif %}</p>
-                  <p>{% if page.support-1 %}{{ page.support-1 }}{% endif %}</p>
-                  <p>{% if page.support-2 %}{{ page.support-2 }}{% endif %}</p>
-                  <p>{% if page.support-3 %}{{ page.support-3 }}{% endif %}</p>
-                  <p>{% if page.artist-thumb %}{{ page.artist-thumb }}{% endif %}</p>
-                  <p>{% if page.support-1-thumb %}{{ page.support-1-thumb }}{% endif %}</p>
-                  <p>{% if page.support-2-thumb %}{{ page.support-2-thumb }}{% endif %}</p>
-                  <p>{% if page.support-3-thumb %}{{ page.support-3-thumb }}{% endif %}</p>
-                  <p>{% if page.address %}{{ page.address }}{% endif %}</p>
-                  <p>{% if page.postal %}{{ page.postal }}{% endif %}</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
       <div class="offset-xl-2 offset-lg-1 col-xl-5 col-lg-5 col-md-5 col-12 d-block">
-        <div class="">
-          <div class="bg-dark p-4 p-lg-8 rounded-lg opacity-1">
-            <form>
-              <h1 class="mb-2 text-white">Submit bid</h1>
-              <p class="mb-4">What would you like to pay for your tickets?</p>
-
-              <label for="password">Price per ticket</label>
-              <div class="input-group mb-4">
-                <div class="input-group-prepend">
-                  <span class="input-group-text bg-white">$</span>
-                </div>
-                <input type="number" class="form-control" placeholder="0.00" required="" aria-label="Amount (to the nearest dollar)" />
-              </div>
-              <a class="btn btn-primary btn-block" href="/payment" type="submit">
-                Continue
-              </a>
-              <div class="d-lg-flex justify-content-between mt-4 mb-3">
-                <p class="font-14">
-                  <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="You should bid what you think is reasonable to pay for one ticket to this event.">What should I bid?</a>
-                </p>
-              </div>
-            </form>
-          </div>
+        <div class="bg-dark p-3 p-md-4 p-lg-8 rounded-lg">
+          <h2 class="mb-2 text-white">Pay what you want</h2>
+          <p class="m-0 text-light">Tickets to this event are offered at the price fans think is fair.</p>
+          <ul class="list-unstyled lead  text-light my-4">
+            <li><i class="fas fa-check-circle text-primary"></i> I am a reason</li>
+            <li><i class="fas fa-check-circle text-primary"></i> I am a reason</li>
+            <li><i class="fas fa-check-circle text-primary"></i> I am a reason</li>
+          </ul>
+          {% include modal-event-bid.html %}
         </div>
       </div>
     </div>
@@ -97,7 +47,7 @@ layout: default
     <div class="row">
       <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="alert alert-info" role="alert">
-          <p><strong>What am I bidding on?</strong> The {{ page.artist }} show at the {{ page.venue }} on {{ page.date }} is selling tickets using OneWeek. OneWeek helps <u>you</u> get a ticket to the show, without having to pay exorbitant prices from ticket resellers. We’re cutting out the middleman.</p>
+          <p><strong>What am I bidding on?</strong> The {{ page.title }} show at the {{ page.venue }} on {{ page.event-date }} is selling tickets using OneWeek. OneWeek helps <u>you</u> get a ticket to the show, without having to pay exorbitant prices from ticket resellers. We’re cutting out the middleman.</p>
         </div>
       </div>
     </div>

@@ -1,24 +1,29 @@
 ---
 title:						    Breaking Benjamin Live
 description:			    Purchase tickets to see Breaking Benjamin live in Memphis on May 21, 2021.
-date:                 May 21, 2021
+event-date:                 May 21, 2021
 doors:                6:00pm
 show:                 7:00pm
 end:                  11:00pm
 venue:                Minglewood Hall
-address:              Street Name 12
+address:              1555 Madison Ave
 city:                 Memphis
-postal:               77802
+postal:               38104
 state:                TN
-artist:               Breaking Benjamin
-support-1:            Three Days Grace
-support-2:            Red
-support-3: 
 hero:                 /assets/images/events/149552859629-breaking-benjamin/breaking-benjamin-hero.jpeg
-artist-thumb:         /assets/images/events/149552859629-breaking-benjamin/breaking-benjamin-thumbnail.jpeg
-support-1-thumb:      /assets/images/events/149552859629-breaking-benjamin/
-support-2-thumb:      /assets/images/events/149552859629-breaking-benjamin/
-support-3-thumb:      /assets/images/events/149552859629-breaking-benjamin/
+performers: 
+  - name:             Breaking Benjamin
+    role:             Headliner
+    thumbnail:        /assets/images/events/149552859629-breaking-benjamin/breaking-benjamin.jpeg
+  - name:             Three Days Grace
+    role:             Support
+    thumbnail:        /assets/images/events/149552859629-breaking-benjamin/three-days-grace.jpg
+  - name:             Red
+    role:             Support
+    thumbnail:        /assets/images/events/149552859629-breaking-benjamin/red.jpg
+  - name:             Saving Abel
+    role:             Opening
+    thumbnail:        /assets/images/events/149552859629-breaking-benjamin/saving-abel.jpg
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Following the wrap-up of their North American co-headline arena tour with Korn, multiplatinum band Breaking Benjamin announced their 2020 US summer tour. The tour kicks off July 15th with very special guest opener Bush as well as Theory of a Deadman, Saint Asonia and Cory Marks includes stops at Jones Beach, Hartford, St. Louis, Dallas, Tampa, Phoenix, Nashville, Las Vegas and Irvine, CA to name a few. Breaking Benjamin is touring in support of their vast catalogue and latest release, Aurora, which showcases reimagined versions of the band's biggest and most popular songs, including "Dear Agony" as well as "So Cold" and "Red Cold River," both of which were #1 rock radio hits. Aurora also features multiple special guests, including Lacey Sturm (ex-Flyleaf), Spencer Chamberlain (Underoath), and Scooter Ward (Cold) who joins the band on the album's current single, "Far Away," which is currently Top 10 at rock radio.
