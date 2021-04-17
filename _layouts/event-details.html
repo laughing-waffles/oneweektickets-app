@@ -64,9 +64,9 @@ layout: default
                 <p class="text-light">How many tickets would you like to this event?</p>
                 <div class="form-group my-4">
                   <label for="quantity">Number of tickets<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
-                  <input type="number" class="form-control" placeholder="1" value="1" min="1" max="10" aria-label="quantity" required />
+                  <input type="number" id="qty" class="form-control" placeholder="1" value="1" min="1" max="10" aria-label="quantity" required />
                 </div>
-                <a class="btn btn-secondary btn-block mt-2" href="#carouselExampleIndicators" role="button" data-slide-to="2">Next</a>
+                <a class="btn btn-secondary btn-block mt-2" href="#carouselExampleIndicators" role="button" data-slide-to="2" id="quantitybtn">Next</a>
               </div>
 
               <div class="carousel-item">
@@ -78,13 +78,13 @@ layout: default
                     <div class="input-group-prepend">
                       <span class="input-group-text bg-white">$</span>
                     </div>
-                    <input type="number" class="form-control" placeholder="0.00" value="1" min="1" max="999" aria-label="Amount (to the nearest dollar)" required />
+                    <input type="number" id="amt" class="form-control" placeholder="0.00" value="1" min="1" max="999" aria-label="Amount (to the nearest dollar)" required />
                   </div>
                 </div>
                 <p class="font-14">
                   <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="You should bid what you think is reasonable to pay for one ticket to this event.">What should I bid?</a>
                 </p>
-                <a class="btn btn-secondary btn-block" href="#carouselExampleIndicators" role="button" data-slide-to="3">Next</a>
+                <a class="btn btn-secondary btn-block" href="#carouselExampleIndicators" role="button" data-slide-to="3"  id="pricebtn">Next</a>
                 <div class="d-lg-flex justify-content-between mt-4 mb-3">
                 </div>
               </div>
@@ -94,15 +94,15 @@ layout: default
                 <p class="text-light">This is the offer you will submit for these tickets.</p>
                 <dl class="row text-light">
                   <dt class="col-sm-8">Quantity</dt>
-                  <dd class="col-sm-4">4</dd>
-                  <dt class="col-sm-8">Price per ticket</dt>
-                  <dd class="col-sm-4">$25.00</dd>
+                  <dd class="col-sm-4" id="listqty" data-raw="">4</dd>
+                  <dt class="col-sm-8">Bid, per ticket</dt>
+                  <dd class="col-sm-4" id="listbid" data-raw="">$25.00</dd>
                   <dt class="col-sm-8">Subtotal</dt>
-                  <dd class="col-sm-4">$100.00</dd>
+                  <dd class="col-sm-4" id="listsub" data-raw="">$100.00</dd>
                   <dt class="col-sm-8">Service fee (7%)</dt>
-                  <dd class="col-sm-4">$7.00</dd>
+                  <dd class="col-sm-4"id="listfee">$7.00</dd>
                   <dt class="col-sm-8">Total</dt>
-                  <dd class="col-sm-4">$100.00</dd>
+                  <dd class="col-sm-4" id="listtotal" data-raw="">$100.00</dd>
                 </dl>
                 {% include modal-event-payment.html %}
               </div>
@@ -196,3 +196,4 @@ layout: default
     </div>
   </div>
 </div>
+<script src="/assets/js/fomo.js" deferred></script>
