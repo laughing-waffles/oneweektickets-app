@@ -29,6 +29,7 @@ plugins:
 include:
   - _pages
   - _events
+  - _manage
 exclude:
   - .jekyll-cache
   - Gemfile
@@ -48,13 +49,30 @@ defaults:
   - scope:
       path: _pages
     values:
-      layout: autopage
+      layout: page
       permalink: '/:basename'
   - scope:
       path: _events
     values:
       layout: event-details
-      permalink: '/:basename'
+      permalink: '/e/:basename'
+      sitemap: false
+  - scope:
+      path: _manage
+    values:
+      layout: page
+      permalink: '/manage/events/:basename'
+      sitemap: false
+  - scope:
+      path: _organizations
+    values:
+      layout: page
+      permalink: '/organizations/events/:basename'
+      sitemap: false
+  - scope:
+      path: "assets/*"
+    values:
+      sitemap: false
 cloudinary:
   cloud_name: judsonlmoore-com
   only_prod: true

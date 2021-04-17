@@ -2,6 +2,7 @@
 title:						Disclosures
 description:			This website occasionally engages with third-party vendors and affiliates to create or influence this site's content. Read an explanation of this content here. 
 layout:						page
+sitemap:					false
 ---
 
 

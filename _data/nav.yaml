@@ -4,60 +4,20 @@ main:
       - title: Demo event
         subtitle: Breaking Benjamin
         icon: far fa-smile
-        url: /149552859629-breaking-benjamin
-      - title: Drowdown item
-        subtitle: Subtitle
+        url: /e/breaking-benjamin-149552859629
+      - title: Request a demo
+        subtitle: Learn more today
         icon: far fa-smile
-        url: /
+        url: /request-demo
 footer:
   - column-h: Links
     links:
-      - title: Link
+      - title: Home
         url: /
-      - title: Link
-        url: /
-      - title: Link
-        url: /
-      - title: Link
-        url: /
-      - title: Link
-        url: /
-  - column-h: Links
-    links:
-      - title: Link
-        url: /
-      - title: Link
-        url: /
-      - title: Link
-        url: /
-      - title: Link
-        url: /
-      - title: Link
-        url: /
-  - column-h: Links
-    links:
-      - title: Link
-        url: /
-      - title: Link
-        url: /
-      - title: Link
-        url: /
-      - title: Link
-        url: /
-      - title: Link
-        url: /
-  - column-h: Links
-    links:
-      - title: Link
-        url: /
-      - title: Link
-        url: /
-      - title: Link
-        url: /
-      - title: Link
-        url: /
-      - title: Link
-        url: /
+      - title: FAQ
+        url: /faq
+      - title: Request demo
+        url: /request-demo
 bottom-bar:
   - title: Terms of Service
     url: /terms
