@@ -1,4 +1,4 @@
-name: jekyll-buld-deploy-aws-s3-cloudfront
+name: CI
 
 on:
   push:
@@ -7,29 +7,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
-
-      - uses: actions/setup-ruby@v1
+      - uses: actions/checkout@v1
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
         with:
-          ruby-version: "2.6"
-
-      - uses: actions/setup-python@v2
-        with:
-          python-version: "3.x"
-
-      - uses: chrislennon/action-aws-cli@v1.1
-
-      - name: Build and deploy
-        run: |
-          rm -f Gemfile.lock
-          bundle install
-          bundle exec jekyll build
-          aws s3 sync _site s3://oneweektickets/
-          python3 create_invalidation_json.py _site > invbatch.json
-          aws cloudfront create-invalidation --distribution-id E3GG40UPHJMZ7M --invalidation-batch file://invbatch.json
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: us-east-1
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+      - name: Build static site
+        run: yarn install && npm run-script build
+      - name: Deploy static site to S3 bucket
+        run: aws s3 sync ./dist/ s3://oneweektickets/ --delete
