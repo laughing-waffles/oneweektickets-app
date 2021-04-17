@@ -1,7 +1,7 @@
 ---
 title:						    Breaking Benjamin Live
 description:			    Purchase tickets to see Breaking Benjamin live in Memphis on May 21, 2021.
-event-date:                 May 21, 2021
+event-date:           May 21, 2021
 doors:                6:00pm
 show:                 7:00pm
 end:                  11:00pm

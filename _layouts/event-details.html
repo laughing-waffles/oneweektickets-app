@@ -10,7 +10,6 @@ layout: default
     <div class="row d-lg-flex align-items-center">
       <div class="col-xl-5 col-lg-5 col-md-5 col-12 p-4 p-lg-0">
         <div class="mb-0 mb-lg-8">
-
           <h1 class="text-white mb-3 display-4">
             {{ page.title }}
           </h1>
@@ -21,21 +20,94 @@ layout: default
           </p>
 
           {% include modal-event-details.html %}
-
         </div>
       </div>
 
-      <div class="offset-xl-2 offset-lg-1 col-xl-5 col-lg-5 col-md-5 col-12 d-block">
-        <div class="bg-dark p-3 p-md-4 p-lg-8 rounded-lg">
-          <h2 class="mb-2 text-white">Pay what you want</h2>
-          <p class="m-0 text-light">Tickets to this event are offered at the price fans think is fair.</p>
-          <ul class="list-unstyled lead  text-light my-4">
-            <li><i class="fas fa-check-circle text-primary"></i> I am a reason</li>
-            <li><i class="fas fa-check-circle text-primary"></i> I am a reason</li>
-            <li><i class="fas fa-check-circle text-primary"></i> I am a reason</li>
-          </ul>
-          {% include modal-event-bid.html %}
+      <div class="offset-lg-1 col-xl-5 col-lg-5 col-md-5 col-12 d-block ml-auto">
+        <div id="carouselExampleIndicators" class="carousel slide bg-dark p-3 p-md-4 p-lg-8 rounded-lg" data-ride="carousel" data-interval="">
+          <style>
+            /* Chrome, Safari, Edge, Opera */
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+
+            /* Firefox */
+            input[type="number"] {
+              -moz-appearance: textfield;
+            }
+          </style>
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+          </ol>
+          <div class="carousel-inner">
+            <form action="/payment">
+              <div class="carousel-item active">
+                <h2 class="mb-2 text-white">Tickets</h2>
+                <p class="text-light">Tickets to this event are offered at the price fans think is fair.</p>
+                <ul class="list-unstyled lead text-light my-4">
+                  <li><i class="fas fa-check-circle text-primary"></i> I am a reason</li>
+                  <li><i class="fas fa-check-circle text-primary"></i> I am a reason</li>
+                  <li><i class="fas fa-check-circle text-primary"></i> I am a reason</li>
+                </ul>
+                <a class="btn btn-secondary btn-block mt-2" href="#carouselExampleIndicators" role="button" data-slide-to="1">Get tickets</a>
+              </div>
+
+              <div class="carousel-item">
+                <h2 class="mb-2 text-white">Quantity</h2>
+                <p class="text-light">How many tickets would you like to this event?</p>
+                <div class="form-group my-4">
+                  <label for="quantity">Number of tickets<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+                  <input type="number" class="form-control" placeholder="1" value="1" min="1" max="10" aria-label="quantity" required />
+                </div>
+                <a class="btn btn-secondary btn-block mt-2" href="#carouselExampleIndicators" role="button" data-slide-to="2">Next</a>
+              </div>
+
+              <div class="carousel-item">
+                <h2 class="mb-2 text-white">Price</h2>
+                <p class="text-light">What would you like to pay for your tickets?</p>
+                <div class="input-group my-4">
+                  <label for="password">Price per ticket<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text bg-white">$</span>
+                    </div>
+                    <input type="number" class="form-control" placeholder="0.00" value="1" min="1" max="999" aria-label="Amount (to the nearest dollar)" required />
+                  </div>
+                </div>
+                <p class="font-14">
+                  <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="You should bid what you think is reasonable to pay for one ticket to this event.">What should I bid?</a>
+                </p>
+                <a class="btn btn-secondary btn-block" href="#carouselExampleIndicators" role="button" data-slide-to="3">Next</a>
+                <div class="d-lg-flex justify-content-between mt-4 mb-3">
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <h2 class="mb-2 text-white">Overview</h2>
+                <p class="text-light">This is the offer you will submit for these tickets.</p>
+                <dl class="row text-light">
+                  <dt class="col-sm-8">Quantity</dt>
+                  <dd class="col-sm-4">4</dd>
+                  <dt class="col-sm-8">Price per ticket</dt>
+                  <dd class="col-sm-4">$25.00</dd>
+                  <dt class="col-sm-8">Subtotal</dt>
+                  <dd class="col-sm-4">$100.00</dd>
+                  <dt class="col-sm-8">Service fee (7%)</dt>
+                  <dd class="col-sm-4">$7.00</dd>
+                  <dt class="col-sm-8">Total</dt>
+                  <dd class="col-sm-4">$100.00</dd>
+                </dl>
+                {% include modal-event-payment.html %}
+              </div>
+            </form>
+          </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -47,20 +119,23 @@ layout: default
     <div class="row">
       <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="alert alert-info" role="alert">
-          <p><strong>What am I bidding on?</strong> The {{ page.title }} show at the {{ page.venue }} on {{ page.event-date }} is selling tickets using OneWeek. OneWeek helps <u>you</u> get a ticket to the show, without having to pay exorbitant prices from ticket resellers. We’re cutting out the middleman.</p>
+          <p>
+            <strong>What am I bidding on?</strong> The {{ page.title }} show at the {{ page.venue }} on {{ page.event-date }} is selling tickets using OneWeek. OneWeek helps <u>you</u> get a ticket to the show, without having to pay
+            exorbitant prices from ticket resellers. We’re cutting out the middleman.
+          </p>
         </div>
       </div>
     </div>
     <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
       <div class="row">
-
         <!-- para -->
         <div class="mt-5">
           <h2 class="font-weight-bold">
             How does OneWeek prevent ticket resellers from buying all of the tickets?
           </h2>
           <p class="mb-3 font-size-md">
-            By using a blind auction! You enter the price that you think it’s worth paying to go to the show. Ticket resellers have an incentive to bid low so that they can turn around and make a massive profit when they (re)sell you the ticket.
+            By using a blind auction! You enter the price that you think it’s worth paying to go to the show. Ticket resellers have an incentive to bid low so that they can turn around and make a massive profit when they (re)sell you the
+            ticket.
           </p>
         </div>
 
@@ -81,7 +156,8 @@ layout: default
         <div class="mt-5">
           <h2 class="font-weight-bold">What happens if my bid is successful?</h2>
           <p class="mb-3 font-size-md">
-            If you bid an amount that was in the top 1/7th of bids for the day, you’ll receive an email from OneWeek. We’ll charge your credit card for the amount listed when you placed your bid, and you’ll receive instructions on how your tickets will be delivered.
+            If you bid an amount that was in the top 1/7th of bids for the day, you’ll receive an email from OneWeek. We’ll charge your credit card for the amount listed when you placed your bid, and you’ll receive instructions on how your
+            tickets will be delivered.
           </p>
         </div>
 
@@ -96,11 +172,8 @@ layout: default
             <li>Change your bid, and your new bid will be active in the rest of the auction days left</li>
             <li>Cancel your bid, and you won’t participate in the rest of the auction days left.</li>
           </ul>
-          <p class="mb-3 font-size-md">
-            More questions? See our <a href="/faq" target="_blank">FAQ</a>
-          </p>
+          <p class="mb-3 font-size-md">More questions? See our <a href="/faq" target="_blank">FAQ</a></p>
         </div>
-
       </div>
     </div>
   </div>
