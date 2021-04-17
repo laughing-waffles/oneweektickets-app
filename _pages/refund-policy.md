@@ -48,7 +48,7 @@ If you are approved, then your refund will be processed, and a credit will autom
 
 ## Late or missing refunds
 
-If you haven’t received a refund yet, first check your bank account again. Then contact your credit card company, it may take some time before your refund is officially posted. Next, contact your bank. There is often some processing time before a refund is posted. If you’ve done all of this and you still have not received your refund yet, please contact us at shop@judsonlmoore.com.
+If you haven’t received a refund yet, first check your bank account again. Then contact your credit card company, it may take some time before your refund is officially posted. Next, contact your bank. There is often some processing time before a refund is posted. If you’ve done all of this and you still have not received your refund yet, please contact us at shop@oneweektickets.com.
 
 ## Sale items  
 
@@ -56,7 +56,7 @@ Only regular priced items may be refunded, unfortunately, sale items cannot be r
 
 ## Exchanges
 
-We only replace items if they are defective or damaged. If you need to exchange it for the same item, send us an email at shop@judsonlmoore.com.
+We only replace items if they are defective or damaged. If you need to exchange it for the same item, send us an email at shop@oneweektickets.com.
 
 ## Gifts  
 

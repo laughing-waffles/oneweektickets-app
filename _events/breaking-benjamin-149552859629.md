@@ -1,4 +1,6 @@
 ---
+id:                   149552859629
+auction-end:         '2021/05/04 06:00:00'
 title:						    Breaking Benjamin Live
 description:			    Purchase tickets to see Breaking Benjamin live in Memphis on May 21, 2021.
 event-date:           May 21, 2021
