@@ -1,11 +1,10 @@
 baseurl: ''
-permalink: ':title'
+url: 'https://www.oneweektickets.com'
 title: OneWeek Tickets
 tagline: Price Discovery For the Primary Market
 description: >-
   An innovative ticketing platform that helps venues, artists, promoters, and fans 
   all have a better experience by enabling auction pricing in the primary market.
-url: 'https://www.oneweektickets.com'
 author: OneWeek
 logo: null
 lang: en_US
@@ -27,9 +26,9 @@ plugins:
   - jekyll-sitemap
   - jekyll-target-blank
 include:
-  - _account-settings
-  - _events
-  - _manage
+  - account-settings
+  - events
+  - manage
   - _pages
 exclude:
   - .jekyll-cache
@@ -46,35 +45,36 @@ defaults:
       type: posts
     values:
       layout: blog-single
+      permalink: '/:title'
       is_post: true
   - scope:
       path: _pages
     values:
       layout: page
-      permalink: '/:basename'
+      permalink: '/:basename/'
   - scope:
-      path: _events
+      path: events
     values:
       layout: event-details
-      permalink: '/e/:basename'
+      permalink: '/:path/:basename/'
       sitemap: false
   - scope:
-      path: _account-settings
+      path: account-settings
     values:
       layout: account-settings
-      permalink: '/account-settings/:basename'
+      permalink: '/:path/:basename/'
       sitemap: false
   - scope:
-      path: _manage
+      path: manage
     values:
       layout: page
-      permalink: '/manage/events/:basename'
+      permalink: '/:path/:basename/'
       sitemap: false
   - scope:
-      path: _organizations
+      path: organizations
     values:
       layout: page
-      permalink: '/organizations/events/:basename'
+      permalink: '/:path/:basename/'
       sitemap: false
   - scope:
       path: "assets/*"

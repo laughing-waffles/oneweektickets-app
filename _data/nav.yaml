@@ -15,14 +15,14 @@ footer:
       - title: Home
         url: /
       - title: FAQ
-        url: /faq.html
+        url: /faq
       - title: Request demo
-        url: /request-demo.html
+        url: /request-demo
 bottom-bar:
   - title: Terms of Service
-    url: /terms.html
+    url: /terms
   - title: Privacy Policy
-    url: /privacy.html
+    url: /privacy
   - title: Sitemap
     url: /sitemap.xml
 account-settings:
