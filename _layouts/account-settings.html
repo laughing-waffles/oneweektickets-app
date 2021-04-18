@@ -1,0 +1,88 @@
+---
+layout: default
+---
+
+{% include navbar.html %} 
+
+<div class="bg-shape bg-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+        <div class="pt-lg-9 pb-lg-15 pt-6 pb-10 mb-4">
+          <h1 class="h2 text-white">Profile</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pb-12 mt-lg-n14 mt-n9">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-12">
+        <nav class="navbar navbar-expand-md navbar-light dashboard-nav mb-3 mb-lg-0">
+          <a class="d-xl-none d-lg-none d-md-none text-inherit font-weight-bold" href="#!">Menu</a>
+          <button
+            class="navbar-toggler d-md-none icon-shape icon-sm rounded bg-primary text-light"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="fas fa-bars"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <div class="navbar-nav flex-column w-100">
+              <div class="border-bottom p-4 d-flex justify-content-between text-reset">
+                <div class="d-flex align-items-center">
+                  <img src="../assets/images/avatar-1.png" alt="" class="rounded-circle avatar-lg" />
+                  <div class="ml-3">
+                    <h5 class="mb-0">Leslie Alexander</h5>
+                    <small>Free Member</small>
+                  </div>
+                </div>
+              </div>
+              <div class="p-4">
+                <span class="heading">Account</span>
+                <ul class="list-unstyled mb-4 mt-2">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="dashboard-profile.html">My Profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="dashboard-subscription.html">Subscriptions</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="dashboard-security.html">Security</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="dashboard-notifications.html">Notifications</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="dashboard-user.html">Users</a>
+                  </li>
+                </ul>
+                <span class="heading border-top pt-4 d-block">Billing</span>
+
+                <ul class="list-unstyled mb-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="dashboard-payment-plan.html">Plan &amp; Payment</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="dashboard-payment-history.html">Payment History</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      {{ content }}
+
+    </div>
+  </div>
+</div>
+
+{% include footer.html %}
