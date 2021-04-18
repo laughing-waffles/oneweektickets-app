@@ -27,9 +27,10 @@ plugins:
   - jekyll-sitemap
   - jekyll-target-blank
 include:
-  - _pages
+  - _account-settings
   - _events
   - _manage
+  - _pages
 exclude:
   - .jekyll-cache
   - Gemfile
@@ -56,6 +57,12 @@ defaults:
     values:
       layout: event-details
       permalink: '/e/:basename'
+      sitemap: false
+  - scope:
+      path: _account-settings
+    values:
+      layout: account-settings
+      permalink: '/account-settings/:basename'
       sitemap: false
   - scope:
       path: _manage
