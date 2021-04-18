@@ -4,24 +4,24 @@ main:
       - title: Demo event
         subtitle: Breaking Benjamin
         icon: far fa-smile
-        url: /e/breaking-benjamin-149552859629
+        url: /e/breaking-benjamin-149552859629.html
       - title: Request a demo
         subtitle: Learn more today
         icon: far fa-smile
-        url: /request-demo
+        url: /request-demo.html
 footer:
   - column-h: Links
     links:
       - title: Home
         url: /
       - title: FAQ
-        url: /faq
+        url: /faq.html
       - title: Request demo
-        url: /request-demo
+        url: /request-demo.html
 bottom-bar:
   - title: Terms of Service
-    url: /terms
+    url: /terms.html
   - title: Privacy Policy
-    url: /privacy
+    url: /privacy.html
   - title: Sitemap
     url: /sitemap.xml
