@@ -6,6 +6,7 @@ layout: compress
 <html lang="en">
 
   <head>
+
     {% if jekyll.environment == 'production' %}
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-57FN2K5SH7"></script>
     <script>
@@ -25,27 +26,23 @@ layout: compress
     {% seo %}
 
     <!-- Libs CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"
-      integrity="sha512-NWCafukXClS6fKch6bSMl/WvPzZrD1OGMf1oMAnFYXSSKZ7hgeswls+r4SdK4bFJauVwmvFf7HlMwji2TsjROA=="
-      crossorigin="anonymous"
-    />
-    <!-- <link rel="stylesheet" href="{{ '/assets/libs/ion-rangeslider/css/ion.rangeSlider.min.css'| relative_url }}"> -->
+    <link rel="stylesheet" href="{{ '/assets/css/ion.rangeSlider.min.css'| relative_url }}">
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="{{'/assets/css/theme.min.css'| relative_url }}" />
 
     <!-- Site Icon -->
     <link rel="icon" href="{{'/favicon.ico'| relative_url }}" />
-	<!-- jQ early for ed -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
-    
+
+    <!-- jQ early for ed -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+
   </head>
 
   {% capture layout %} {% if page.layout %}layout-{{ page.layout }} {% endif %} {% endcapture %}
 
   <body class="{{layout}}">
+
     {{ content }}
 
     <!-- Optional JavaScript -->
@@ -54,7 +51,7 @@ layout: compress
     {% endif %}
 
     <!-- Libs JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous"></script>
     <script src="{{'/assets/js/bootstrap.min.js' | relative_url }}"></script>
     <script src="{{'/assets/js/jquery.slimscroll.min.js' | relative_url }}"></script>
     <script src="{{'/assets/js/jquery.magnific-popup.min.js' | relative_url }}"></script>
@@ -66,7 +63,7 @@ layout: compress
     <script src="{{'/assets/js/tiny-slider.min.js' | relative_url }}"></script>
     <script src="{{'/assets/js/jquery.countdown.min.js' | relative_url }}"></script>
     <script src="{{'/assets/js/clipboard.min.js' | relative_url }}"></script>
-<script src="https://unpkg.com/currency.js@~2.0.3/dist/currency.min.js"></script>
+    <script src="https://unpkg.com/currency.js@~2.0.3/dist/currency.min.js"></script>
 
     <!-- Theme JS -->
     <script src="{{'/assets/js/theme.min.js' | relative_url }}"></script>
@@ -86,5 +83,5 @@ layout: compress
       });
     </script>
 
-</body>
+  </body>
 </html>

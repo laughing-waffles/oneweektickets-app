@@ -1,14 +1,14 @@
 main:
-  - dropdown-title: Dropdown
+  - dropdown-title: Account
     dropdown-items:
-      - title: Demo event
-        subtitle: Breaking Benjamin
-        icon: far fa-smile
-        url: /e/breaking-benjamin-149552859629.html
-      - title: Request a demo
-        subtitle: Learn more today
-        icon: far fa-smile
-        url: /request-demo.html
+      - title: Register
+        subtitle: Create an account
+        icon: fas fa-user-plus
+        url: /request-demo
+      - title: Login
+        subtitle: Access your account
+        icon: fas fa-sign-in-alt
+        url: /login
 footer:
   - column-h: Links
     links:
@@ -25,3 +25,21 @@ bottom-bar:
     url: /privacy.html
   - title: Sitemap
     url: /sitemap.xml
+account-settings:
+  - title: My Profile
+    url: /account-settings/profile
+  - title: Events
+    url: /account-settings/events
+  - title: Subscriptions
+    url: /account-settings/subscriptions
+  - title: Security
+    url: /account-settings/security
+  - title: Notificaitons
+    url: /account-settings/notifications
+  - title: Users
+    url: /account-settings/users
+billing-settings:
+  - title: Plan & Payment
+    url: /account-settings/payment-plan
+  - title: Payment History
+    url: /account-settings/payment-history

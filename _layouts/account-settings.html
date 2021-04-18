@@ -39,39 +39,28 @@ layout: default
                 <div class="d-flex align-items-center">
                   <img src="../assets/images/avatar-1.png" alt="" class="rounded-circle avatar-lg" />
                   <div class="ml-3">
-                    <h5 class="mb-0">Leslie Alexander</h5>
-                    <small>Free Member</small>
+                    <h5 class="mb-0">Judson Moore</h5>
+                    <small>Admin</small>
                   </div>
                 </div>
               </div>
               <div class="p-4">
                 <span class="heading">Account</span>
                 <ul class="list-unstyled mb-4 mt-2">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="dashboard-profile.html">My Profile</a>
+                  {% for item in site.data.nav.account-settings %}
+                  <li class="nav-item{% if page.url == item.url} %} active{% endif %}">
+                    <a class="nav-link" href="{{ item.url | relative_url }}">{{ item.title. }}</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="dashboard-subscription.html">Subscriptions</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="dashboard-security.html">Security</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="dashboard-notifications.html">Notifications</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="dashboard-user.html">Users</a>
-                  </li>
+                  {% endfor %}
                 </ul>
                 <span class="heading border-top pt-4 d-block">Billing</span>
 
                 <ul class="list-unstyled mb-0">
-                  <li class="nav-item">
-                    <a class="nav-link" href="dashboard-payment-plan.html">Plan &amp; Payment</a>
+                  {% for item in site.data.nav.billing-settings %}
+                  <li class="nav-item{% if page.url == item.url} %} active{% endif %}">
+                    <a class="nav-link" href="{{ item.url | relative_url }}">{{ item.title. }}</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="dashboard-payment-history.html">Payment History</a>
-                  </li>
+                  {% endfor %}
                 </ul>
               </div>
             </div>
@@ -85,4 +74,18 @@ layout: default
   </div>
 </div>
 
-{% include footer.html %}
+<!-- Footer -->
+<div class="footer py-3 bg-dark text-base">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="list-inline">
+          <li class="list-inline-item">© {{ site.time | date: '%Y' }} {{ site.title }}</li>
+          {% for item in site.data.nav.bottom-bar %}
+          <li class="list-inline-item"><a href="{{ item.url | relative_url }}" class="text-reset">{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

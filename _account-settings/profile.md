@@ -1,4 +1,4 @@
 ---
-title:            User Dashboard
+title:            My Profile
 layout:           account-settings-profile
 ---
