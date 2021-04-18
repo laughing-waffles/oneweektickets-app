@@ -1,17 +1,16 @@
 baseurl: ''
-url: 'https://www.oneweektickets.com'
+url: https://www.oneweektickets.com
 title: OneWeek Tickets
 tagline: Price Discovery For the Primary Market
 description: >-
   An innovative ticketing platform that helps venues, artists, promoters, and fans 
   all have a better experience by enabling auction pricing in the primary market.
 author: OneWeek
-logo: null
+logo: /favicon.ico
 lang: en_US
 favicon: /favicon.ico
 og_image: /assets/images/bg-hero.jpg
-mailchimp-list: >-
-  https://oneweektickets.us1.list-manage.com/subscribe/post?u=f0d949cdf0a6a387f7b55a173&amp;id=4f123ead61
+mailchimp-list: https://oneweektickets.us1.list-manage.com/subscribe/post?u=f0d949cdf0a6a387f7b55a173&amp;id=4f123ead61
 markdown: kramdown
 kramdown:
   input: GFM
@@ -175,12 +174,8 @@ compress_html:
   blanklines: false
   ignore:
     envs: []
-contact:
-  speaking: support@oneweektickets.com
-  other: support@oneweektickets.com
-  whatsapp: +1.310.571.5210
 pagination:
-  enabled: true
+  enabled: false
   per_page: 9
   permalink: '/page-:num/'
   title: ':title'
@@ -191,7 +186,7 @@ pagination:
     before: 2
     after: 2
 autopages:
-  enabled: true
+  enabled: false
   categories:
     layouts:
       - autopage.html
