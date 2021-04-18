@@ -1,4 +1,5 @@
 {
   "domain": "oneweektickets.us.auth0.com",
-  "clientId": "Zbtaszi0DXfzpcXIpmmmsA2mtbN5gaLw"
+  "clientId": "Zbtaszi0DXfzpcXIpmmmsA2mtbN5gaLw",
+  "audience" : "https://api.oneweektickets.com"
 }
