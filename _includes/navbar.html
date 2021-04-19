@@ -22,6 +22,7 @@
             </a>
           </li>
           {% for item in site.data.nav.main %}
+          {% if item.dropdown-title %}
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="" id="menu-{{ forloop.index }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               {{ item.dropdown-title }}
@@ -43,9 +44,14 @@
                   </div>
                 </a>
               </li>
-              {% endfor %}
+              {% endfor %}    
             </ul>
           </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ item.url | absolute_url}}">{{ item.title }}</a>
+          </li>
+          {% endif %}
           {% endfor %}
         </ul>
         <div class="header-btn">

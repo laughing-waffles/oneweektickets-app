@@ -1,14 +1,18 @@
 main:
-  - dropdown-title: Account
-    dropdown-items:
-      - title: Register
-        subtitle: Create an account
-        icon: fas fa-user-plus
-        url: /request-demo
-      - title: Login
-        subtitle: Access your account
-        icon: fas fa-sign-in-alt
-        url: /login
+  - title: Register
+    url: /request-demo
+  - title: Login
+    url: /login
+#  - dropdown-title: Account
+#    dropdown-items:
+#      - title: Register
+#        subtitle: Create an account
+#        icon: fas fa-user-plus
+#         url: /request-demo
+#       - title: Login
+#         subtitle: Access your account
+#         icon: fas fa-sign-in-alt
+#        url: /login
 footer:
   - column-h: Links
     links:
