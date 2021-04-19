@@ -26,13 +26,15 @@ plugins:
   - jekyll-target-blank
 include:
   - account-settings
-  - events
   - manage
   - _pages
 exclude:
   - .jekyll-cache
   - Gemfile
   - Gemfile.lock
+collections:
+  events:
+    output: true
 defaults:
   - scope:
       path: ''
@@ -52,10 +54,10 @@ defaults:
       layout: page
       permalink: '/:basename/'
   - scope:
-      path: events
+      path: _events
     values:
       layout: event-details
-      permalink: '/:path/:basename/'
+      permalink: '/e/:path/'
       sitemap: false
   - scope:
       path: account-settings

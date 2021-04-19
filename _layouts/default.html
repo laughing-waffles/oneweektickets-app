@@ -4,9 +4,7 @@ layout: compress
 
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-
     {% if jekyll.environment == 'production' %}
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-57FN2K5SH7"></script>
     <script>
@@ -25,18 +23,26 @@ layout: compress
 
     {% seo %}
 
+    <!-- Libs JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.0/chart.min.js" integrity="sha512-RGbSeD/jDcZBWNsI1VCvdjcDULuSfWTtIva2ek5FtteXeSjLfXac4kqkDRHVGf1TwsXCAqPTF7/EYITD0/CTqw==" crossorigin="anonymous"></script>
+
     <!-- Libs CSS -->
-    <link rel="stylesheet" href="{{ '/assets/css/ion.rangeSlider.min.css'| absolute_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/ion.rangeSlider.min.css'| absolute_url }}" />
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="{{'/assets/css/theme.min.css'| absolute_url }}" />
 
-    <!-- Site Icon -->
-    <link rel="icon" href="{{'/favicon.ico'| absolute_url }}" />
+    <!-- Site Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{'/apple-touch-icon.png'| absolute_url }}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{'/favicon-32x32.png'| absolute_url }}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{'/favicon-16x16.png'| absolute_url }}" />
+    <link rel="manifest" href="{{'/site.webmanifest'| absolute_url }}" />
+    <link rel="mask-icon" href="{{'/safari-pinned-tab.svg'| absolute_url }}" color="#39b54b" />
+    <meta name="msapplication-TileColor" content="#00a300" />
+    <meta name="theme-color" content="#ffffff" />
 
     <!-- jQ early for ed -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
-
   </head>
 
   {% capture layout %} {% if page.layout %}layout-{{ page.layout }} {% endif %} {% endcapture %}
@@ -51,8 +57,8 @@ layout: compress
     {% endif %}
 
     <!-- Libs JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous"></script>
-    <script src="{{'/assets/js/bootstrap.min.js' | absolute_url }}"></script>
+    <script src="{{'/assets/js/jquery.min.js' | absolute_url }}"></script>
+    <script src="{{'/assets/js/bootstrap.bundle.min.js' | absolute_url }}"></script>
     <script src="{{'/assets/js/jquery.slimscroll.min.js' | absolute_url }}"></script>
     <script src="{{'/assets/js/jquery.magnific-popup.min.js' | absolute_url }}"></script>
     <script src="{{'/assets/js/prism.min.js' | absolute_url }}"></script>
@@ -62,26 +68,56 @@ layout: compress
     <script src="{{'/assets/js/jquery.inputmask.min.js' | absolute_url }}"></script>
     <script src="{{'/assets/js/tiny-slider.min.js' | absolute_url }}"></script>
     <script src="{{'/assets/js/jquery.countdown.min.js' | absolute_url }}"></script>
-    <script src="{{'/assets/js/clipboard.min.js' | absolute_url }}"></script>
     <script src="https://unpkg.com/currency.js@~2.0.3/dist/currency.min.js"></script>
+
+    <!-- Clipboard -->
+    <script src="{{'/assets/js/clipboard.min.js' | absolute_url }}"></script>
 
     <!-- Theme JS -->
     <script src="{{'/assets/js/theme.min.js' | absolute_url }}"></script>
 
-    <!-- Clock config -->
-    <script type="text/javascript">
-      $('#status').countdown('{{ site.auction-end }}', {elapse: true})
-      .on('update.countdown', function(event) {
-        var $this = $(this);
-        if (event.elapsed) {
-          $this.html(event.strftime(''
-            + '<p>%D days, %H hours, %M minutes, %S seconds</p>'));
-        } else {
-          $this.html(event.strftime(''
-            + '<p>%D days, %H hours, %M minutes, %S seconds</p>'));
-        }
+    <!-- Chart JS -->
+    <script src="{{ '/assets/js/script.js' | absolute_url }}"></script>
+    <script>
+      var ctx = document.getElementById("myChart");
+      var myChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: years,
+          datasets: [
+            {
+              data: africa,
+              label: "Africa",
+              borderColor: "#3e95cd",
+              fill: false,
+            },
+            {
+              data: asia,
+              label: "Asia",
+              borderColor: "#3e95cd",
+              fill: false,
+            },
+            {
+              data: europe,
+              label: "Europe",
+              borderColor: "#3e95cd",
+              fill: false,
+            },
+            {
+              data: latinAmerica,
+              label: "Latin America",
+              borderColor: "#3e95cd",
+              fill: false,
+            },
+            {
+              data: northAmerica,
+              label: "North America",
+              borderColor: "#3e95cd",
+              fill: false,
+            },
+          ],
+        },
       });
     </script>
-
   </body>
 </html>

@@ -1,0 +1,55 @@
+---
+layout: default
+---
+
+{% include navbar.html %} {% include hero.html %}
+
+<div class="pt-lg-12 pb-lg-12 py-6">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-12">
+        <div class="d-md-flex justify-content-between mb-3">
+          <div>
+            <h4>Events currently on-sale</h4>
+          </div>
+          <!-- 
+          <div>
+            <div class="d-inline-block mr-2">
+              <span>Sort by:</span>
+            </div>
+            <div class="d-inline-block">
+              <select class="custom-select">
+                <option selected="">Default</option>
+                <option value="1">Popularity</option>
+                <option value="2">Price: low to high</option>
+                <option value="3">Price: high to low</option>
+              </select>
+            </div>
+          </div>
+        </div> 
+        -->
+      </div>
+    </div>
+    <div class="row">
+      <!-- course thumbnail -->
+      {% for event in site.events %}
+      <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+        <div class="mb-4">
+          <a href="{{ event.url | absolute_url }}" target="_blank" >
+            <img src="{{ event.hero | absolute_url }}" alt="" class="img-fluid w-100 border-top border-top-5 border-primary rounded-top" />
+          </a>
+          <div class="card-body p-4 border border-top-0 rounded-bottom bg-white">
+            <a href="{{ event.url | absolute_url }}" target="_blank">
+              <h4 class="mb-3">{{ event.title }}</h4>
+            </a>
+            <p class="font-13 font-weight-bold"><span class="mr-2">20 Lessons</span> <span class="mr-2">54 Students</span> <span>2 weeks</span></p>
+            <span class="font-weight-bold text-secondary h4 mb-0">$35.00</span>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% include footer.html %}
