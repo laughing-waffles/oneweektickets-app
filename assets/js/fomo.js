@@ -32,7 +32,7 @@ window.onload = async () => {
 }
 const login = async () => {
   await auth0.loginWithRedirect({
-	  redirect_uri: "http://127.0.0.1:4000/payment?amt=" + $('#listbid').data("raw") + "&qty=" + $('#listqty').data("raw")
+	  redirect_uri: window.location.protocol + window.location.hostname + "/payment?amt=" + $('#listbid').data("raw") + "&qty=" + $('#listqty').data("raw")
   });
 };
 
