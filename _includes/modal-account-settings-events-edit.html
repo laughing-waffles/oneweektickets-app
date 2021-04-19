@@ -1,0 +1,26 @@
+<!-- Button trigger modal -->
+
+<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#event-edit-{{ forloop.index }}">
+  Add New
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="event-edit-{{ forloop.index }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Edit Event</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        We are still building this functionality. To edit an event, please contact <a href="mailto:events@oneweektickets.com" target="_blank">events@oneweektickets.com</a> and one of our representatives will work with you to get your
+        events edited.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

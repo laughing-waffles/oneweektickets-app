@@ -1,10 +1,16 @@
 <!-- header -->
-<div class="header fixed-top border-top-3 border-top border-primary {% if layout.dark-navbar == true %}bg-dark{% endif %}">
+<div class="
+  {% if layout.home == true %}
+    header fixed-top border-top-3 border-top border-primary
+  {% else %}
+    header position-sticky border-top-3 border-top border-primary bg-dark
+  {% endif %}
+  ">
   <!-- navigation start -->
   <div class="container-lg">
     <nav class="navbar navbar-expand-lg navbar-default">
       <a class="navbar-brand" href="{{ site.url | absolute_url }}">
-        <h1 class="font-weight-bolder d-block text-white h4 m-0">OneWeek</h1>
+        <h1 class="font-weight-bolder d-block text-white h2 m-0">OneWeek</h1>
       </a>
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
         <span class="icon-bar top-bar mt-0"></span>
@@ -55,7 +61,7 @@
           {% endfor %}
         </ul>
         <div class="header-btn">
-          <a href="{{ 'request-demo' | absolute_url }}" class="btn btn-primary btn-sm">Sell tickets <i class="fas fa-book"></i></a>
+          <a href="{{ 'request-demo' | absolute_url }}" class="btn btn-primary btn-sm">Sell tickets</a>
         </div>
       </div>
     </nav>
