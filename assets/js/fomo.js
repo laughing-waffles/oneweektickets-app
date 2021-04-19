@@ -13,7 +13,9 @@ $( "#pricebtn" ).click(function() {
 	$("#listfee").data("raw",currency($('#amt').val()).multiply($('#qty').val()).multiply(.07));
 	$("#listtotal").text(currency($('#listfee').data("raw")).add($('#listsub').data("raw")).format());
 });
-
+$("#loginbtn").click(function() {
+	login();
+});
 
 let auth0 = null;
 const fetchAuthConfig = () => fetch("/auth_config.json");
@@ -32,7 +34,7 @@ window.onload = async () => {
 }
 const login = async () => {
   await auth0.loginWithRedirect({
-	  redirect_uri: window.location.protocol + window.location.hostname + "/payment?amt=" + $('#listbid').data("raw") + "&qty=" + $('#listqty').data("raw")
+	  redirect_uri: window.location.protocol + "//" + window.location.hostname +  (window.location.port ? ':' + window.location.port: '') + "/payment?amt=" + $('#listbid').data("raw") + "&qty=" + $('#listqty').data("raw")
   });
 };
 

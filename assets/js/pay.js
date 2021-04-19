@@ -14,14 +14,17 @@ window.onload = async () => {
   const isAuthenticated = await auth0.isAuthenticated();
   const query = window.location.search;
   if (query.includes("code=") && query.includes("state=")) {
-  
-   await auth0.handleRedirectCallback();
-  await updateUI();
-}
+	   		const isCallback = await auth0.handleRedirectCallback();
+	  		await updateUI();
+		}
+	
 }
 
+
 const updateUI = async () => { 
-    console.log(await auth0.getTokenSilently());
+    console.log("authenticated!");
+	$('body').data("auth", await auth0.getTokenSilently());
+	enterBid();
 };
 
 
@@ -34,20 +37,34 @@ curl -X POST https://api-dot-oneweek-tickets.uc.r.appspot.com/api/bid/1  \
 
 */
 
-const urlParams = new URLSearchParams(queryString);
+
 
 function enterBid() {
+	const urlParams = new URLSearchParams(window.location.search);
+	
+	console.log("prep bid");
+	console.log(urlParams.get('amt'));
+	console.log($("body").data('auth'));
 $.ajax({
-url: 'https://api-dot-oneweek-tickets.uc.r.appspot.com/api/bid/1',
+url: 'https://oneweektickets.com/api/event/1',
+//'https://oneweektickets.com/api/event/' + urlParams.get('event'),
 type: 'POST',
 beforeSend: function (xhr) {
-    xhr.setRequestHeader('Authorization', 'Bearer ' + auth0pass);
+    xhr.setRequestHeader('Authorization', 'Bearer ' + $("body").data('auth'));
 },
 data: {"currency":"USD","amount":urlParams.get('amt'),"quantity":urlParams.get('qty')},
-success: function () {
+success: function (result) {
 //get the sessionId to serve up stripe checkout
 	//redirect to stripe checkout page?
+	const result = await stripe.redirectToCheckout({
+	  sessionId: result.sessionId,
+	});
 
+	if (result.error) {
+	  // If `redirectToCheckout` fails due to a browser or network
+	  // error, display the localized error message to your customer
+		console.log(result.error.message);
+	}
  },
 error: function () { },
 });
