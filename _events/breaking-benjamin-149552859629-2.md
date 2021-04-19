@@ -1,6 +1,6 @@
 ---
 id:                   149552859629
-status:               optimized
+status:               auction
 auction-end:         '2021/05/04 06:00:00'
 title:						    Breaking Benjamin Live
 description:			    Purchase tickets to see Breaking Benjamin live in Memphis on May 21, 2021.
@@ -28,8 +28,8 @@ performers:
     role:             Opening
     thumbnail:        /assets/images/events/149552859629-breaking-benjamin/saving-abel.jpg
 tickets-available:    1000.0
-tickets-sold:         100.0
-revenue:              100000.0
+tickets-sold:         142.0
+revenue:              87000.0
 break-even:           200000.0
 ---
 

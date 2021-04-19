@@ -44,9 +44,8 @@ layout: account-settings
                 </a>
               
                 <span class="dropdown-menu dropdown-menu-right dropdown-menu-md-left" aria-labelledby="dropdown-{{ forloop.index }}" style="">
-                  {% include modal-account-settings-events-edit.html %}
                   <a class="dropdown-item" href="#!">Remove</a>
-                  <a class="dropdown-item" href="#!">Make it Primary</a>
+                  <a class="dropdown-item" href="{{ event.url | absolute_url }}" target="_blank">View</a>
                 </span>
               </span>
               
