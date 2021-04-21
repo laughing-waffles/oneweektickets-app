@@ -8,7 +8,7 @@ layout: default
   <div class="container">
       <div class="row">
           <div class="col-xl-12 col-lg-12 col-md-12 col-12">
-              <div class="pt-lg-9 pb-lg-15 pt-6 pb-10 mb-4">
+              <div class="pt-lg-8 pb-lg-14 pt-5 pb-0 mb-16">
                   <h1 class="h2 text-white">{{ page.title }}</h1>
               </div>
           </div>
@@ -16,17 +16,17 @@ layout: default
   </div>
 </div>
 
-<div class="pb-12 mt-lg-n14 mt-n9">
+<div class="pb-12 mt-lg-n18 mt-n10">
   <div class="container">
     <div class="row">
       <div class="col-lg-3 col-md-4 col-12">
-        <nav class="navbar navbar-expand-md navbar-light dashboard-nav mb-3 mb-lg-0">
+        <nav class="navbar navbar-expand-md navbar-light dashboard-nav mb-3 mb-lg-0 ">
           <a class="d-xl-none d-lg-none d-md-none text-inherit font-weight-bold" href="#!">Menu</a>
           <button
             class="navbar-toggler d-md-none icon-shape icon-sm rounded bg-primary text-light"
             type="button"
-            data-toggle="collapse"
-            data-target="#navbarNavDropdown"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown"
             aria-expanded="false"
             aria-label="Toggle navigation"
@@ -38,15 +38,15 @@ layout: default
               <div class="border-bottom p-4 d-flex justify-content-between text-reset">
                 <div class="d-flex align-items-center">
                   <img src="{{'/assets/images/avatar-1.png' | absolute_url }}" alt="" class="rounded-circle avatar-lg" />
-                  <div class="ml-3">
-                    <h5 class="mb-0">Judson Moore</h5>
+                  <div class="ms-3 lh-1">
+                    <h5 class="mb-1">Judson Moore</h5>
                     <small>Admin</small>
                   </div>
                 </div>
               </div>
               <div class="p-4">
                 <span class="heading">Account</span>
-                <ul class="list-unstyled mb-4 mt-2">
+                <ul class="list-unstyled mb-0">
                   {% for item in site.data.nav.account-settings %}
                   <li class="nav-item{% if page.url == item.url %} active{% endif %}">
                     <a class="nav-link" href="{{ item.url | absolute_url }}">{{ item.title }}</a>
