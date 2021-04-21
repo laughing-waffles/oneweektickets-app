@@ -1,4 +1,5 @@
 let auth0 = null;
+let stripe;
 const fetchAuthConfig = () => fetch("/auth_config.json");
 const configureClient = async () => {
   const response = await fetchAuthConfig();
@@ -6,7 +7,8 @@ const configureClient = async () => {
 
   auth0 = await createAuth0Client({
     domain: config.domain,
-    client_id: config.clientId
+    client_id: config.clientId,
+    audience: config.audience
   });
 };
 window.onload = async () => {
@@ -22,7 +24,7 @@ window.onload = async () => {
 
 
 const updateUI = async () => { 
-    console.log("authenticated!");
+    console.log("authenticated!");	
 	$('body').data("auth", await auth0.getTokenSilently());
 	enterBid();
 };
@@ -38,34 +40,41 @@ curl -X POST https://api-dot-oneweek-tickets.uc.r.appspot.com/api/bid/1  \
 */
 
 
-
+//TODO event-id(1) is hardcoded, should be dynamic = https://oneweektickets.com/api/bid/1
+//TODO redirection to oneweektickets.com/api does not work, needs to be fixed
 function enterBid() {
+	
 	const urlParams = new URLSearchParams(window.location.search);
 	
 	console.log("prep bid");
 	console.log(urlParams.get('amt'));
 	console.log($("body").data('auth'));
-$.ajax({
-url: 'https://oneweektickets.com/api/event/1',
+	const amountAsCent = Math.round(parseFloat(urlParams.get('amt') * 100));
+$.ajax({ 
+url: 'https://oneweek-tickets.uc.r.appspot.com/api/bid/1',
 //'https://oneweektickets.com/api/event/' + urlParams.get('event'),
-type: 'POST',
+type: 'post',
 beforeSend: function (xhr) {
     xhr.setRequestHeader('Authorization', 'Bearer ' + $("body").data('auth'));
 },
-data: {"currency":"USD","amount":urlParams.get('amt'),"quantity":urlParams.get('qty')},
-success: function (result) {
-//get the sessionId to serve up stripe checkout
+contentType: 'application/json',
+data: JSON.stringify({"currency":"USD","amount":amountAsCent,"quantity":urlParams.get('qty')}),
+success: async function (result) {
+	//TODO this should be done earlier
+	stripe = Stripe(result.publishableKey);
+	//get the sessionId to serve up stripe checkout
 	//redirect to stripe checkout page?
-	const result = await stripe.redirectToCheckout({
+	const stripeResponse = await stripe.redirectToCheckout({
 	  sessionId: result.sessionId,
 	});
 
-	if (result.error) {
+	if (stripeResponse.error) {
 	  // If `redirectToCheckout` fails due to a browser or network
 	  // error, display the localized error message to your customer
-		console.log(result.error.message);
+		console.log(stripeResponse.error.message);
 	}
  },
 error: function () { },
 });
+
 }
