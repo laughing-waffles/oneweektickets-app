@@ -24,7 +24,8 @@ layout: default
       </div>
 
       <div class="offset-lg-1 col-xl-5 col-lg-5 col-md-5 col-12 d-block ml-auto">
-        <div id="carouselExampleIndicators" class="carousel slide bg-dark p-3 p-md-4 p-lg-8 rounded-lg" data-ride="carousel" data-interval="">
+
+        <div id="carouselExampleIndicators" class="carousel slide bg-dark p-3 p-md-4 p-lg-8 rounded-lg" data-ride="carousel" data-interval=""  style="min-height:25.5vh">
           <style>
             /* Chrome, Safari, Edge, Opera */
             input::-webkit-outer-spin-button,
@@ -32,19 +33,22 @@ layout: default
               -webkit-appearance: none;
               margin: 0;
             }
-
+        
             /* Firefox */
             input[type="number"] {
               -moz-appearance: textfield;
             }
           </style>
+
+          {% if page.status == 'auction' %}
+
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
           </ol>
-          
+        
           <div class="carousel-inner">
             <form action="/payment">
               <div class="carousel-item active">
@@ -58,7 +62,7 @@ layout: default
                 <div id="status" class="countdown"></div>
                 <a class="btn btn-secondary btn-block mt-2" href="#carouselExampleIndicators" role="button" data-slide-to="1">Get tickets</a>
               </div>
-
+        
               <div class="carousel-item">
                 <h2 class="mb-2 text-white">Quantity</h2>
                 <p class="text-light">How many tickets would you like to this event?</p>
@@ -68,7 +72,7 @@ layout: default
                 </div>
                 <a class="btn btn-secondary btn-block mt-2" href="#carouselExampleIndicators" role="button" data-slide-to="2" id="quantitybtn">Next</a>
               </div>
-
+        
               <div class="carousel-item">
                 <h2 class="mb-2 text-white">Price</h2>
                 <p class="text-light">What would you like to pay for your tickets?</p>
@@ -84,11 +88,67 @@ layout: default
                 <p class="font-14">
                   <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="You should bid what you think is reasonable to pay for one ticket to this event.">What should I bid?</a>
                 </p>
-                <a class="btn btn-secondary btn-block" href="#carouselExampleIndicators" role="button" data-slide-to="3"  id="pricebtn">Next</a>
-                <div class="d-lg-flex justify-content-between mt-4 mb-3">
-                </div>
+                <a class="btn btn-secondary btn-block" href="#carouselExampleIndicators" role="button" data-slide-to="3" id="pricebtn">Next</a>
+                <div class="d-lg-flex justify-content-between mt-4 mb-3"></div>
               </div>
+        
+              <div class="carousel-item">
+                <h2 class="mb-2 text-white">Overview</h2>
+                <p class="text-light">This is the offer you will submit for these tickets.</p>
+                <dl class="row text-light">
+                  <dt class="col-sm-8">Quantity</dt>
+                  <dd class="col-sm-4" id="listqty" data-raw="">0</dd>
+                  <dt class="col-sm-8">Bid, per ticket</dt>
+                  <dd class="col-sm-4" id="listbid" data-raw="">$0.00</dd>
+                  <dt class="col-sm-8">Subtotal</dt>
+                  <dd class="col-sm-4" id="listsub" data-raw="">$0.00</dd>
+                  <dt class="col-sm-8">Service fee (7%)</dt>
+                  <dd class="col-sm-4" id="listfee">$0.00</dd>
+                  <dt class="col-sm-8">Shipping</dt>
+                  <dd class="col-sm-4" id="listfee">FREE</dd>
+                  <dt class="col-sm-8">Total</dt>
+                  <dd class="col-sm-4" id="listtotal" data-raw="">$0.00</dd>
+                </dl>
+                <button type="button" class="btn btn-primary btn-block" id="loginbtn">
+                  Login to Submit Bid
+                </button>
+              </div>
+            </form>
+          </div>
 
+          {% elsif page.status == 'draft' %}
+
+          <h2 class="mb-2 text-white">Tickets</h2>
+          <p class="text-light">Tickets to this event are offered at the price fans think is fair.</p>
+          <ul class="list-unstyled lead text-light my-4">
+            <li><i class="fas fa-check-circle text-primary"></i> I am a reason</li>
+            <li><i class="fas fa-check-circle text-primary"></i> I am a reason</li>
+            <li><i class="fas fa-check-circle text-primary"></i> I am a reason</li>
+          </ul>
+          <p>This event will go on-sale in:</p>
+          <div id="status" class="countdown"></div>
+          <a class="btn btn-secondary btn-block mt-2" href="#!" role="button">Add reminder to calendar <i class="fas fa-download"></i></a>
+
+          {% elsif page.status == 'optimized' %}
+
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          </ol>
+        
+          <div class="carousel-inner">
+            <form action="/payment">
+
+              <div class="carousel-item active">
+                <h2 class="mb-2 text-white">Quantity</h2>
+                <p class="text-light">How many tickets would you like to this event?</p>
+                <div class="form-group my-4">
+                  <label for="quantity">Number of tickets<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+                  <input type="number" id="qty" class="form-control" placeholder="1" value="1" min="1" max="10" aria-label="quantity" required />
+                </div>
+                <a class="btn btn-secondary btn-block mt-2" href="#carouselExampleIndicators" role="button" data-slide-to="1" id="quantitybtn">Next</a>
+              </div>
+        
               <div class="carousel-item">
                 <h2 class="mb-2 text-white">Overview</h2>
                 <p class="text-light">This is the offer you will submit for these tickets.</p>
@@ -100,18 +160,20 @@ layout: default
                   <dt class="col-sm-8">Subtotal</dt>
                   <dd class="col-sm-4" id="listsub" data-raw="">$100.00</dd>
                   <dt class="col-sm-8">Service fee (7%)</dt>
-                  <dd class="col-sm-4"id="listfee">$7.00</dd>
+                  <dd class="col-sm-4" id="listfee">$7.00</dd>
                   <dt class="col-sm-8">Total</dt>
                   <dd class="col-sm-4" id="listtotal" data-raw="">$100.00</dd>
                 </dl>
-				<button type="button" class="btn btn-primary btn-block" id="loginbtn">
-				  Login to Submit Bid
-				</button>
+                <button type="button" class="btn btn-primary btn-block" id="loginbtn">
+                  Continue to checkout
+                </button>
               </div>
             </form>
           </div>
-        </div>
 
+          {% endif %}
+
+        </div>
       </div>
     </div>
   </div>
@@ -122,6 +184,26 @@ layout: default
   <div class="container">
     <div class="row">
       <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <div class="alert alert-info" role="alert">
           <p>
             <strong>What am I bidding on?</strong> The {{ page.title }} show at the {{ page.venue }} on {{ page.event-date }} is selling tickets using OneWeek. OneWeek helps <u>you</u> get a ticket to the show, without having to pay

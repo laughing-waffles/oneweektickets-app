@@ -13,14 +13,17 @@ layout: account-settings
     <!-- card body -->
     <div class="card-body p-4">
       <ul class="list-group list-group-flush">
-        {% for event in site.events %} 
-        {% if forloop.first == true %}
+        {% for event in site.events %} {% if forloop.first == true %}
         <li class="list-group-item px-0 pb-3 pt-0">
-        {% elsif forloop.last == true %}
+          {% elsif forloop.last == true %}
+        </li>
+
         <li class="list-group-item px-0 pt-3 pb-0">
-        {% else %}
+          {% else %}
+        </li>
+
         <li class="list-group-item px-0 py-3">
-        {% endif %}
+          {% endif %}
           <div class="row">
             <a class="stretched-link" data-toggle="collapse" href="#collapse-{{ forloop.index }}" role="button" aria-expanded="false" aria-controls="collapse-{{ forloop.index }}"></a>
             <div class="col-8 col-lg-4 order-1">
@@ -42,13 +45,16 @@ layout: account-settings
                 <a class="text-muted text-decoration-none" href="#!" role="button" id="dropdown-{{ forloop.index }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fe fe-more-vertical"></i>
                 </a>
-              
+
                 <span class="dropdown-menu dropdown-menu-right dropdown-menu-md-left" aria-labelledby="dropdown-{{ forloop.index }}" style="">
-                  <a class="dropdown-item" href="#!">Remove</a>
                   <a class="dropdown-item" href="{{ event.url | absolute_url }}" target="_blank">View</a>
+                  <a class="dropdown-item" href="#!">Edit</a>
+                  <a class="dropdown-item" href="#!">
+                    Settlement <span class="badge bg-dark float-right text-white">Pro <i class="fas fa-crown text-warning"></i></span>
+                  </a>
+                  <a class="dropdown-item" href="#!">Remove</a>
                 </span>
               </span>
-              
             </div>
             <div class="col-6 col-lg-3 order-3 order-lg-2 mt-1 mt-md-0">
               {% if event.tickets-sold %}
@@ -60,15 +66,22 @@ layout: account-settings
                   style="width: {{ event.tickets-sold | divided_by: event.tickets-available | times: 100 | round }}%"
                   aria-valuenow="{{ event.tickets-sold | divided_by: event.tickets-available | times: 100 | round }}"
                   aria-valuemin="0"
-                  aria-valuemax="100"
-                ></div>
+                  aria-valuemax="100">
+                </div>
               </div>
               {% endif %}
             </div>
             <div class="col-6 col-lg-3 order-4 order-lg-3 mt-1 mt-md-0">
               <p class="mb-0 small">${{ event.revenue | round }} / ${{ event.break-even | round }}</p>
               <div class="progress ml-auto" style="height: 5px;">
-                <div class="progress-bar bg-success" role="progressbar" style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                <div 
+                  class="progress-bar bg-success" 
+                  role="progressbar" 
+                  style="width: {{ event.revenue | divided_by: event.break-even | times: 100 | round }}%;" 
+                  aria-valuenow="{{ event.revenue | divided_by: event.break-even | times: 100 | round }}" 
+                  aria-valuemin="0" 
+                  aria-valuemax="100" >
+              </div>
               </div>
             </div>
           </div>
@@ -86,69 +99,75 @@ layout: account-settings
     <div class="card-header bg-white p-4">
       <h4 class="mb-0">Event History</h4>
     </div>
-    <div class="card-body p-4">
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item px-0 pb-3 pt-0">
-          <div class="d-flex justify-content-between">
-            <div class="d-flex">
-              <h5 class="mb-0">Breaking Benjamin Live</h5>
-              <p class="mb-0 small">May 21, 2021 | Memphis, TN</p>
-            </div>
 
-            <div>
-              <a href="#!" class="btn btn-light btn-sm">Pay Now</a>
-            </div>
-          </div>
-        </li>
-        <li class="list-group-item px-0 py-3">
-          <div class="d-flex justify-content-between">
-            <div>
-              <a href="#!">Invoice #00002</a>
-              <p class="mb-0 small">Billed Apr 21, 2021</p>
-            </div>
-
-            <div>
-              <a href="#!" class="btn btn-light-success btn-sm text-success">Paid</a>
-            </div>
-          </div>
-        </li>
-        <li class="list-group-item px-0 py-3">
-          <div class="d-flex justify-content-between">
-            <div>
-              <a href="#!">Invoice #00003</a>
-              <p class="mb-0 small">Billed Apr 21, 2021</p>
-            </div>
-
-            <div>
-              <a href="#!" class="btn btn-light-success btn-sm text-success">Paid</a>
-            </div>
-          </div>
-        </li>
-        <li class="list-group-item px-0 py-3">
-          <div class="d-flex justify-content-between">
-            <div>
-              <a href="#!">Invoice #00004</a>
-              <p class="mb-0 small">Billed Apr 21, 2021</p>
-            </div>
-
-            <div>
-              <a href="#!" class="btn btn-light-success btn-sm text-success">Paid</a>
-            </div>
-          </div>
-        </li>
-        <li class="list-group-item px-0 pt-3 pb-0">
-          <div class="d-flex justify-content-between">
-            <div>
-              <a href="#!">Invoice #00005</a>
-              <p class="mb-0 small">Billed Apr 21, 2021</p>
-            </div>
-
-            <div>
-              <a href="#!" class="btn btn-light-success btn-sm text-success">Paid</a>
-            </div>
-          </div>
-        </li>
-      </ul>
+    <div class="table-responsive border-0">
+      <table class="table mb-0 text-nowrap">
+        <thead class="bg-light">
+          <tr>
+            <th scope="col" class="py-2 border-bottom-0">ID</th>
+            <th scope="col" class="py-2 border-bottom-0">DATE</th>
+            <th scope="col" class="py-2 border-bottom-0">EVENT NAME</th>
+            <th scope="col" class="py-2 border-bottom-0">REVENUE</th>
+            <th scope="col" class="py-2 border-bottom-0">REPORT</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="align-middle">e5BZptmrBl</td>
+            <td class="align-middle">2020-12-07</td>
+            <td class="align-middle">Galactic</td>
+            <td class="align-middle">$5.00</td>
+            <td class="align-middle">
+              <a href="#!"><i class="fe fe-download"></i></a>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-middle">4aS1taQR4F</td>
+            <td class="align-middle">2020-11-07</td>
+            <td class="align-middle">Galactic</td>
+            <td class="align-middle">$5.00</td>
+            <td class="align-middle">
+              <a href="#!"><i class="fe fe-download"></i></a>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-middle">jnUIsm4j5E</td>
+            <td class="align-middle">2020-10-07</td>
+            <td class="align-middle">Galactic</td>
+            <td class="align-middle">$5.00</td>
+            <td class="align-middle">
+              <a href="#!"><i class="fe fe-download"></i></a>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-middle">NPigkt3dxj</td>
+            <td class="align-middle">2020-09-07</td>
+            <td class="align-middle">Galactic</td>
+            <td class="align-middle">$5.00</td>
+            <td class="align-middle">
+              <a href="#!"><i class="fe fe-download"></i></a>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-middle">xzxxGXcIqk</td>
+            <td class="align-middle">2020-09-07</td>
+            <td class="align-middle">Galactic</td>
+            <td class="align-middle">$5.00</td>
+            <td class="align-middle">
+              <a href="#!"><i class="fe fe-download"></i></a>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-middle">cvll5njW1r</td>
+            <td class="align-middle">2020-09-07</td>
+            <td class="align-middle">Galactic</td>
+            <td class="align-middle">$5.00</td>
+            <td class="align-middle">
+              <a href="#!"><i class="fe fe-download"></i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
