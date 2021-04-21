@@ -1,6 +1,6 @@
 ---
 title:						Privacy Policy
-description:			Protecting user data and respecting the privacy of those who choose to visit this page is critical. Understand your rights as a visitor to judsonlmoore.com by reading this page.
+description:			Protecting user data and respecting the privacy of those who choose to visit this page is critical. Understand your rights as a visitor to oneweektickets.com by reading this page.
 layout:						page
 ---
 
@@ -32,7 +32,7 @@ When you provide us with personal information to complete a transaction, verify 
 If we ask for your personal information for a secondary reason, like marketing, we will either ask you directly for your expressed consent, or provide you with an opportunity to say no.  
 How do I withdraw my consent?
 
-If after you opt-in, you change your mind, you may withdraw your consent for us to contact you, for the continued collection, use or disclosure of your information, at anytime, by contacting us at getintouch@judsonlmoore.com or mailing us at: Judson L Moore 2102 Quail Hollow Dr, Bryan, TX, 77802, United States
+If after you opt-in, you change your mind, you may withdraw your consent for us to contact you, for the continued collection, use or disclosure of your information, at anytime, by contacting us at getintouch@oneweektickets.com or mailing us at: One Week Tickets 2102 Quail Hollow Dr, Bryan, TX, 77802, United States
 
 ## SECTION 3 – DISCLOSURE
 
@@ -74,8 +74,8 @@ If our store is acquired or merged with another company, your information may be
 
 ### QUESTIONS AND CONTACT INFORMATION
 
-If you would like to: access, correct, amend or delete any personal information we have about you, register a complaint, or simply want more information contact our Privacy Compliance Officer at getintouch@judsonlmoore.com or by mail at:
+If you would like to: access, correct, amend or delete any personal information we have about you, register a complaint, or simply want more information contact our Privacy Compliance Officer at getintouch@oneweektickets.com or by mail at:
 
-Judson L Moore  
+One Week Tickets  
 Re: Privacy Compliance Officer  
 2102 Quail Hollow Dr, Bryan, TX, 77802, United States  

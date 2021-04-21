@@ -15,42 +15,37 @@ layout: account-settings
       <ul class="list-group list-group-flush">
         {% for event in site.events %} {% if forloop.first == true %}
         <li class="list-group-item px-0 pb-3 pt-0">
-          {% elsif forloop.last == true %}
-        </li>
-
+        {% elsif forloop.last == true %}
         <li class="list-group-item px-0 pt-3 pb-0">
-          {% else %}
-        </li>
-
+        {% else %}
         <li class="list-group-item px-0 py-3">
-          {% endif %}
+        {% endif %}
           <div class="row">
-            <a class="stretched-link" data-toggle="collapse" href="#collapse-{{ forloop.index }}" role="button" aria-expanded="false" aria-controls="collapse-{{ forloop.index }}"></a>
+            <a class="stretched-link" data-bs-toggle="collapse" href="#collapse-{{ forloop.index }}" role="button" aria-expanded="false" aria-controls="collapse-{{ forloop.index }}"></a>
             <div class="col-8 col-lg-4 order-1">
               <h5 class="mb-0">
                 {{ event.title }}
               </h5>
               <p class="mb-0 small">{{ event.event-date | abbreviated_date }} | {{ event.city }}, {{ event.state }}</p>
             </div>
-            <div class="col-4 col-lg-2 text-right order-2 order-lg-4 p-0">
+            <div class="col-4 col-lg-2 text-end order-2 order-lg-4 p-0">
               {% if event.status == 'optimized' %}
-              <span class="badge badge-success mr-1 mr-lg-2">Optimized</span>
+              <span class="badge bg-success me-lg-4 me-0">Optimized</span>
               {% elsif event.status == 'auction' %}
-              <span class="badge badge-light-success mr-1 mr-lg-2">Auction</span>
+              <span class="badge bg-light-success text-dark me-lg-4 me-0">Auction</span>
               {% elsif event.status == 'draft' %}
-              <span class="badge badge-light mr-1 mr-lg-2">Draft</span>
+              <span class="badge bg-light text-dark me-lg-4 me-0">Draft</span>
               {% endif %}
 
               <span class="dropdown">
-                <a class="text-muted text-decoration-none" href="#!" role="button" id="dropdown-{{ forloop.index }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="text-muted text-decoration-none" href="#" role="button" id="dropdown-{{ forloop.index }}" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fe fe-more-vertical"></i>
                 </a>
-
                 <span class="dropdown-menu dropdown-menu-right dropdown-menu-md-left" aria-labelledby="dropdown-{{ forloop.index }}" style="">
                   <a class="dropdown-item" href="{{ event.url | absolute_url }}" target="_blank">View</a>
-                  <a class="dropdown-item" href="#!">Edit</a>
-                  <a class="dropdown-item" href="#!">
-                    Settlement <span class="badge bg-dark float-right text-white">Pro <i class="fas fa-crown text-warning"></i></span>
+                  {% include modal-account-settings-events-edit.html %}
+                  <a class="dropdown-item d-flex justify-content-between" href="#!">
+                    Settlement <span class="badge bg-dark text-end text-white">Pro <i class="fas fa-crown text-warning"></i></span>
                   </a>
                   <a class="dropdown-item" href="#!">Remove</a>
                 </span>

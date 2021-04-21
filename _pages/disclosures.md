@@ -20,7 +20,7 @@ sitemap:					false
 
 *This policy is valid from January 20, 2020.*
 
-This blog is the sole property of and reflects the opinions, experiences, and advice of Judson L Moore, except for where otherwise stated, such as in the instance of the third-party content provided by guest writers or sponsored content, which will be clearly identified as such. For questions about this blog, please [contact me](/contact/).
+This blog is the sole property of and reflects the opinions, experiences, and advice of One Week Tickets, except for where otherwise stated, such as in the instance of the third-party content provided by guest writers or sponsored content, which will be clearly identified as such. For questions about this blog, please [contact me](/contact/).
 
 ## BLOG MONETIZATION
 
@@ -42,4 +42,4 @@ The blog maintains a subscription-based e-newsletter list which readers can opt-
 
 ## THIRD-PARTY CONTENT
 
-From time to time there may be guest authors or cross-posts included in the content of The Judson L Moore Blog. The authors of this material will be clearly identified. Authors may choose, at their sole discretion, the inclusion of affiliate links within their content which may in some way, at no charge to the readers, offer a financial benefit to those guest authors. Content provided by third parties will not be edited by The Judson L Moore Blog, but it will be vetted and approved for publishing on this site.
+From time to time there may be guest authors or cross-posts included in the content of The One Week Tickets Blog. The authors of this material will be clearly identified. Authors may choose, at their sole discretion, the inclusion of affiliate links within their content which may in some way, at no charge to the readers, offer a financial benefit to those guest authors. Content provided by third parties will not be edited by The One Week Tickets Blog, but it will be vetted and approved for publishing on this site.
