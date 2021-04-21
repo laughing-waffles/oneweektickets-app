@@ -1,3 +1,9 @@
+//do this first, because a successful auth0 wipes urlparams out.
+const urlParams = new URLSearchParams(window.location.search);
+var amt = urlParams.get('amt');
+var qty = urlParams.get('qty');
+
+
 let auth0 = null;
 let stripe;
 const fetchAuthConfig = () => fetch("/auth_config.json");
@@ -12,12 +18,20 @@ const configureClient = async () => {
   });
 };
 window.onload = async () => {
+	$("#messageload").text("Logging you in...");
   await configureClient();
   const isAuthenticated = await auth0.isAuthenticated();
   const query = window.location.search;
   if (query.includes("code=") && query.includes("state=")) {
 	   		const isCallback = await auth0.handleRedirectCallback();
 	  		await updateUI();
+			window.history.replaceState({}, document.title, location.protocol + '//' + location.host + location.pathname);
+			
+			
+		}
+		else {
+			$("#messageload").text("Oops!");
+			$("#errorload").html("You didn't get logged in. Please <a href='javascript:window.history.back();'>go back</a> and try again.");
 		}
 	
 }
@@ -25,41 +39,34 @@ window.onload = async () => {
 
 const updateUI = async () => { 
     console.log("authenticated!");	
+	$("#messageload").text("Logged in!");
 	$('body').data("auth", await auth0.getTokenSilently());
 	enterBid();
 };
 
 
-//TODO get the token from auth0, and grab url vars for bid amt and qty. 
-/**
-curl -X POST https://api-dot-oneweek-tickets.uc.r.appspot.com/api/bid/1  \ 
-    --header "authorization: Bearer {USER_TOKEN_HERE}" \
-    --header "Content-Type: application/json"  \
-    -d '{"currency":"USD","amount":11100,"quantity":2}'
-
-*/
 
 
-//TODO event-id(1) is hardcoded, should be dynamic = https://oneweektickets.com/api/bid/1
-//TODO redirection to oneweektickets.com/api does not work, needs to be fixed
 function enterBid() {
 	
-	const urlParams = new URLSearchParams(window.location.search);
+	$("#messageload").text("Preparing your bid...");
 	
 	console.log("prep bid");
-	console.log(urlParams.get('amt'));
-	console.log($("body").data('auth'));
-	const amountAsCent = Math.round(parseFloat(urlParams.get('amt') * 100));
+	const amountAsCent = Math.round(parseFloat(amt * 100));
 $.ajax({ 
 url: 'https://oneweek-tickets.uc.r.appspot.com/api/bid/1',
+//TODO event-id(1) is hardcoded, should be dynamic = https://oneweektickets.com/api/bid/1
+//TODO redirection to oneweektickets.com/api does not work, needs to be fixed
 //'https://oneweektickets.com/api/event/' + urlParams.get('event'),
 type: 'post',
 beforeSend: function (xhr) {
     xhr.setRequestHeader('Authorization', 'Bearer ' + $("body").data('auth'));
 },
 contentType: 'application/json',
-data: JSON.stringify({"currency":"USD","amount":amountAsCent,"quantity":urlParams.get('qty')}),
+data: JSON.stringify({"currency":"USD","amount":amountAsCent,"quantity":qty}),
 success: async function (result) {
+	$("#messageload").text("Sending you to the secure payment portal...");
+	
 	//TODO this should be done earlier
 	stripe = Stripe(result.publishableKey);
 	//get the sessionId to serve up stripe checkout
@@ -72,9 +79,14 @@ success: async function (result) {
 	  // If `redirectToCheckout` fails due to a browser or network
 	  // error, display the localized error message to your customer
 		console.log(stripeResponse.error.message);
+		$("#messageload").text("Oops!");
+		$("#errorload").text(stripeResponse.error.message);
 	}
  },
-error: function () { },
+error: function () { 
+	$("#messageload").text("Oops!");
+	$("#errorload").text("API error");
+},
 });
 
 }

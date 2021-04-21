@@ -1,24 +1,10 @@
 ---
 layout: page
 ---
-<pre>
-https://stackoverflow.com/questions/6256043/css-position-loading-indicator-in-the-center-of-the-screen
 
-TODO: this page should be more real!
+<h1 id="messageload">Loading...</h1>
+<div id="errorload"></div>
 
-It is running some JS to make sure that:
-a) the user is authenticated
-b) tell the oW API to accept a bid
-c) redirect the user to stripe to complete payment.*
-
-
-in the future, this page would actually be the payment page, but I think right now it just needs to be a spinner to wait for all of those things to complete and then get redirected. 
-
-*I need to run it through the actual API to confirm we can use stripe's payment page or if we'll need to write our own (since it's not actually a payment, just a pre-auth + store tokenized credit card.)
-
-<a href="/payment-confirmation">Continue</a>
-
-</pre>
 
 <script src="/assets/js/pay.js" deferred></script>
 <script src="https://js.stripe.com/v3/"></script>
