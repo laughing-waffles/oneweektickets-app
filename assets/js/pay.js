@@ -1,4 +1,5 @@
 let auth0 = null;
+let stripe;
 const fetchAuthConfig = () => fetch("/auth_config.json");
 const configureClient = async () => {
   const response = await fetchAuthConfig();
@@ -59,7 +60,9 @@ beforeSend: function (xhr) {
 contentType: 'application/json',
 data: JSON.stringify({"currency":"USD","amount":amountAsCent,"quantity":urlParams.get('qty')}),
 success: async function (result) {
-//get the sessionId to serve up stripe checkout
+	//TODO this should be done earlier
+	stripe = Stripe(result.publishableKey);
+	//get the sessionId to serve up stripe checkout
 	//redirect to stripe checkout page?
 	const stripeResponse = await stripe.redirectToCheckout({
 	  sessionId: result.sessionId,
