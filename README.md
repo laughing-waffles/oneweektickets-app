@@ -25,3 +25,7 @@ I made the initial favicon.ico using https://gauger.io/fonticon/. selecting the 
 ## Charts
 
 Using https://www.chartjs.org/
+
+## Email templates
+
+Using the templates from https://github.com/wildbit/postmark-templates
