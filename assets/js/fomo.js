@@ -1,3 +1,22 @@
+//countdown clock
+$('#status').countdown('{{ page.auction-end }}', {elapse: true})
+.on('update.countdown', function(event) {
+  var $this = $(this);
+  if (event.elapsed) {
+    $this.html(event.strftime(''
+      + '<p>%D days, %H hours, %M minutes, %S seconds</p>'));
+  } else {
+    $this.html(event.strftime(''
+      + '<p>%D days, %H hours, %M minutes, %S seconds</p>'));
+  }
+});
+
+
+//bid management UI
+
+
+
+
 $( "#quantitybtn" ).click(function() {
 	$('#qty').val();
 	$("#listqty").text($('#qty').val());
