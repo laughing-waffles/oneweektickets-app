@@ -1,6 +1,6 @@
 ---
-title:					  Payment Confirmation
+title:					  Bid Confirmation
 description:			
-layout:						payment-confirmation
+layout:						bid-confirmation
 sitemap:					false
 ---
