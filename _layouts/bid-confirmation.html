@@ -1,0 +1,63 @@
+---
+layout: default
+---
+
+<div class="bg-shape bg-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+        <div class="py-lg-10 pt-10 pb-8">
+          <h1 class="h2 text-white">Shop</h1>
+          <!-- breadcrumbs -->
+          <div class="custom-breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="shop.html">Shop</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Order Completed</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="py-10">
+  <div class="container">
+    <div class="row">
+      <div class="offset-lg-2 col-lg-8 col-md-12 col-12 text-center">
+        <svg class="mb-4 css-i6dzq1" viewBox="0 0 24 24" width="104" height="104" stroke="#16D570" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+        <h2>Your bid has been placed.</h2>
+        <p>We’ll send you an email with more information, but the first auction will run tomorrow.</p>
+        <p>If your bid is successful, your credit card will be charged and you’ll receive a receipt.</p>
+        <p class="mb-4">If your bid isn’t, then your bid will participate in the auction 6 more times. You can always come back and change your bid, or withdraw your bid altogether. </p>
+        <div class="alert alert-info" role="alert">
+          Placing a bid does not mean that you have purchased a ticket to this event. Your bid will participate in an auction that occurs once per day for the next 7 days. If your bid is successful, you will receive a receipt and information on how to collect your ticket to the event. <a href="/faq" class="alert-link">Read more</a>.
+        </div>
+        <a href="/" class="btn btn-primary">Continue</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Footer -->
+<div class="footer py-3 bg-dark text-base">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="list-inline">
+          <li class="list-inline-item">© {{ site.time | date: '%Y' }} {{ site.title }}</li>
+          {% for item in site.data.nav.bottom-bar %}
+          <li class="list-inline-item"><a href="/login" class="text-reset">{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
