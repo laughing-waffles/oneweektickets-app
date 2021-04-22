@@ -2,7 +2,7 @@
 id:                   149552859629            # unique 12-digit ID number
 status:               auction                 # draft, auction, optimized
 auction-end:         '2021/05/04 06:00:00'
-title:						    Breaking Benjamin Live
+title:						    Breaking Benjamin
 description:			    Purchase tickets to see Breaking Benjamin live in Memphis on May 21, 2021.
 event-date:           Aug 2, 2021
 doors:                6:00pm
