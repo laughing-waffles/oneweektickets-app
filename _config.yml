@@ -133,7 +133,7 @@ cloudinary:
       max_height: 70
       figure: never
       attributes:
-        class: img-fluid avatar-xl rounded-circle mr-3
+        class: img-fluid avatar-xl rounded-circle me-3
         loading: lazy
     logo:
       gravity: auto
