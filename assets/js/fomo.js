@@ -47,10 +47,10 @@ $( "#continuebtn" ).click(function() {
 	$("#listtotal").text(currency($('#listfee').data("raw")).add($('#listsub').data("raw")).format());
 	}
 	else {
-		
+        event.preventDefault();
+        event.stopPropagation();	
 	  doBounce($("#amt").parent(), 3, '10px', 300);   
-      event.preventDefault();
-      event.stopPropagation();
+ 
 	}
 });
 $("#loginbtn").click(function() {

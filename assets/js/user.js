@@ -16,10 +16,14 @@ window.onload = async () => {
   const isAuthenticated = await auth0.isAuthenticated();
   if (isAuthenticated) {
    console.log(JSON.stringify(
-      await auth0.getUser()
+     await auth0.getUser()
     ));
+      var userInfo = await auth0.getUser()
+	
+	$('#img-uploaded').attr('src',userInfo.picture);
   }
   else {
   console.log("User not logged in. What should I do?");
   
   }
+}
