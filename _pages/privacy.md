@@ -30,9 +30,14 @@ How do you get my consent?
 When you provide us with personal information to complete a transaction, verify your credit card, place an order, arrange for a delivery or return a purchase, we imply that you consent to our collecting it and using it for that specific reason only.
 
 If we ask for your personal information for a secondary reason, like marketing, we will either ask you directly for your expressed consent, or provide you with an opportunity to say no.  
+
 How do I withdraw my consent?
 
-If after you opt-in, you change your mind, you may withdraw your consent for us to contact you, for the continued collection, use or disclosure of your information, at anytime, by contacting us at getintouch@oneweektickets.com or mailing us at: One Week Tickets 2102 Quail Hollow Dr, Bryan, TX, 77802, United States
+If after you opt-in, you change your mind, you may withdraw your consent for us to contact you, for the continued collection, use or disclosure of your information, at anytime, by contacting us at getintouch@oneweektickets.com or mailing us at: 
+
+OneWeek Tickets
+PO Box 6724
+Austin, TX 78762
 
 ## SECTION 3 – DISCLOSURE
 
@@ -76,6 +81,6 @@ If our store is acquired or merged with another company, your information may be
 
 If you would like to: access, correct, amend or delete any personal information we have about you, register a complaint, or simply want more information contact our Privacy Compliance Officer at getintouch@oneweektickets.com or by mail at:
 
-One Week Tickets  
-Re: Privacy Compliance Officer  
-2102 Quail Hollow Dr, Bryan, TX, 77802, United States  
+OneWeek Tickets
+PO Box 6724
+Austin, TX 78762

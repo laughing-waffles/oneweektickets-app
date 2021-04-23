@@ -27,8 +27,6 @@ bottom-bar:
     url: /terms
   - title: Privacy Policy
     url: /privacy
-  - title: Sitemap
-    url: /sitemap.xml
 account-settings:
   - title: Events
     url: /account-settings/events
