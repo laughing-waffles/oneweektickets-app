@@ -3,13 +3,17 @@ layout: default
 ---
 
 <div
-  class="border-top-3 border-top border-primary bg-dark pt-lg-13 py-12 pb-0"
-  style="background-image: linear-gradient(0deg, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 100%), url({{ page.hero }}); background-position: center; background-repeat: no-repeat; background-size: cover; position: relative;"
+  class="border-top border-primary"
+  style="
+    background-image: linear-gradient(0deg, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%), url({{ page.hero }}); 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    position: relative;"
 >
   <div class="container">
-
-    <div class="row align-items-end justify-content-between align-content-end min-vh-80">
-      <div class="col-12 col-md-6 col-lg-5 py-md-5 mt-5 text-white">
+    <div class="row align-items-end justify-content-between align-content-end vh-100">
+      <div class="col-12 col-md-6 col-lg-6 py-md-5 mt-5 text-white">
         <p1 style="mb-0 font-size-14 text-uppercase fw-light">{{ page.event-date | date: "%B %e, %Y" }}</p1>
         <h1 class="mb-3 display-5 text-white">
           {{ page.title }}
@@ -17,176 +21,151 @@ layout: default
         {% for performer in page.performers %}
         <span class="badge border border-light text-light mb-1">{{ performer.name }}</span>
         {% endfor %}
-        <p class="my-3 lead">
-          {{ page.city }} <span>&#183;</span> {{ page.venue }}
-        </p>
+        <p class="my-3 lead">{{ page.city }} <span>&#183;</span> {{ page.venue }}</p>
         <p>
           {{ content | truncatewords: 20 }} {% include modal-event-details.html %}
         </p>
       </div>
 
-
-
-
-      <div class="col-12 col-md-6 col-lg-5 col-xl-4 p-3 p-md-4 p-lg-8 rounded-top bg-white min-vh-60">
-
-        <style>
-          /* Chrome, Safari, Edge, Opera */
-          input::-webkit-outer-spin-button,
-          input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-          }
-      
-          /* Firefox */
-          input[type="number"] {
-            -moz-appearance: textfield;
-          }
-        </style>
+      <div class="col-12 col-md-6 col-lg-5 col-xl-4 p-3 p-md-4 p-lg-8 rounded-top bg-dark text-white">
 
         {% if page.status == 'auction' %}
 
-        <div id="bid-module" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+        <h2 class="mb-2 text-light d-none d-sm-block">Tickets</h2>
+        <p class="text-light d-none d-sm-block">Tickets to this event are offered at the price fans think is fair.</p>
+        <ul class="list-unstyled lead text-light my-4 d-none d-sm-block">
+          <li><i class="fas fa-check-circle text-primary"></i> Best price available</li>
+          <li><i class="fas fa-check-circle text-primary"></i> Avoid scalpers and scams</li>
+          <li><i class="fas fa-check-circle text-primary"></i> Pay what is fair</li>
+        </ul>
+        <div id="status" class="countdown font-12 text-danger"></div>
 
-          <div class="carousel-inner">
+        <div class="d-grid gap-2">
+          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#slider-bid" aria-controls="slider-bid">
+            Get tickets
+          </button>
+        </div>
+
+        <p class="text-center font-14 mt-5 mb-0"><a href="#faq">Frequently Asked Questions</a></p>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="slider-bid" aria-labelledby="slider-bidLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="slider-bidLabel">Get tickets to {{ page.title }}</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+
+          <div class="offcanvas-body text-dark">
             <form action="/payment">
-              <div class="carousel-item active">
-                <h2 class="mb-2 text-dark">Tickets</h2>
-                <p class="text-dark">Tickets to this event are offered at the price fans think is fair.</p>
-                <ul class="list-unstyled lead text-dark my-4">
-                  <li><i class="fas fa-check-circle text-primary"></i> I am a reason</li>
-                  <li><i class="fas fa-check-circle text-primary"></i> I am a reason</li>
-                  <li><i class="fas fa-check-circle text-primary"></i> I am a reason</li>
-                </ul>
-                <div id="status" class="countdown font-12 text-danger"></div>                
-                <div class="d-grid gap-2">
-                  <button class="btn btn-primary mt-2" href="#bid-module" type="button" data-bs-slide-to="1">Get tickets</button>
-                </div>
-              </div>
-        
-              <div class="carousel-item">
-                <h2 class="mb-2 text-dark">Quantity</h2>
-                <p class="text-dark">How many tickets would you like to this event?</p>
-                <div class="form-group my-4">
-                  <label for="quantity">Number of tickets<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
-                  <input type="number" id="qty" class="form-control" placeholder="1" value="1" min="1" max="10" aria-label="quantity" required />
-                </div>
-                <div class="d-grid gap-2 d-md-flex justify-content-between">
-                  <a class="btn btn-outline-primary me-md-2" href="#bid-module" role="button" data-bs-slide-to="0">Back</a>
-                  <a class="btn btn-primary" href="#bid-module" role="button" data-bs-slide-to="2" id="quantitybtn">Next</a>
-                </div>
-              </div>
-        
-              <div class="carousel-item">
-                <h2 class="mb-2 text-dark">Price</h2>
-                <p class="text-dark">What would you like to pay for your tickets?</p>
-                <div class="input-group my-4">
-                  <label for="password">Price per ticket<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
-                  <a class="font-14 ml-auto" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="You should bid what you think is reasonable to pay for one ticket to this event.">What should I bid?</a>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text bg-white">$</span>
+              <style>
+                /* Chrome, Safari, Edge, Opera */
+                input::-webkit-outer-spin-button,
+                input::-webkit-inner-spin-button {
+                  -webkit-appearance: none;
+                  margin: 0;
+                }
+                /* Firefox */
+                input[type="number"] {
+                  -moz-appearance: textfield;
+                }
+              </style>
+              <div class="row">
+                <div class="col-12">
+                  <div class="collapse multi-collapse show" id="multiCollapseExample1" >
+                    <div class="alert alert-info d-block d-sm-none" role="alert">
+                      <p>Tickets to this event are offered at the price fans think is fair.</p>
+                      <hr>
+                      <ul class="list-unstyled lead mb-0">
+                        <li><i class="fas fa-check-circle text-primary"></i> Best price available</li>
+                        <li><i class="fas fa-check-circle text-primary"></i> Avoid scalpers and scams</li>
+                        <li><i class="fas fa-check-circle text-primary"></i> Pay what is fair</li>
+                      </ul>
+                      <div id="status" class="countdown font-12 text-danger"></div>
                     </div>
-                    <input type="number" id="amt" class="form-control" placeholder="0.00" value="1" min="1" max="999" aria-label="Amount (to the nearest dollar)" required />
+                    <div class="form-floating mb-3">
+                      <select class="form-select" id="qty" aria-label="Quantity of tickets" required >
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                      </select>
+                      <label for="qty">Number of tickets<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <div class="input-group my-4">
+                        <label for="amt">Price per ticket<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+                        <a href="#" class="ms-auto"tabindex="-1" data-bs-toggle="tooltip" title="the title" data-bs-original-title="You should bid what you think is reasonable to pay for one ticket to this event.">What should I bid?</a>
+                        <div class="input-group">
+                          <span class="input-group-text">$</span>
+                          <input type="number" id="amt" class="form-control" placeholder="0.00" value="1" min="1" max="999" aria-label="Amount (to the nearest dollar)" required />
+                          <span class="input-group-text">.00</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-between">
+                      <button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#slider-bid" aria-controls="slider-bid">Back</button>
+                      <button class="btn btn-primary w-50" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1">Continue</button>
+                    </div>
                   </div>
-                </div>
-                <div class="d-grid gap-2 d-md-flex justify-content-between">
-                  <a class="btn btn-outline-primary me-md-2" href="#bid-module" role="button" data-bs-slide-to="1">Back</a>
-                  <a class="btn btn-primary" href="#bid-module" href="#bid-module" role="button" data-bs-slide-to="3" id="pricebtn">Next</a>
-                </div>
-              </div>
 
-              <div class="carousel-item">
-                <h2 class="mb-2 text-dark">Overview</h2>
-                <p class="text-dark">This is the offer you will submit for these tickets.</p>
-                <dl class="row text-dark">
-                  <dt class="col-sm-8">Quantity</dt>
-                  <dd class="col-sm-4" id="listqty" data-raw="">0</dd>
-                  <dt class="col-sm-8">Bid, per ticket</dt>
-                  <dd class="col-sm-4" id="listbid" data-raw="">$0.00</dd>
-                  <dt class="col-sm-8">Subtotal</dt>
-                  <dd class="col-sm-4" id="listsub" data-raw="">$0.00</dd>
-                  <dt class="col-sm-8">Service fee (7%)</dt>
-                  <dd class="col-sm-4" id="listfee">$0.00</dd>
-                  <dt class="col-sm-8">Shipping</dt>
-                  <dd class="col-sm-4" id="listfee">FREE</dd>
-                  <dt class="col-sm-8">Total</dt>
-                  <dd class="col-sm-4" id="listtotal" data-raw="">$0.00</dd>
-                </dl>
-                <div class="d-grid gap-2 d-md-flex justify-content-between">
-                  <a class="btn btn-outline-primary me-md-2" href="#bid-module" role="button" data-bs-slide-to="2">Back</a>
-                  <a class="btn btn-primary" href="#bid-module" href="#bid-module" role="button" data-bs-slide-to="3" id="loginbtn">Login to place bid</a>
+                  <div class="collapse multi-collapse" id="multiCollapseExample2">
+                    <div class="mb-3">
+                      <h2 class="mb-2 ">Overview</h2>
+                      <p class="">This is the offer you will submit for these tickets.</p>
+                      <dl class="row ">
+                        <dt class="col-8">Quantity</dt>
+                        <dd class="col-4" id="listqty" data-raw="">0</dd>
+                        <dt class="col-8">Bid, per ticket</dt>
+                        <dd class="col-4" id="listbid" data-raw="">$0.00</dd>
+                        <dt class="col-8">Subtotal</dt>
+                        <dd class="col-4" id="listsub" data-raw="">$0.00</dd>
+                        <dt class="col-8">Service fee (7%)</dt>
+                        <dd class="col-4" id="listfee">$0.00</dd>
+                        <dt class="col-8">Shipping</dt>
+                        <dd class="col-4" id="listfee">FREE</dd>
+                        <dt class="col-8">Total</dt>
+                        <dd class="col-4" id="listtotal" data-raw="">$0.00</dd>
+                      </dl>
+                    </div>
+                    <div class="form-check mb-3">
+                      <input class="form-check-input" type="checkbox" id="autoSizingCheck">
+                      <label class="form-check-label" for="autoSizingCheck">
+                        I agree to the <a href="{{'terms' | absolute_url}}" target="_block">terms</a>.
+                      </label>
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-between">
+                      <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample2">Back</button>
+                      <button class="btn btn-primary w-50" href="#bid-module" href="#bid-module" role="button" data-bs-slide-to="3" id="loginbtn">Login to place bid</button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </form>
+
+
           </div>
         </div>
-        <p class="text-center font-14 my-5"><a href="#faq">Frequently Asked Questions</a></p>          
 
         {% elsif page.status == 'draft' %}
 
-        <h2 class="mb-2 text-dark">Tickets</h2>
-        <p class="text-light">Tickets to this event are offered at the price fans think is fair.</p>
-        <ul class="list-unstyled lead text-light my-4">
-          <li><i class="fas fa-check-circle text-primary"></i> I am a reason</li>
-          <li><i class="fas fa-check-circle text-primary"></i> I am a reason</li>
-          <li><i class="fas fa-check-circle text-primary"></i> I am a reason</li>
-        </ul>
-        <p>This event will go on-sale in:</p>
-        <div id="status" class="countdown"></div>
-        <a class="btn btn-secondary btn-block mt-2" href="#!" role="button">Add reminder to calendar <i class="fas fa-download"></i></a>
+        <p>I am a draft</p>
 
         {% elsif page.status == 'optimized' %}
 
-        <ol class="carousel-indicators">
-          <li data-target="#bid-module" data-bs-slide-to="0" class="active"></li>
-          <li data-target="#bid-module" data-bs-slide-to="1"></li>
-        </ol>
-      
-        <div class="carousel-inner">
-          <form action="/payment">
-
-            <div class="carousel-item active">
-              <h2 class="mb-2 text-dark">Quantity</h2>
-              <p class="text-light">How many tickets would you like to this event?</p>
-              <div class="form-group my-4">
-                <label for="quantity">Number of tickets<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
-                <input type="number" id="qty" class="form-control" placeholder="1" value="1" min="1" max="10" aria-label="quantity" required />
-              </div>
-              <a class="btn btn-secondary btn-block mt-2" href="#bid-module" role="button" data-bs-slide-to="1" id="quantitybtn">Next</a>
-            </div>
-      
-            <div class="carousel-item">
-              <h2 class="mb-2 text-dark">Overview</h2>
-              <p class="text-light">This is the offer you will submit for these tickets.</p>
-              <dl class="row text-light">
-                <dt class="col-sm-8">Quantity</dt>
-                <dd class="col-sm-4" id="listqty" data-raw="">4</dd>
-                <dt class="col-sm-8">Bid, per ticket</dt>
-                <dd class="col-sm-4" id="listbid" data-raw="">$25.00</dd>
-                <dt class="col-sm-8">Subtotal</dt>
-                <dd class="col-sm-4" id="listsub" data-raw="">$100.00</dd>
-                <dt class="col-sm-8">Service fee (7%)</dt>
-                <dd class="col-sm-4" id="listfee">$7.00</dd>
-                <dt class="col-sm-8">Total</dt>
-                <dd class="col-sm-4" id="listtotal" data-raw="">$100.00</dd>
-              </dl>
-              <button type="button" class="btn btn-primary btn-block" id="loginbtn">
-                Continue to checkout
-              </button>
-            </div>
-          </form>
-        </div>
+        <p>I am optimized</p>
 
         {% endif %}
 
       </div>
+
     </div>
   </div>
 </div>
-
-
-
 
 <!-- page content -->
 <div class="py-lg-12 py-10" id="faq">
@@ -238,5 +217,6 @@ layout: default
     </div>
   </div>
 </div>
+
 <script src="/assets/js/fomo.js" deferred></script>
 <script src="https://cdn.auth0.com/js/auth0-spa-js/1.14/auth0-spa-js.production.js"></script>
