@@ -32,6 +32,7 @@ $( "#quantitybtn" ).click(function() {
 });
 
 $( "#continuebtn" ).click(function() {
+	if ($('#amt').val() !== "") {
 	$('#qty').val();
 	$("#listqty").text($('#qty').val());
 	$('#listqty').data("raw",$('#qty').val());
@@ -44,15 +45,25 @@ $( "#continuebtn" ).click(function() {
 	$("#listfee").text(currency($('#amt').val()).multiply($('#qty').val()).multiply(.07).format());
 	$("#listfee").data("raw",currency($('#amt').val()).multiply($('#qty').val()).multiply(.07));
 	$("#listtotal").text(currency($('#listfee').data("raw")).add($('#listsub').data("raw")).format());
+	}
+	else {
+		
+	  doBounce($("#amt").parent(), 3, '10px', 300);   
+      event.preventDefault();
+      event.stopPropagation();
+	}
 });
 $("#loginbtn").click(function() {
+	
 	if ($("#termsagreed").prop("checked") === true) {
 		login();		
 	}
 	else {
+	
 		  doBounce($("#termsagreed").parent(), 3, '10px', 300);   
 	}
-
+    event.preventDefault();
+    event.stopPropagation();
 });
 
 let auth0 = null;
