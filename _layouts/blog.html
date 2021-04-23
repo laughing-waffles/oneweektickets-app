@@ -43,7 +43,7 @@ layout: default
               <a href="{{ post.url | relative_url }}" class="text-white">{{ post.title }}</a>
             </h2>
             <div class="font-14">
-              <span class="mr-2">{{ post.date | date:"%B %e, %Y" }}</span>
+              <span class="me-2">{{ post.date | date:"%B %e, %Y" }}</span>
               {% assign author = site.authors | where: 'short_name', page.author | first %}
               <span>Posted by <a href="{{ author.url | absolute_url}}" class="text-white">{{ author.name }}</a></span>
             </div>

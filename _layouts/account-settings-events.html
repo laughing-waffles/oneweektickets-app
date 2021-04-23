@@ -54,7 +54,7 @@ layout: account-settings
             <div class="col-6 col-lg-3 order-3 order-lg-2 mt-1 mt-md-0">
               {% if event.tickets-sold %}
               <p class="mb-0 small">{{ event.tickets-sold | round }} / {{ event.tickets-available | round }}</p>
-              <div class="progress ml-auto" style="height: 5px;">
+              <div class="progress ms-auto" style="height: 5px;">
                 <div
                   class="progress-bar bg-warning"
                   role="progressbar"
@@ -68,7 +68,7 @@ layout: account-settings
             </div>
             <div class="col-6 col-lg-3 order-4 order-lg-3 mt-1 mt-md-0">
               <p class="mb-0 small">${{ event.revenue | round }} / ${{ event.break-even | round }}</p>
-              <div class="progress ml-auto" style="height: 5px;">
+              <div class="progress ms-auto" style="height: 5px;">
                 <div 
                   class="progress-bar bg-success" 
                   role="progressbar" 

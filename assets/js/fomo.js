@@ -1,4 +1,6 @@
 //countdown clock
+
+/****
 $('#status').countdown('{{ page.auction-end }}', {elapse: true})
 .on('update.countdown', function(event) {
   var $this = $(this);
@@ -11,19 +13,31 @@ $('#status').countdown('{{ page.auction-end }}', {elapse: true})
   }
 });
 
+**/
+
+
 
 //bid management UI
 
-
+function doBounce(element, times, distance, speed) {
+    for(var i = 0; i < times; i++) {
+        element.animate({marginLeft: '-='+distance}, speed)
+            .animate({marginLeft: '+='+distance}, speed);
+    }        
+}
 
 
 $( "#quantitybtn" ).click(function() {
+
+});
+
+$( "#continuebtn" ).click(function() {
+	if ($('#amt').val() !== "") {
 	$('#qty').val();
 	$("#listqty").text($('#qty').val());
 	$('#listqty').data("raw",$('#qty').val());
-});
-
-$( "#pricebtn" ).click(function() {
+	
+	
 	$("#listbid").text(currency($('#amt').val()).format());
 	$('#listbid').data("raw",currency($('#amt').val()));
 	$("#listsub").text(currency($('#amt').val() * $('#qty').val()).format());
@@ -31,9 +45,25 @@ $( "#pricebtn" ).click(function() {
 	$("#listfee").text(currency($('#amt').val()).multiply($('#qty').val()).multiply(.07).format());
 	$("#listfee").data("raw",currency($('#amt').val()).multiply($('#qty').val()).multiply(.07));
 	$("#listtotal").text(currency($('#listfee').data("raw")).add($('#listsub').data("raw")).format());
+	}
+	else {
+		
+	  doBounce($("#amt").parent(), 3, '10px', 300);   
+      event.preventDefault();
+      event.stopPropagation();
+	}
 });
 $("#loginbtn").click(function() {
-	login();
+	
+	if ($("#termsagreed").prop("checked") === true) {
+		login();		
+	}
+	else {
+	
+		  doBounce($("#termsagreed").parent(), 3, '10px', 300);   
+	}
+    event.preventDefault();
+    event.stopPropagation();
 });
 
 let auth0 = null;

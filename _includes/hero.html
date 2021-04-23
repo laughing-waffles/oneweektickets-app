@@ -92,7 +92,7 @@
                 <!-- Post author metadata -->
                 {% if page.author %}
                 {% assign author = site.authors | where: 'short_name', page.author | first %}
-                <span class="mr-2">Posted by <a href="{{ author.url | relative_url }}">{{ author.name }}</a></span>
+                <span class="me-2">Posted by <a href="{{ author.url | relative_url }}">{{ author.name }}</a></span>
                 {% endif %}
 
                 <!-- Podcast duration -->
