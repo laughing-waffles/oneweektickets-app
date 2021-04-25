@@ -81,6 +81,10 @@ defaults:
       path: "assets/*"
     values:
       sitemap: false
+  - scope:
+      path: "emails/*"
+    values:
+      sitemap: false
 cloudinary:
   cloud_name: judsonlmoore-com
   only_prod: true
