@@ -2,6 +2,7 @@
 title:						Privacy Policy
 description:			Protecting user data and respecting the privacy of those who choose to visit this page is critical. Understand your rights as a visitor to oneweektickets.com by reading this page.
 layout:						page
+sitemap:					false
 ---
 
 
