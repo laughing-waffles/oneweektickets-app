@@ -3,3 +3,8 @@ Sitemap: https://www.oneweektickets.com/sitemap.xml
 User-agent: *
 Disallow: /terms/
 Disallow: /privacy/
+Disallow: /account-settings/*
+Disallow: /manage/*
+Disallow: /events/*
+Disallow: /emails/*
+Disallow: /e/*
