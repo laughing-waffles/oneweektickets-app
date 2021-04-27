@@ -18,6 +18,7 @@ window.onload = async () => {
    console.log(JSON.stringify(
      await auth0.getUser()
     ));
+	$('body').data("auth", await auth0.getTokenSilently());
       var userInfo = await auth0.getUser()
 	
 	$('#img-uploaded').attr('src',userInfo.picture);
@@ -28,4 +29,29 @@ window.onload = async () => {
   console.log("User not logged in. What should I do?");
   
   }
+}
+
+function getBids() {
+	$.ajax({ 
+	url: 'https://oneweek-tickets.uc.r.appspot.com/api/bid/1',
+	//TODO event-id(1) is hardcoded, should be dynamic = https://oneweektickets.com/api/bid/1
+	//TODO redirection to oneweektickets.com/api does not work, needs to be fixed
+	//'https://oneweektickets.com/api/event/' + urlParams.get('event'),
+	type: 'GET',
+	beforeSend: function (xhr) {
+	    xhr.setRequestHeader('Authorization', 'Bearer ' + $("body").data('auth'));
+	},
+	contentType: 'application/json',
+	success: async function (result) {
+		//print out some <li>'s for each bid; date, time, amount per ticket, qty tickets, total (including service fees)
+	
+	
+	 },
+	error: function () { 
+		$("#messageload").text("Oops!");
+		$("#errorload").text("API error");
+	},
+	});
+	
+	
 }
