@@ -5,6 +5,19 @@ layout: compress
 <!DOCTYPE html>
 <html lang="en">
   <head>
+<script
+  src="https://js.sentry-cdn.com/d3595e496abd44cfbc41d944f46bf434.min.js"
+  crossorigin="anonymous"
+></script>
+<script>
+  Sentry.onLoad(function() { 
+	  Sentry.init({
+		  dsn: "https://d3595e496abd44cfbc41d944f46bf434@o586189.ingest.sentry.io/5738068",
+		  tracesSampleRate: 1.0
+});
+ });
+</script>
+	  
     {% if jekyll.environment == 'production' %}
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-57FN2K5SH7"></script>
     <script>
