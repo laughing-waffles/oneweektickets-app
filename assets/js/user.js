@@ -21,6 +21,8 @@ window.onload = async () => {
       var userInfo = await auth0.getUser()
 	
 	$('#img-uploaded').attr('src',userInfo.picture);
+	$('#img-uploaded2').attr('src',userInfo.picture);
+  $('#insert-name').text(userInfo.name);
   }
   else {
   console.log("User not logged in. What should I do?");
