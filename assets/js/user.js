@@ -24,6 +24,8 @@ window.onload = async () => {
 	$('#img-uploaded').attr('src',userInfo.picture);
 	$('#img-uploaded2').attr('src',userInfo.picture);
   $('#insert-name').text(userInfo.name);
+  
+  getBids();
   }
   else {
 	  //user not logged in; redirect to auth0 to login
@@ -50,10 +52,11 @@ function getBids() {
 		//print out some <li>'s for each bid; date, time, amount per ticket, qty tickets, total (including service fees)
 		console.log(result);
 		$(result).each(function(index) {
-			$('.event-' + index + '.bid').text(currency(this.amt/100).format());
-			$('.event-' + index + '.datetime').text(this.bidDay + " " + this.bidTime);
-			$('.event-' + index + '.name').text(this.name);			
-			$('.event-' + index + '.qty').text(this.quantity);
+			$('.event-' + index + ' > .bid').text(currency(this.amount/100).format());
+			$('.event-' + index + ' > .datetime').text(this.bidDay + " " + this.bidTime);
+			$('.event-' + index + ' > .name').text(this.name);			
+			$('.event-' + index + ' > .qty').text(this.quantity);
+			$('.event-' + index).show();
 		})
 	 },
 	error: function () { 
