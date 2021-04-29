@@ -25,7 +25,8 @@ plugins:
   - jekyll-sitemap
   - jekyll-target-blank
 include:
-  - account-settings
+  - s
+  - u
   - manage
   - _pages
 exclude:
@@ -60,10 +61,16 @@ defaults:
       permalink: '/e/:path/'
       sitemap: false
   - scope:
-      path: account-settings
+      path: u
     values:
-      layout: account-settings
-      permalink: '/:path/:basename/'
+      layout: account-settings-buyers
+      permalink: '/:path/account-settings/:basename/'
+      sitemap: false
+  - scope:
+      path: s
+    values:
+      layout: account-settings-sellers
+      permalink: '/:path/account-settings/:basename/'
       sitemap: false
   - scope:
       path: manage
