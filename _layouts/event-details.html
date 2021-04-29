@@ -53,7 +53,6 @@ layout: default
             <h5 class="offcanvas-title" id="slider-bidLabel">Get tickets to {{ page.title }}</h5>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
-
           <div class="offcanvas-body text-dark">
             <form action="#">
               <style>
@@ -99,7 +98,8 @@ layout: default
                     <div class="form-floating mb-3">
                       <div class="input-group my-4">
                         <label for="amt">Price per ticket<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
-                        <a href="#" class="ms-auto" tabindex="-1" data-bs-toggle="tooltip" title="the title" data-bs-original-title="You should bid what you think is reasonable to pay for one ticket to this event.">What should I bid?</a>
+
+                        <a href="#" class="ms-auto" data-toggle="tooltip" data-placement="right" title="You should bid what you think is reasonable to pay for one ticket to this event.">What should I bid?</a>
                         <div class="input-group">
                           <span class="input-group-text">$</span>
                           <input type="number" id="amt" class="form-control" placeholder="" min="1" max="999" aria-label="Amount (to the nearest dollar)" required style="text-align:right" />
@@ -124,9 +124,9 @@ layout: default
                         <dd class="col-4" id="listbid" data-raw="">$0.00</dd>
                         <dt class="col-8">Subtotal</dt>
                         <dd class="col-4" id="listsub" data-raw="">$0.00</dd>
-                        <dt class="col-8">Service fee (7%)</dt>
+                        <dt class="col-8">Service fee (7%) <a href="#" class="text-dark" data-toggle="tooltip" data-placement="right" title="This fee is inclusive of taxes."><i class="far fa-question-circle"></i></a></dt>
                         <dd class="col-4" id="listfee">$0.00</dd>
-                        <dt class="col-8">Shipping</dt>
+                        <dt class="col-8">Shipping <a href="#" class="text-dark" data-toggle="tooltip" data-placement="right" title="Your ticket will be available to pick up at the venue the day of the event."><i class="far fa-question-circle"></i></a></dt>
                         <dd class="col-4" id="listfee">FREE</dd>
                         <dt class="col-8">Total</dt>
                         <dd class="col-4" id="listtotal" data-raw="">$0.00</dd>
@@ -146,8 +146,15 @@ layout: default
                 </div>
               </div>
             </form>
-
-
+            <script>
+              $(document).ready(function(){
+                $('[data-toggle="tooltip"]').tooltip();   
+                $(".tip-top").tooltip({placement : 'top'});
+                $(".tip-right").tooltip({placement : 'right'});
+                $(".tip-bottom").tooltip({placement : 'bottom'});
+                $(".tip-left").tooltip({ placement : 'left'});
+              });
+            </script>
           </div>
         </div>
 
