@@ -80,6 +80,12 @@ const configureClient = async () => {
 };
 window.onload = async () => {
   await configureClient();
+  const isAuthenticated = await auth0.isAuthenticated();
+  if (isAuthenticated) {
+	  $("#loginbtn").text("Place Bid");
+	  
+	  //TODO: We should be looking up to see if they already have a bid, and change the UI to be "Modify Bid"
+  }
 }
 const login = async () => {
   await auth0.loginWithRedirect({
