@@ -47,7 +47,7 @@ layout: default
               <div class="p-4">
                 <span class="heading">Account</span>
                 <ul class="list-unstyled mb-0">
-                  {% for item in site.data.nav.account-settings %}
+                  {% for item in site.data.nav.account-settings-sellers %}
                   <li class="nav-item{% if page.url == item.url %} active{% endif %}">
                     <a class="nav-link" href="{{ item.url | absolute_url }}">{{ item.title }}</a>
                   </li>
@@ -56,7 +56,7 @@ layout: default
                 <span class="heading border-top pt-4 d-block">Billing</span>
 
                 <ul class="list-unstyled mb-0">
-                  {% for item in site.data.nav.billing-settings %}
+                  {% for item in site.data.nav.billing-settings-sellers %}
                   <li class="nav-item{% if page.url == item.url %} active{% endif %}">
                     <a class="nav-link" href="{{ item.url | absolute_url }}">{{ item.title }}</a>
                   </li>

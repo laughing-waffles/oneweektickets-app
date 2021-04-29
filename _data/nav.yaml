@@ -27,21 +27,27 @@ bottom-bar:
     url: /terms
   - title: Privacy Policy
     url: /privacy
-account-settings:
-  - title: Events
-    url: /account-settings/events
+account-settings-buyers:
   - title: My Profile
-    url: /account-settings/profile
-  - title: Subscriptions
-    url: /account-settings/subscriptions
-  - title: Security
-    url: /account-settings/security
-  - title: Notificaitons
-    url: /account-settings/notifications
-  - title: Users
-    url: /account-settings/users
-billing-settings:
-  - title: Plan & Payment
-    url: /account-settings/payment-plan
+    url: /u/account-settings/profile
+billing-settings-buyers:
   - title: Payment History
-    url: /account-settings/payment-history
+    url: /u/account-settings/payment-history
+account-settings-sellers:
+  - title: Events
+    url: /s/account-settings/events
+  - title: My Profile
+    url: /s/account-settings/profile
+  - title: Subscriptions
+    url: /s/account-settings/subscriptions
+  - title: Security
+    url: /s/account-settings/security
+  - title: Notificaitons
+    url: /s/account-settings/notifications
+  - title: Users
+    url: /s/account-settings/users
+billing-settings-sellers:
+  - title: Plan & Payment
+    url: /s/account-settings/payment-plan
+  - title: Payment History
+    url: /s/account-settings/payment-history
