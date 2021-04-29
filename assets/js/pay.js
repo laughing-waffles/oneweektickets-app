@@ -65,6 +65,11 @@ beforeSend: function (xhr) {
 contentType: 'application/json',
 data: JSON.stringify({"currency":"USD","amount":amountAsCent,"quantity":qty}),
 success: async function (result) {
+	if (result.state == "BID_UPDATED") {
+		window.location.replace("/bid-success/");
+	}
+	else {
+	
 	$("#messageload").text("Sending you to the secure payment portal...");
 	
 	//TODO this should be done earlier
@@ -82,6 +87,7 @@ success: async function (result) {
 		$("#messageload").text("Oops!");
 		$("#errorload").text(stripeResponse.error.message);
 	}
+}
  },
 error: function () { 
 	$("#messageload").text("Oops!");
