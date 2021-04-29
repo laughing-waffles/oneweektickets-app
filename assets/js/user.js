@@ -48,8 +48,14 @@ function getBids() {
 	contentType: 'application/json',
 	success: async function (result) {
 		//print out some <li>'s for each bid; date, time, amount per ticket, qty tickets, total (including service fees)
-	
-	
+		console.log(result);
+		$(result).each(function(index) {
+			$('.event-' + index + '.bid').text(currency(this.amt/100).format());
+			$('.event-' + index + '.datetime').text(this.bidDay + " " this.bidTime);
+			$('.event-' + index + '.name').text(this.name);			
+			$('.event-' + index + '.qty').text(this.quantity);
+			$('.event-' + index + '.datetime').text(this.bidDay + " " this.bidTime);
+		})
 	 },
 	error: function () { 
 		$("#messageload").text("Oops!");
