@@ -26,7 +26,11 @@ window.onload = async () => {
   $('#insert-name').text(userInfo.name);
   }
   else {
-  console.log("User not logged in. What should I do?");
+	  //user not logged in; redirect to auth0 to login
+	  
+	  await auth0.loginWithRedirect({
+		  redirect_uri: window.location.protocol + "//" + window.location.hostname +  (window.location.port ? ':' + window.location.port: '') + "/account-settings/profile/"
+	  });
   
   }
 }
