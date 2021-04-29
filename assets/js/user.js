@@ -51,10 +51,9 @@ function getBids() {
 		console.log(result);
 		$(result).each(function(index) {
 			$('.event-' + index + '.bid').text(currency(this.amt/100).format());
-			$('.event-' + index + '.datetime').text(this.bidDay + " " this.bidTime);
+			$('.event-' + index + '.datetime').text(this.bidDay + " " + this.bidTime);
 			$('.event-' + index + '.name').text(this.name);			
 			$('.event-' + index + '.qty').text(this.quantity);
-			$('.event-' + index + '.datetime').text(this.bidDay + " " this.bidTime);
 		})
 	 },
 	error: function () { 
