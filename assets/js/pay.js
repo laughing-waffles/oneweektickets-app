@@ -66,7 +66,7 @@ contentType: 'application/json',
 data: JSON.stringify({"currency":"USD","amount":amountAsCent,"quantity":qty}),
 success: async function (result) {
 	if (result.state == "BID_UPDATED") {
-		window.location.replace("/bid-success/");
+		window.location.replace("/bid-confirmation/");
 	}
 	else {
 	
