@@ -14,6 +14,13 @@ window.onload = async () => {
 	$("#messageload").text("Logging you in...");
   await configureClient();
   const isAuthenticated = await auth0.isAuthenticated();
+  const query = window.location.search;
+  if (query.includes("code=") && query.includes("state=")) {
+	   		const isCallback = await auth0.handleRedirectCallback();
+			window.history.replaceState({}, document.title, location.protocol + '//' + location.host + location.pathname);
+		}
+	
+		
   if (isAuthenticated) {
    console.log(JSON.stringify(
      await auth0.getUser()
