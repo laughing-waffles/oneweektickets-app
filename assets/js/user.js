@@ -31,7 +31,7 @@ window.onload = async () => {
 	  //user not logged in; redirect to auth0 to login
 	  
 	  await auth0.loginWithRedirect({
-		  redirect_uri: window.location.protocol + "//" + window.location.hostname +  (window.location.port ? ':' + window.location.port: '') + "/account-settings/profile/"
+		  redirect_uri: window.location.protocol + "//" + window.location.hostname +  (window.location.port ? ':' + window.location.port: '') + "/u/account-settings/profile/"
 	  });
   
   }
