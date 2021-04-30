@@ -1,20 +1,9 @@
 ---
 title:						Privacy Policy
 description:			Protecting user data and respecting the privacy of those who choose to visit this page is critical. Understand your rights as a visitor to oneweektickets.com by reading this page.
-layout:						page
+layout:						legal
 sitemap:					false
 ---
-
-
-<p>
-	<span>
-		Related information: 
-		<a href="{{ '/terms' | relative_url }}">Terms and Conditions</a> | 
-		<a href="{{ '/refund-policy' | relative_url }}">Refund Policy</a> | 
-		<a href="{{ '/privacy' | relative_url }}">Privacy Policy</a> | 
-		<a href="{{ '/disclosures' | relative_url }}">Disclosures</a>
-	</span>
-</p>
 
 ## SECTION 1 – WHAT DO WE DO WITH YOUR INFORMATION?
 

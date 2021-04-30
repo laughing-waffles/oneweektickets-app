@@ -2,17 +2,17 @@
 layout: default
 ---
 
-{% include navbar.html %} 
+{% include navbar.html %}
 
 <div class="bg-shape bg-dark">
   <div class="container">
-      <div class="row">
-          <div class="col-xl-12 col-lg-12 col-md-12 col-12">
-              <div class="pt-lg-8 pb-lg-14 pt-5 pb-0 mb-16">
-                  <h1 class="h2 text-white">{{ page.title }}</h1>
-              </div>
-          </div>
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+        <div class="pt-lg-8 pb-lg-14 pt-5 pb-0 mb-16">
+          <h1 class="h2 text-white">{{ page.title }}</h1>
+        </div>
       </div>
+    </div>
   </div>
 </div>
 
@@ -20,7 +20,7 @@ layout: default
   <div class="container">
     <div class="row">
       <div class="col-lg-3 col-md-4 col-12">
-        <nav class="navbar navbar-expand-md navbar-light dashboard-nav mb-3 mb-lg-0 ">
+        <nav class="navbar navbar-expand-md navbar-light dashboard-nav mb-3 mb-lg-0">
           <a class="d-xl-none d-lg-none d-md-none text-inherit font-weight-bold" href="#!">Menu</a>
           <button
             class="navbar-toggler d-md-none icon-shape icon-sm rounded bg-primary text-light"
@@ -54,7 +54,6 @@ layout: default
                   {% endfor %}
                 </ul>
                 <span class="heading border-top pt-4 d-block">Billing</span>
-
                 <ul class="list-unstyled mb-0">
                   {% for item in site.data.nav.billing-settings-buyers %}
                   <li class="nav-item{% if page.url == item.url %} active{% endif %}">

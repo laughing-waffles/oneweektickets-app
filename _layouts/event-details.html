@@ -10,7 +10,7 @@ layout: default
     background-repeat: no-repeat; 
     background-size: cover; 
     position: relative;"
->
+  >
   <div class="container">
     <div class="row align-items-end justify-content-between align-content-end vh-80">
       <div class="col-12 col-md-6 col-lg-6 py-md-5 mt-5 text-white">
@@ -28,7 +28,6 @@ layout: default
       </div>
 
       <div class="col-12 col-md-6 col-lg-5 col-xl-4 p-3 p-md-4 p-lg-8 rounded-top bg-dark text-white">
-
         {% if page.status == 'auction' %}
 
         <h2 class="mb-2 text-light d-none d-sm-block">Tickets</h2>
@@ -69,10 +68,10 @@ layout: default
               </style>
               <div class="row">
                 <div class="col-12">
-                  <div class="collapse multi-collapse show" id="multiCollapseExample1" >
+                  <div class="collapse multi-collapse show" id="multiCollapseExample1">
                     <div class="alert alert-light d-block d-sm-none border-bottom mb-5" role="alert">
                       <p>Tickets to this event are offered at the price fans think is fair.</p>
-                      <hr>
+                      <hr />
                       <ul class="list-unstyled lead mb-0">
                         <li><i class="fas fa-check-circle text-primary"></i> Best price available</li>
                         <li><i class="fas fa-check-circle text-primary"></i> Avoid scalpers and scams</li>
@@ -81,7 +80,7 @@ layout: default
                       <div id="status" class="countdown font-12 text-danger"></div>
                     </div>
                     <div class="form-floating mb-3">
-                      <select class="form-select" id="qty" aria-label="Quantity of tickets" required >
+                      <select class="form-select" id="qty" aria-label="Quantity of tickets" required>
                         <option value="1" selected>1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -102,7 +101,7 @@ layout: default
                         <a href="#" class="ms-auto" data-toggle="tooltip" data-placement="right" title="You should bid what you think is reasonable to pay for one ticket to this event.">What should I bid?</a>
                         <div class="input-group">
                           <span class="input-group-text">$</span>
-                          <input type="number" id="amt" class="form-control" placeholder="" min="1" max="999" aria-label="Amount (to the nearest dollar)" required style="text-align:right" />
+                          <input type="number" id="amt" class="form-control" placeholder="" min="1" max="999" aria-label="Amount (to the nearest dollar)" required style="text-align: right;" />
                           <span class="input-group-text">.00</span>
                         </div>
                       </div>
@@ -115,28 +114,30 @@ layout: default
 
                   <div class="collapse multi-collapse" id="multiCollapseExample2">
                     <div class="mb-3">
-                      <h2 class="mb-2 ">Overview</h2>
+                      <h2 class="mb-2">Overview</h2>
                       <p class="">This is the offer you will submit for these tickets.</p>
-                      <dl class="row ">
+                      <dl class="row">
                         <dt class="col-8">Quantity</dt>
                         <dd class="col-4" id="listqty" data-raw="">0</dd>
                         <dt class="col-8">Bid, per ticket</dt>
                         <dd class="col-4" id="listbid" data-raw="">$0.00</dd>
                         <dt class="col-8">Subtotal</dt>
                         <dd class="col-4" id="listsub" data-raw="">$0.00</dd>
-                        <dt class="col-8">Service fee (7%) <a href="#" class="text-dark" data-toggle="tooltip" data-placement="right" title="This fee is inclusive of taxes."><i class="far fa-question-circle"></i></a></dt>
+                        <dt class="col-8">
+                          Service fee (7%) <a href="#" class="text-dark" data-toggle="tooltip" data-placement="right" title="This fee is inclusive of taxes."><i class="far fa-question-circle"></i></a>
+                        </dt>
                         <dd class="col-4" id="listfee">$0.00</dd>
-                        <dt class="col-8">Shipping <a href="#" class="text-dark" data-toggle="tooltip" data-placement="right" title="Your ticket will be available to pick up at the venue the day of the event."><i class="far fa-question-circle"></i></a></dt>
+                        <dt class="col-8">
+                          Shipping <a href="#" class="text-dark" data-toggle="tooltip" data-placement="right" title="Your ticket will be available to pick up at the venue the day of the event."><i class="far fa-question-circle"></i></a>
+                        </dt>
                         <dd class="col-4" id="listfee">FREE</dd>
                         <dt class="col-8">Total</dt>
                         <dd class="col-4" id="listtotal" data-raw="">$0.00</dd>
                       </dl>
                     </div>
                     <div class="form-check mb-3">
-                      <input class="form-check-input" type="checkbox" id="termsagreed">
-                      <label class="form-check-label" for="termsagreed">
-                        I agree to the <a href="{{'terms' | absolute_url}}" target="_block">terms</a>.
-                      </label>
+                      <input class="form-check-input" type="checkbox" id="termsagreed" />
+                      <label class="form-check-label" for="termsagreed"> I agree to the <a href="{{'terms' | absolute_url}}" target="_block">terms</a>. </label>
                     </div>
                     <div class="d-grid gap-2 d-flex justify-content-between">
                       <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample2">Back</button>
@@ -147,12 +148,12 @@ layout: default
               </div>
             </form>
             <script>
-              $(document).ready(function(){
-                $('[data-toggle="tooltip"]').tooltip();   
-                $(".tip-top").tooltip({placement : 'top'});
-                $(".tip-right").tooltip({placement : 'right'});
-                $(".tip-bottom").tooltip({placement : 'bottom'});
-                $(".tip-left").tooltip({ placement : 'left'});
+              $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+                $(".tip-top").tooltip({ placement: "top" });
+                $(".tip-right").tooltip({ placement: "right" });
+                $(".tip-bottom").tooltip({ placement: "bottom" });
+                $(".tip-left").tooltip({ placement: "left" });
               });
             </script>
           </div>
@@ -167,9 +168,7 @@ layout: default
         <p>I am optimized</p>
 
         {% endif %}
-
       </div>
-
     </div>
   </div>
 </div>

@@ -1,19 +1,9 @@
 ---
 title:						Terms and Conditions
 description:			All visitors and users of oneweektickets.com agree to these terms and conditions 
-layout:						page
+layout:						legal
 sitemap:					false
 ---
-
-<p>
-	<span>
-		Related information: 
-		<a href="{{ '/terms' | relative_url }}">Terms and Conditions</a> | 
-		<a href="{{ '/refund-policy' | relative_url }}">Refund Policy</a> | 
-		<a href="{{ '/privacy' | relative_url }}">Privacy Policy</a> | 
-		<a href="{{ '/disclosures' | relative_url }}">Disclosures</a>
-	</span>
-</p>
 
 ## OVERVIEW
 
