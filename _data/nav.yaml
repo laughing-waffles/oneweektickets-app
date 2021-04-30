@@ -1,8 +1,8 @@
 main:
   - title: Register
     url: /request-demo
-  - title: Login
-    url: /login
+  - title: Buyer Login
+    url: /u/account-settings/login-gateway/
 #  - dropdown-title: Account
 #    dropdown-items:
 #      - title: Register
