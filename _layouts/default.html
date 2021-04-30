@@ -84,7 +84,9 @@ layout: compress
 
     <!-- Optional JavaScript -->
     {% if jekyll.environment == 'production' %}
+    {% if page.tidio == 'true' %}
     <script src="//code.tidio.co/z2hn7p4qksjhv1nz8qnad2apogrp8jvj.js" async></script>
+    {% endif %}
     {% endif %}
 
     <!-- Libs JS -->
