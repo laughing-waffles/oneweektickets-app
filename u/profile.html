@@ -1,234 +1,94 @@
 ---
 title:            My Profile
 ---
+
 <style>
-	[class^="event-"] {
-		display:none;
-	}
-	</style>
+  [class^="event-"] {
+    display: none;
+  }
+</style>
 <!-- dashboard nav -->
 <div class="col-lg-9 col-md-8 col-12">
   <div class="card rounded-lg mb-4">
     <!-- card header -->
     <div class="card-header bg-white p-4">
-      <h3 class="mb-0 h4">My Profile</h3>
+      <h3 class="mb-0 h4">Account</h3>
     </div>
     <!-- card body -->
     <div class="card-body p-4">
-      <div class="d-lg-flex align-items-center justify-content-between">
-        <div class="d-flex align-items-center mb-4 mb-lg-0">
-          <img src="{{'/assets/images/avatar-default.jpg' | absolute_url }}" id="img-uploaded2" class="avatar-xl rounded-circle" alt="" />
-          <div class="ms-3">
-            <h4 class="mb-0">Your avatar</h4>
-            <p class="mb-0 font-14">
-              PNG or JPG no bigger than 800px wide and tall.
-            </p>
-          </div>
-        </div>
-        <div>
-          <a href="#!" class="btn btn-primary btn-sm">Upload Photo</a>
 
-          <a href="#!" class="btn btn-light btn-sm">Delete Photo</a>
+      <div class="card rounded-lg mb-4">
+        <!-- card header -->
+        <div class="card-header bg-white p-4 border-bottom-0">
+          <h3 class="mb-0 h4">Bid History</h3>
+        </div>
+        <!-- table -->
+        <div class="table-responsive border-0">
+          <table class="table mb-0 text-nowrap">
+            <thead class="bg-light">
+              <tr>
+                <th scope="col" class="py-2 border-bottom-0">BID DATE</th>
+                <th scope="col" class="py-2 border-bottom-0">Event</th>
+                <th scope="col" class="py-2 border-bottom-0">
+                  Number of Tickets
+                </th>
+                <th scope="col" class="py-2 border-bottom-0">Bid Amount</th>
+                <th scope="col" class="py-2 border-bottom-0">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="event-0">
+                <td class="align-middle datetime"></td>
+                <td class="align-middle name"></td>
+                <td class="align-middle qty"></td>
+                <td class="align-middle bid"></td>
+                <td class="align-middle">
+                  <a href="#!"><i class="fe fe-download"></i></a>
+                </td>
+              </tr>
+              <tr class="event-1">
+                <td class="align-middle datetime"></td>
+                <td class="align-middle name"></td>
+                <td class="align-middle qty"></td>
+                <td class="align-middle bid"></td>
+                <td class="align-middle">
+                  <a href="#!"><i class="fe fe-download"></i></a>
+                </td>
+              </tr>
+              <tr class="event-2">
+                <td class="align-middle datetime"></td>
+                <td class="align-middle name"></td>
+                <td class="align-middle qty"></td>
+                <td class="align-middle bid"></td>
+                <td class="align-middle">
+                  <a href="#!"><i class="fe fe-download"></i></a>
+                </td>
+              </tr>
+              <tr class="event-3">
+                <td class="align-middle datetime"></td>
+                <td class="align-middle name"></td>
+                <td class="align-middle qty"></td>
+                <td class="align-middle bid"></td>
+                <td class="align-middle">
+                  <a href="#!"><i class="fe fe-download"></i></a>
+                </td>
+              </tr>
+              <tr class="event-4">
+                <td class="align-middle datetime"></td>
+                <td class="align-middle name"></td>
+                <td class="align-middle qty"></td>
+                <td class="align-middle bid"></td>
+                <td class="align-middle">
+                  <a href="#!"><i class="fe fe-download"></i></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
-      <hr class="my-5" />
-
-      <div>
-        <!-- form -->
-        <form class="form-row">
-          <div class="col-12 col-md-12">
-            <h4 class="mb-3">General information</h4>
-          </div>
-          <div class="form-group col-12 col-md-6">
-            <label class="font-14 text-dark" for="fname">First Name<span class="text-danger">*</span></label>
-            <input type="text" id="fname" class="form-control" placeholder="First Name" required="" />
-          </div>
-          <div class="form-group col-12 col-md-6">
-            <label class="font-14 text-dark" for="lname">Last Name<span class="text-danger">*</span></label>
-            <input type="text" id="lname" class="form-control" placeholder="Last Name" required="" />
-          </div>
-          <div class="form-group col-12 col-md-6">
-            <label class="font-14 text-dark" for="email">Email<span class="text-danger">*</span></label>
-            <input type="text" id="email" class="form-control" placeholder="Email address here" required="" />
-          </div>
-          <div class="form-group col-12 col-md-6">
-            <label class="font-14 text-dark" for="phone">Phone</label>
-            <input type="text" id="phone" class="form-control" placeholder="Phone" required="" />
-          </div>
-          <div class="col-12 col-md-12">
-            <h4 class="mb-3 mt-3">Address</h4>
-          </div>
-          <div class="form-group col-12 col-md-12">
-            <label class="font-14 text-dark" for="address">Address Line 1</label>
-            <input type="text" id="address" class="form-control" placeholder="Address" required="" />
-          </div>
-          <div class="form-group col-12 col-md-12">
-            <label class="font-14 text-dark" for="address2">Address Line 2</label>
-            <input type="text" id="address2" class="form-control" placeholder="Address" required="" />
-          </div>
-          <div class="form-group col-12 col-md-4">
-            <label class="font-14 text-dark">City</label>
-            <select class="custom-select">
-              <option selected="">Select City</option>
-              <option value="1">Ahmedabad</option>
-              <option value="2">Jaipur</option>
-              <option value="3">Bombay</option>
-            </select>
-          </div>
-
-          <div class="form-group col-12 col-md-4">
-            <label class="font-14 text-dark">Country</label>
-            <select class="custom-select">
-              <option selected="">Select Country</option>
-              <option value="1">India</option>
-              <option value="2">UK</option>
-              <option value="3">USA</option>
-            </select>
-          </div>
-          <div class="form-group col-12 col-md-4">
-            <label class="font-14 text-dark" for="zipcode">Zip</label>
-            <input type="text" id="zipcode" class="form-control" placeholder="ex: 044" required="" />
-          </div>
-          <div class="col-12">
-            <button class="btn btn-primary" type="submit">
-              Save Profile
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <!-- card -->
-  <div class="card rounded-lg mb-4">
-    <!-- card header -->
-    <div class="card-header bg-white p-4">
-      <h3 class="mb-0 h4">Privacy Settings</h3>
-    </div>
-    <!-- card body -->
-    <div class="card-body p-4">
-      <div class="d-md-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
-        <div class="">
-          <h4 class="mb-1 h5">Public Profile</h4>
-          <p class="mb-0 font-14">
-            Making your profile publo means anyone can see your information.
-          </p>
-        </div>
-        <div class="">
-          <div class="custom-control custom-switch">
-            <input type="checkbox" class="custom-control-input" id="publicProfile" checked="" />
-            <label class="custom-control-label" for="publicProfile"></label>
-          </div>
-        </div>
-      </div>
-      <div class="d-md-flex justify-content-between align-items-center">
-        <div class="">
-          <h4 class="mb-1 h5">Expose your email.</h4>
-          <p class="mb-0 font-14">
-            This lets user find you by your email address.
-          </p>
-        </div>
-        <div class="">
-          <div class="custom-control custom-switch">
-            <input type="checkbox" class="custom-control-input" id="privacySetting" />
-            <label class="custom-control-label" for="privacySetting"></label>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- card  -->
-  <div class="card rounded-lg">
-    <div class="card-body p-4">
-      <p class="mb-0">
-        <i class="fe fe-trash-2 font-20 me-2 text-primary"></i>If you no longer want to use Coach, you can
-        <a href="#!">delete our account.</a>
-      </p>
     </div>
   </div>
 </div>
-
-<div class="col-lg-9 col-md-8 col-12">
-  <div class="card rounded-lg mb-4">
-    <!-- card header -->
-    <div class="card-header bg-white p-4 border-bottom-0">
-      <h3 class="mb-0 h4">Bid History</h3>
-    </div>
-    <!-- table -->
-
-    <div class="table-responsive border-0">
-      <table class="table mb-0 text-nowrap">
-        <thead class="bg-light">
-          <tr>
-            <th scope="col" class="py-2 border-bottom-0">BID DATE</th>
-            <th scope="col" class="py-2 border-bottom-0">Event</th>
-            <th scope="col" class="py-2 border-bottom-0">
-             Number of Tickets
-            </th>
-            <th scope="col" class="py-2 border-bottom-0">Bid Amount</th>
-            <th scope="col" class="py-2 border-bottom-0">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="event-0">
-            <td class="align-middle datetime"></td>
-			<td class="align-middle name"></td>
-            <td class="align-middle qty"></td>
-            <td class="align-middle bid"></td>
-       
-            <td class="align-middle">
-              <a href="#!"><i class="fe fe-download"></i></a>
-            </td>
-          </tr>
-          <tr class="event-1">
-            <td class="align-middle datetime"></td>
-			<td class="align-middle name"></td>
-            <td class="align-middle qty"></td>
-            <td class="align-middle bid"></td>
-       
-            <td class="align-middle">
-              <a href="#!"><i class="fe fe-download"></i></a>
-            </td>
-          </tr>
-          <tr class="event-2">
-            <td class="align-middle datetime"></td>
-			<td class="align-middle name"></td>
-            <td class="align-middle qty"></td>
-            <td class="align-middle bid"></td>
-       
-            <td class="align-middle">
-              <a href="#!"><i class="fe fe-download"></i></a>
-            </td>
-          </tr>
-          <tr class="event-3">
-            <td class="align-middle datetime"></td>
-			<td class="align-middle name"></td>
-            <td class="align-middle qty"></td>
-            <td class="align-middle bid"></td>
-       
-            <td class="align-middle">
-              <a href="#!"><i class="fe fe-download"></i></a>
-            </td>
-          </tr>
-          <tr class="event-4">
-            <td class="align-middle datetime"></td>
-			<td class="align-middle name"></td>
-            <td class="align-middle qty"></td>
-            <td class="align-middle bid"></td>
-       
-            <td class="align-middle">
-              <a href="#!"><i class="fe fe-download"></i></a>
-            </td>
-          </tr>
-
- 
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
-
-
-
 
 <script src="/assets/js/user.js" deferred></script>
 <script src="https://cdn.auth0.com/js/auth0-spa-js/1.14/auth0-spa-js.production.js"></script>
