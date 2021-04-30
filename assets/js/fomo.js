@@ -43,10 +43,14 @@ $( "#amt, #qty" ).change(function() {
 	$("#listtotal").text(currency($('#listfee').data("raw")).add($('#listsub').data("raw")).format());
 	}
 	else {
-        event.preventDefault();
-        event.stopPropagation();	
-	  doBounce($("#amt").parent(), 3, '10px', 300);   
- 
+		if ($('#listbid').data("firstTime") == undefined) {
+			$('#listbid').data("firstTime",'notnull');
+		}
+		else {
+			event.preventDefault();
+			event.stopPropagation();	
+			doBounce($("#amt").parent(), 3, '10px', 300);   
+		}
 	}
 });
 $("#loginbtn").click(function() {
