@@ -26,12 +26,14 @@ function doBounce(element, times, distance, speed) {
     }        
 }
 
-
-$( "#amt, #qty" ).change(function() {
-	if ($('#amt').val() !== "") {
+$( "#qty" ).change(function() {
 	$('#qty').val();
 	$("#listqty").text($('#qty').val());
 	$('#listqty').data("raw",$('#qty').val());
+});
+$( "#amt" ).keyup(function() {
+	if ($('#amt').val() !== "") {
+
 	
 	
 	$("#listbid").text(currency($('#amt').val()).format());
@@ -43,14 +45,10 @@ $( "#amt, #qty" ).change(function() {
 	$("#listtotal").text(currency($('#listfee').data("raw")).add($('#listsub').data("raw")).format());
 	}
 	else {
-		if ($('#listbid').data("firstTime") == undefined) {
-			$('#listbid').data("firstTime",'notnull');
-		}
-		else {
+
 			event.preventDefault();
 			event.stopPropagation();	
 			doBounce($("#amt").parent(), 3, '10px', 300);   
-		}
 	}
 });
 $("#loginbtn").click(function() {
