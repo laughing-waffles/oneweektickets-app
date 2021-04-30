@@ -19,6 +19,9 @@ window.onload = async () => {
 	   		const isCallback = await auth0.handleRedirectCallback();
 			window.history.replaceState({}, document.title, location.protocol + '//' + location.host + location.pathname);
 		}
+		if (query.includes("login-gateway")) {
+			window.location.replace("/u/account-settings/profile/");
+		}
 	
 		
   if (isAuthenticated) {
