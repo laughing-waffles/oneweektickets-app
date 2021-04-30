@@ -27,11 +27,7 @@ function doBounce(element, times, distance, speed) {
 }
 
 
-$( "#quantitybtn" ).click(function() {
-
-});
-
-$( "#continuebtn" ).click(function() {
+$( "#amt, #qty" ).change(function() {
 	if ($('#amt').val() !== "") {
 	$('#qty').val();
 	$("#listqty").text($('#qty').val());
