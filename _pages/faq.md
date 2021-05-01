@@ -44,3 +44,7 @@ If you do not update your credit card information by the time listed in the emai
 There’s no such thing. You should bid what you feel is reasonable and not a penny more. Unlike scalpers, we never want you to walk away feeling like you got ripped off. OneWeek is specifically designed to remove the ticket resellers from the process, to ensure that you get a fair price. 
 
 Still have questions? Please email us at [support@oneweektickets.com](mailto:support@oneweektickets.com).
+
+{% if jekyll.environment == 'production' %}
+<script src="//code.tidio.co/z2hn7p4qksjhv1nz8qnad2apogrp8jvj.js" async></script>
+{% endif %}
