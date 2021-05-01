@@ -9,6 +9,5 @@ group :jekyll_plugins do
     gem 'rouge'
     gem 'jekyll-cloudinary'
     gem 'jekyll-sitemap'
-    gem 'jekyll-target-blank'
 end
 gem "webrick", "~> 1.7"
