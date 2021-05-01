@@ -1,18 +1,33 @@
 main:
-  - title: Register
-    url: /request-demo
-  - title: Buyer Login
-    url: /u/account-settings/login-gateway/
-#  - dropdown-title: Account
-#    dropdown-items:
-#      - title: Register
-#        subtitle: Create an account
-#        icon: fas fa-user-plus
-#         url: /request-demo
-#       - title: Login
-#         subtitle: Access your account
-#         icon: fas fa-sign-in-alt
-#        url: /login
+  - dropdown-title: Buy Tickets
+    dropdown-items:
+      - title: Login
+        subtitle: See your bids and purchases
+        icon: fas fa-sign-in-alt
+        url: /u/account-settings/login-gateway/
+      - title: FAQ
+        subtitle: Frequently Asked Questions
+        icon: fas fa-info-circle
+        url: /faq
+  - dropdown-title: Sell Tickets
+    dropdown-items:
+      - title: Login
+        subtitle: Manage your events
+        icon: fas fa-sign-in-alt
+        url: /s/account-settings/login-gateway/
+      - title: Register
+        subtitle: Get setup to sell
+        icon: fas fa-comments
+        url: /request-demo
+      - title: FAQ
+        subtitle: Frequently Asked Questions
+        icon: fas fa-info-circle
+        url: /faq
+main-loggedin:
+  - title: Get help
+    url: /faq
+  - title: Log out
+    url: https://oneweektickets.us.auth0.com/logout?returnTo=https://www.oneweektickets.com/
 footer:
   - column-h: Links
     links:

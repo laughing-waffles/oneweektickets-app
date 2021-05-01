@@ -21,19 +21,29 @@
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fas fa-times"></i>
         </button>
-      <!--  <ul class="navbar-nav ms-auto me-lg-3">
+        <ul class="navbar-nav ms-auto me-lg-3">
           <li class="nav-item dropdown disabled">
             <a class="nav-link d-lg-none" href="#">
               Menu
             </a>
           </li>
+
+          {% if page.url contains "account-settings" %}
+          {% for item in site.data.nav.main-loggedin %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ item.url | relative_url}}">{{ item.title }}</a>
+          </li>
+          {% endfor %}
+
+          {% else %}
+
           {% for item in site.data.nav.main %}
           {% if item.dropdown-title %}
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="" id="menu-{{ forloop.index }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="menu-{{ forloop.index }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               {{ item.dropdown-title }}
             </a>
-            <ul class="dropdown-menu dropdown-menu-arrow dropdown-menu-right dropdown-menu-xl-left dropdown-menu-md" aria-labelledby="menu-{{ forloop.index }}">
+            <ul class="dropdown-menu dropdown-menu-arrow dropdown-menu-right dropdown-menu-xl-left" aria-labelledby="menu-{{ forloop.index }}">
               {% for entry in item.dropdown-items %}
               <li>
                 <a class="dropdown-list-group-item" href="{{ entry.url | absolute_url }}">
@@ -59,17 +69,8 @@
           </li>
           {% endif %}
           {% endfor %}
+          {% endif %}
         </ul> 
-        <div class="header-btn">
-          <a href="{{ '/s/account-settings/login-gateway/' | relative_url }}" class="btn btn-primary btn-sm">Sell tickets</a>
-        </div>
-		  -->
-		  
-		  <ul class="navbar-nav ms-auto">
-		            <li class="nav-item">
-		              <a class="nav-link" href="/u/account-settings/login-gateway/">Have you placed a bid or purchased a ticket to a show? Login</a>
-		            </li>
-				</ul>
       </div>
     </nav>
   </div>
