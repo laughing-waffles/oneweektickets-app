@@ -9,7 +9,7 @@
   <!-- navigation start -->
   <div class="container-lg">
     <nav class="navbar navbar-expand-lg navbar-default">
-      <a class="navbar-brand" href="{{ site.url | absolute_url }}">
+      <a class="navbar-brand" href="{{ site.url | relative_url }}">
         <h1 class="fw-bolder d-block text-white h2 m-0">OneWeek</h1>
       </a>
       <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@
           {% if page.url contains "account-settings" %}
           {% for item in site.data.nav.main-loggedin %}
           <li class="nav-item">
-            <a class="nav-link" href="{{ item.url | relative_url}}">{{ item.title }}</a>
+            <a class="nav-link" href="{{ item.url | relative_url }}">{{ item.title }}</a>
           </li>
           {% endfor %}
 
@@ -46,7 +46,7 @@
             <ul class="dropdown-menu dropdown-menu-arrow dropdown-menu-right dropdown-menu-xl-left" aria-labelledby="menu-{{ forloop.index }}">
               {% for entry in item.dropdown-items %}
               <li>
-                <a class="dropdown-list-group-item" href="{{ entry.url | absolute_url }}">
+                <a class="dropdown-list-group-item" href="{{ entry.url | relative_url }}">
                   <div class="d-flex align-items-center">
                     <div class="d-flex align-items-center">
                       <span class="me-3">
