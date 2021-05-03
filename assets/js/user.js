@@ -50,6 +50,8 @@ window.onload = async () => {
   }
 }
 
+
+
 function getBids() {
 	$.ajax({ 
 	url: 'https://oneweek-tickets.uc.r.appspot.com/api/bid/1',
@@ -70,6 +72,7 @@ function getBids() {
 			$('.event-' + index + ' > .name').text(this.name);			
 			$('.event-' + index + ' > .qty').text(this.quantity);
 			$('.event-' + index).show();
+      $('.event-' + index).data("event", index);
 		})
 	 },
 	error: function () { 
@@ -79,4 +82,30 @@ function getBids() {
 	});
 	
 	
+}
+
+$(".cancelbtn").click(function() {
+  cancelBid($(this).data("event"))
+});
+function cancelBid(which) {
+	$.ajax({ 
+	url: 'https://oneweek-tickets.uc.r.appspot.com/api/bid/cancel/1',
+	//TODO event-id(1) is hardcoded, should be dynamic = https://oneweektickets.com/api/bid/1
+	//TODO redirection to oneweektickets.com/api does not work, needs to be fixed
+	//'https://oneweektickets.com/api/event/' + urlParams.get('event'),
+	type: 'POST',
+	beforeSend: function (xhr) {
+	    xhr.setRequestHeader('Authorization', 'Bearer ' + $("body").data('auth'));
+	},
+	contentType: 'application/json',
+	success: async function (result) {
+		$('.event-' + index).addClass("canceled");
+	  
+	 },
+	error: function () { 
+		$("#messageload").text("Oops!");
+		$("#errorload").text("API error");
+	},
+	});
+  
 }
