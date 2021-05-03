@@ -7,6 +7,11 @@ title:            My Profile
     display: none;
   }
 </style>
+<!-- error panel -->
+<div>
+  <div id="messageload"></div>
+  <div id="errorload"></div>
+</div>
 <!-- dashboard nav -->
 <div class="col-lg-9 col-md-8 col-12">
   <div class="card rounded-lg mb-4">
@@ -33,26 +38,20 @@ title:            My Profile
                   Number of Tickets
                 </th>
                 <th scope="col" class="py-2 border-bottom-0">Bid Amount</th>
+                          <th scope="col" class="py-2 border-bottom-0">Status</th>
                 <th scope="col" class="py-2 border-bottom-0">Actions</th>
               </tr>
             </thead>
             <tbody>
-              <tr class="event-0">
-                <td class="align-middle datetime"></td>
-                <td class="align-middle name"></td>
-                <td class="align-middle qty"></td>
-                <td class="align-middle bid"></td>
-                <td class="align-middle">
-                  <a href="#!"><i class="fe fe-download"></i></a>
-                </td>
-              </tr>
               <tr class="event-1">
                 <td class="align-middle datetime"></td>
                 <td class="align-middle name"></td>
                 <td class="align-middle qty"></td>
                 <td class="align-middle bid"></td>
-                <td class="align-middle">
-                  <a href="#!"><i class="fe fe-download"></i></a>
+                <td class="align-middle state"></td>
+                <td class="align-middle actions">
+                  <a href="#!"><i class="fe fe-edit"></i></a>
+                  <a href="#!" class="cancelbtn"><i class="fe fe-x-square"></i></a>
                 </td>
               </tr>
               <tr class="event-2">
@@ -60,8 +59,11 @@ title:            My Profile
                 <td class="align-middle name"></td>
                 <td class="align-middle qty"></td>
                 <td class="align-middle bid"></td>
-                <td class="align-middle">
-                  <a href="#!"><i class="fe fe-download"></i></a>
+                <td class="align-middle state"></td>
+                
+                <td class="align-middle actions">
+                  <a href="#!"><i class="fe fe-edit"></i></a>
+                  <a href="#!" class="cancelbtn"><i class="fe fe-x-square"></i></a>
                 </td>
               </tr>
               <tr class="event-3">
@@ -69,8 +71,11 @@ title:            My Profile
                 <td class="align-middle name"></td>
                 <td class="align-middle qty"></td>
                 <td class="align-middle bid"></td>
-                <td class="align-middle">
-                  <a href="#!"><i class="fe fe-download"></i></a>
+                <td class="align-middle state"></td>
+                
+                <td class="align-middle actions">
+                  <a href="#!"><i class="fe fe-edit"></i></a>
+                  <a href="#!" class="cancelbtn"><i class="fe fe-x-square"></i></a>
                 </td>
               </tr>
               <tr class="event-4">
@@ -78,8 +83,11 @@ title:            My Profile
                 <td class="align-middle name"></td>
                 <td class="align-middle qty"></td>
                 <td class="align-middle bid"></td>
-                <td class="align-middle">
-                  <a href="#!"><i class="fe fe-download"></i></a>
+                <td class="align-middle state"></td>
+                
+                <td class="align-middle actions">
+                  <a href="#!"><i class="fe fe-edit"></i></a>
+                  <a href="#!" class="cancelbtn"><i class="fe fe-x-square"></i></a>
                 </td>
               </tr>
             </tbody>
