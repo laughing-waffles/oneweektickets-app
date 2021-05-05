@@ -7,11 +7,6 @@ title:            My Profile
     display: none;
   }
 </style>
-<!-- error panel -->
-<div>
-  <div id="messageload"></div>
-  <div id="errorload"></div>
-</div>
 <!-- dashboard nav -->
 <div class="col-lg-9 col-md-8 col-12">
   <div class="card rounded-lg mb-4">
@@ -20,80 +15,78 @@ title:            My Profile
       <h3 class="mb-0 h4">Account</h3>
     </div>
     <!-- card body -->
-    <div class="card-body p-4">
+    <!-- error panel -->
+    <div>
+      <div id="messageload"></div>
+      <div id="errorload"></div>
+    </div>
+    <!-- card header -->
+    <div class="card-header bg-white p-4 border-bottom-0">
+      <h3 class="mb-0 h4">Bid History</h3>
+    </div>
+    <!-- table -->
+    <div class="table-responsive border-0">
+      <table class="table mb-0 text-nowrap">
+        <thead class="bg-light">
+          <tr>
+            <th scope="col" class="py-2 border-bottom-0">Event</th>
+            <th scope="col" class="py-2 border-bottom-0">Bid Date</th>
+            <th scope="col" class="py-2 border-bottom-0">Number of Tickets</th>
+            <th scope="col" class="py-2 border-bottom-0">Bid Amount</th>
+            <th scope="col" class="py-2 border-bottom-0">Status</th>
+            <th scope="col" class="py-2 border-bottom-0">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="event-1">
+            <td class="align-middle datetime"></td>
+            <td class="align-middle name"></td>
+            <td class="align-middle qty"></td>
+            <td class="align-middle bid"></td>
+            <td class="align-middle state"></td>
+            <td class="align-middle actions">
+              <a class="btn btn-light" href="#!" role="button"><i class="fe fe-edit"></i> Change bid</a>
+              <a class="btn btn-danger cancelbtn" href="#!" role="button"><i class="fas fa-window-close"></i> Cancel bid</a>
+            </td>
+          </tr>
+          <tr class="event-2">
+            <td class="align-middle datetime"></td>
+            <td class="align-middle name"></td>
+            <td class="align-middle qty"></td>
+            <td class="align-middle bid"></td>
+            <td class="align-middle state"></td>
 
-      <div class="card rounded-lg mb-4">
-        <!-- card header -->
-        <div class="card-header bg-white p-4 border-bottom-0">
-          <h3 class="mb-0 h4">Bid History</h3>
-        </div>
-        <!-- table -->
-        <div class="table-responsive border-0">
-          <table class="table mb-0 text-nowrap">
-            <thead class="bg-light">
-              <tr>
-                <th scope="col" class="py-2 border-bottom-0">BID DATE</th>
-                <th scope="col" class="py-2 border-bottom-0">Event</th>
-                <th scope="col" class="py-2 border-bottom-0">
-                  Number of Tickets
-                </th>
-                <th scope="col" class="py-2 border-bottom-0">Bid Amount</th>
-                          <th scope="col" class="py-2 border-bottom-0">Status</th>
-                <th scope="col" class="py-2 border-bottom-0">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="event-1">
-                <td class="align-middle datetime"></td>
-                <td class="align-middle name"></td>
-                <td class="align-middle qty"></td>
-                <td class="align-middle bid"></td>
-                <td class="align-middle state"></td>
-                <td class="align-middle actions">
-                  <a href="#!"><i class="fe fe-edit"></i></a>
-                  <a href="#!" class="cancelbtn"><i class="fe fe-x-square"></i></a>
-                </td>
-              </tr>
-              <tr class="event-2">
-                <td class="align-middle datetime"></td>
-                <td class="align-middle name"></td>
-                <td class="align-middle qty"></td>
-                <td class="align-middle bid"></td>
-                <td class="align-middle state"></td>
-                
-                <td class="align-middle actions">
-                  <a href="#!"><i class="fe fe-edit"></i></a>
-                  <a href="#!" class="cancelbtn"><i class="fe fe-x-square"></i></a>
-                </td>
-              </tr>
-              <tr class="event-3">
-                <td class="align-middle datetime"></td>
-                <td class="align-middle name"></td>
-                <td class="align-middle qty"></td>
-                <td class="align-middle bid"></td>
-                <td class="align-middle state"></td>
-                
-                <td class="align-middle actions">
-                  <a href="#!"><i class="fe fe-edit"></i></a>
-                  <a href="#!" class="cancelbtn"><i class="fe fe-x-square"></i></a>
-                </td>
-              </tr>
-              <tr class="event-4">
-                <td class="align-middle datetime"></td>
-                <td class="align-middle name"></td>
-                <td class="align-middle qty"></td>
-                <td class="align-middle bid"></td>
-                <td class="align-middle state"></td>
-                
-                <td class="align-middle actions">
-                  <a href="#!"><i class="fe fe-edit"></i></a>
-                  <a href="#!" class="cancelbtn"><i class="fe fe-x-square"></i></a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+            <td class="align-middle actions">
+              <a href="#!"><i class="fe fe-edit"></i></a>
+              <a href="#!" class="cancelbtn"><i class="fe fe-x-square"></i></a>
+            </td>
+          </tr>
+          <tr class="event-3">
+            <td class="align-middle datetime"></td>
+            <td class="align-middle name"></td>
+            <td class="align-middle qty"></td>
+            <td class="align-middle bid"></td>
+            <td class="align-middle state"></td>
+
+            <td class="align-middle actions">
+              <a href="#!"><i class="fe fe-edit"></i></a>
+              <a href="#!" class="cancelbtn"><i class="fe fe-x-square"></i></a>
+            </td>
+          </tr>
+          <tr class="event-4">
+            <td class="align-middle datetime"></td>
+            <td class="align-middle name"></td>
+            <td class="align-middle qty"></td>
+            <td class="align-middle bid"></td>
+            <td class="align-middle state"></td>
+
+            <td class="align-middle actions">
+              <a href="#!"><i class="fe fe-edit"></i></a>
+              <a href="#!" class="cancelbtn"><i class="fe fe-x-square"></i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
