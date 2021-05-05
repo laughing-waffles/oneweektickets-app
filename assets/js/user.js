@@ -31,6 +31,7 @@ window.onload = async () => {
    console.log(JSON.stringify(
      await auth0.getUser()
     ));
+    $("#messageload").text("");
 	$('body').data("auth", await auth0.getTokenSilently());
       var userInfo = await auth0.getUser()
 	
@@ -50,6 +51,8 @@ window.onload = async () => {
   }
 }
 
+
+
 function getBids() {
 	$.ajax({ 
 	url: 'https://oneweek-tickets.uc.r.appspot.com/api/bid/1',
@@ -65,11 +68,31 @@ function getBids() {
 		//print out some <li>'s for each bid; date, time, amount per ticket, qty tickets, total (including service fees)
 		console.log(result);
 		$(result).each(function(index) {
-			$('.event-' + index + ' > .bid').text(currency(this.amount/100).format());
-			$('.event-' + index + ' > .datetime').text(this.bidDay + " " + this.bidTime);
-			$('.event-' + index + ' > .name').text(this.name);			
-			$('.event-' + index + ' > .qty').text(this.quantity);
-			$('.event-' + index).show();
+      var event = index + 1;
+			$('.event-' + event + ' > .bid').text(currency(this.amount/100).format());
+			$('.event-' + event + ' > .datetime').text(this.bidDay + " " + this.bidTime);
+			$('.event-' + event + ' > .name').text(this.name);			
+			$('.event-' + event + ' > .qty').text(this.quantity);
+      $('.event-' + event).data("event", event);
+      switch (this.state) {
+      case 'CANCEL':
+    		$('.event-' + event).addClass("canceled");
+        $('.event-' + event + ' > .state').text("Bid Withdrawn");
+        $('.event-' + event + ' > .actions > .cancelbtn').hide();
+        break;
+      case 'ACTIVE':
+        $('.event-' + event + ' > .state').text("Bid Active, Not Won Yet");        
+        break;
+      case 'ENDED':
+                $('.event-' + event + ' > .state').text("Bid Lost");
+        break;
+      case 'PURCHASE_COMPLETE':
+                $('.event-' + event + ' > .state').text("Bid Won!");
+        break;
+        
+        			
+      }
+      $('.event-' + event).show();
 		})
 	 },
 	error: function () { 
@@ -79,4 +102,33 @@ function getBids() {
 	});
 	
 	
+}
+
+$(".cancelbtn").click(function() {
+  cancelBid($(this).parent().parent().parent().data("event"))
+});
+function cancelBid(which) {
+  var r = confirm("Are you sure you want to cancel your bid?\nThis will fully withdraw your bid.");
+  if (r == true) {
+	$.ajax({ 
+	url: 'https://oneweek-tickets.uc.r.appspot.com/api/bid/cancel/' + which,
+	//TODO event-id(1) is hardcoded, should be dynamic = https://oneweektickets.com/api/bid/1
+	//TODO redirection to oneweektickets.com/api does not work, needs to be fixed
+	//'https://oneweektickets.com/api/event/' + urlParams.get('event'),
+	type: 'POST',
+	beforeSend: function (xhr) {
+	    xhr.setRequestHeader('Authorization', 'Bearer ' + $("body").data('auth'));
+	},
+	contentType: 'application/json',
+	success: async function (result) {
+		$('.event-' + which).addClass("canceled");
+	  
+	 },
+	error: function () { 
+		$("#messageload").text("Oops!");
+		$("#errorload").text("API error");
+	},
+	});
+}
+  
 }
