@@ -76,7 +76,8 @@ function getBids() {
       $('.event-' + event).data("event", event);
       switch (this.state) {
       case 'CANCEL':
-    		$('.event-' + event).addClass("canceled");
+        console.log("cancelled");
+    		$('.event-' + event).addClass("bg-light text-dark");
         $('.event-' + event + ' > .state').text("Bid Withdrawn");
         $('.event-' + event + ' > .actions > .cancelbtn').hide();
         break;
@@ -121,7 +122,7 @@ function cancelBid(which) {
 	},
 	contentType: 'application/json',
 	success: async function (result) {
-		$('.event-' + which).addClass("canceled");
+		$('.event-' + which).addClass("bg-light text-dark");
 	  
 	 },
 	error: function () { 
