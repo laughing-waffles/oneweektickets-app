@@ -16,9 +16,11 @@ window.onload = async () => {
   const isAuthenticated = await auth0.isAuthenticated();
   const query = window.location.search;
   if (query.includes("code=") && query.includes("state=")) {
+    console.log('handle redirect');
 	   		const isCallback = await auth0.handleRedirectCallback();
 			window.history.replaceState({}, document.title, location.protocol + '//' + location.host + location.pathname);
 		}
+       console.log('post redirect');
 
 	
 		
@@ -31,7 +33,7 @@ window.onload = async () => {
    console.log(JSON.stringify(
      await auth0.getUser()
     ));
-    $("#messageload").text("");
+    $("#messageload").text("Done!");
 	$('body').data("auth", await auth0.getTokenSilently());
       var userInfo = await auth0.getUser()
 	
