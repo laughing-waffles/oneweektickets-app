@@ -14,25 +14,26 @@ window.onload = async () => {
 	$("#messageload").text("Logging you in...");
   await configureClient();
   const isAuthenticated = await auth0.isAuthenticated();
+
   const query = window.location.search;
-    if (isAuthenticated) {
-      console.log("logged in l19"); 
-    }
-  
-  if (query.includes("code=") && query.includes("state=")) {
-    console.log('handle redirect');
+
+    if (query.includes("code=") && query.includes("state=")) {
+
 	   		const isCallback = await auth0.handleRedirectCallback();
 			window.history.replaceState({}, document.title, location.protocol + '//' + location.host + location.pathname);
+			console.log('handle redirect');
+
 		}
+		
        console.log('post redirect');
 
-	
-		
+			
   if (isAuthenticated) {
 	if (window.location.pathname.includes("login-gateway") === true) {
 		console.log('true');
 		window.location.replace("/u/account-settings/profile/");
 	}
+	
 	
    console.log(JSON.stringify(
      await auth0.getUser()
@@ -80,10 +81,13 @@ function getBids() {
 			$('.event-' + event + ' > .name').text(this.name);			
 			$('.event-' + event + ' > .qty').text(this.quantity);
       $('.event-' + event).data("event", event);
+
+      $('.event-' + event + ' .cancelbtn').data("event", event);
+	  console.log($('.event-' + event + ' .cancelbtn').data("event") + " event");
       switch (this.state) {
       case 'CANCEL':
         console.log("cancelled");
-    		$('.event-' + event).addClass("bg-light text-dark");
+    	$('.event-' + event).addClass("bg-light text-dark");
         $('.event-' + event + ' > .state').text("Bid Withdrawn");
         $('.event-' + event + ' > .actions > .cancelbtn').hide();
         break;
@@ -112,7 +116,7 @@ function getBids() {
 }
 
 $(".cancelbtn").click(function() {
-  cancelBid($(this).parent().parent().parent().data("event"))
+  cancelBid($(this).data("event"));
 });
 function cancelBid(which) {
   var r = confirm("Are you sure you want to cancel your bid?\nThis will fully withdraw your bid.");
@@ -129,11 +133,12 @@ function cancelBid(which) {
 	contentType: 'application/json',
 	success: async function (result) {
 		$('.event-' + which).addClass("bg-light text-dark");
-	  
+		$('.event-' + which + ' > .state').text("Bid Withdrawn");
+        $('.event-' + which + ' > .actions > .cancelbtn').hide();
 	 },
 	error: function () { 
 		$("#messageload").text("Oops!");
-		$("#errorload").text("API error");
+		$("#errorload").text("API error: unable to cancel your bid. refresh and try again.");
 	},
 	});
 }
