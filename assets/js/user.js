@@ -15,6 +15,10 @@ window.onload = async () => {
   await configureClient();
   const isAuthenticated = await auth0.isAuthenticated();
   const query = window.location.search;
+    if (isAuthenticated) {
+      console.log("logged in l19"); 
+    }
+  
   if (query.includes("code=") && query.includes("state=")) {
     console.log('handle redirect');
 	   		const isCallback = await auth0.handleRedirectCallback();
