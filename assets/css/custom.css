@@ -5,10 +5,10 @@
   height: 60vh !important;
 }
 .min-vh-80 {
-  min-height: 90vh !important;
+  min-height: 80vh !important;
 }
 .vh-80 {
-  height: 90vh !important;
+  height: 80vh !important;
 }
 .right-slant-shape:after {
   bottom: -1px;
