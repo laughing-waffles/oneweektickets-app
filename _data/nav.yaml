@@ -37,6 +37,8 @@ footer:
         url: /faq
       - title: Request demo
         url: /request-demo
+      - title: Feedback
+        url: https://docs.google.com/forms/d/e/1FAIpQLSeDPsLOvDszweFjJk4ugbHJYWyrWec_LIjpQeQclQzS8Ty5uw/viewform?usp=sf_link
 bottom-bar:
   - title: Terms of Service
     url: /terms
@@ -45,6 +47,8 @@ bottom-bar:
 account-settings-buyers:
   - title: My Profile
     url: /u/account-settings/profile
+  - title: Feedback
+    url: https://docs.google.com/forms/d/e/1FAIpQLSeDPsLOvDszweFjJk4ugbHJYWyrWec_LIjpQeQclQzS8Ty5uw/viewform?usp=sf_link
 billing-settings-buyers:
   - title: Payment History
     url: /u/account-settings/payment-history
@@ -61,6 +65,8 @@ account-settings-sellers:
     url: /s/account-settings/notifications
   - title: Users
     url: /s/account-settings/users
+  - title: Feedback
+    url: https://docs.google.com/forms/d/e/1FAIpQLSeDPsLOvDszweFjJk4ugbHJYWyrWec_LIjpQeQclQzS8Ty5uw/viewform?usp=sf_link
 billing-settings-sellers:
   - title: Plan & Payment
     url: /s/account-settings/payment-plan
