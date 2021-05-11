@@ -38,7 +38,7 @@ window.onload = async () => {
    console.log(JSON.stringify(
      await auth0.getUser()
     ));
-    $("#messageload").text("Done!");
+    $("#messageload").text("");
 	$('body').data("auth", await auth0.getTokenSilently());
       var userInfo = await auth0.getUser()
 	
