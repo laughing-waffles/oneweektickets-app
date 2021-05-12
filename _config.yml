@@ -1,11 +1,11 @@
 baseurl: ''
 url: https://www.oneweektickets.com
-title: OneWeek Tickets
+title: One Week Tickets
 tagline: Price Discovery For the Primary Market
 description: >-
   An innovative ticketing platform that helps venues, artists, promoters, and fans 
   all have a better experience by enabling auction pricing in the primary market.
-author: OneWeek
+author: One Week
 logo: /favicon.ico
 lang: en_US
 favicon: /favicon.ico

@@ -7,7 +7,7 @@ sitemap:					false
 
 ## OVERVIEW
 
-This website is operated by OneWeek Tickets. Throughout the site, the terms “we”, “us” and “our” refer to OneWeek Tickets. OneWeek Tickets offers this website, including all information, tools, and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies, and notices stated here.
+This website is operated by One Week Tickets. Throughout the site, the terms “we”, “us” and “our” refer to One Week Tickets. One Week Tickets offers this website, including all information, tools, and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies, and notices stated here.
 
 By visiting our site and/ or purchasing something from us, you engage in our “Service” and agree to be bound by the following terms and conditions (“Terms of Service”, “Terms”), including those additional terms and conditions and policies referenced herein and/or available by hyperlink. These Terms of Service apply to all users of the site, including without limitation users who are browsers, vendors, customers, merchants, and/ or contributors of content.
 
@@ -147,7 +147,7 @@ Any ambiguities in the interpretation of these Terms of Service shall not be con
 
 ## SECTION 18 – GOVERNING LAW
 
-These Terms of Service and any separate agreements whereby we provide you Services shall be governed by and construed in accordance with the laws of OneWeek Tickets. PO Box 6724, Austin, TX 78762.
+These Terms of Service and any separate agreements whereby we provide you Services shall be governed by and construed in accordance with the laws of One Week Tickets. PO Box 6724, Austin, TX 78762.
 
 ## SECTION 19 – CHANGES TO TERMS OF SERVICE
 

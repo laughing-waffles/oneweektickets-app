@@ -6,7 +6,7 @@ tidio:            true
 ---
 
 
-### How does OneWeek prevent ticket resellers from buying all of the tickets?
+### How does One Week prevent ticket resellers from buying all of the tickets?
 
 By using a blind auction! You enter the price that you think it’s worth paying to go to the show. Ticket resellers have an incentive to bid low so that they can turn around and make a massive profit when they (re)sell you the ticket. 
 
@@ -18,7 +18,7 @@ To increase your opportunity of having a successful bid, we run this auction onc
 
 ### What happens if my bid is successful?
 
-If you bid an amount that was in the top 1/7th of bids for the day, you’ll receive an email from OneWeek. We’ll charge your credit card for the amount listed when you placed your bid, and you’ll receive instructions on how your tickets will be delivered. 
+If you bid an amount that was in the top 1/7th of bids for the day, you’ll receive an email from One Week. We’ll charge your credit card for the amount listed when you placed your bid, and you’ll receive instructions on how your tickets will be delivered. 
 
 ### What happens if my bid wasn’t successful?
 
@@ -37,11 +37,11 @@ If you bid on day 1, you credit card may be charged on any day for the next 8 da
 
 You’ll receive an email stating your credit card was declined, and will include a specific time by which you must remedy your credit card information. If you update your credit card information, your card will be immediately charged and you will receive a receipt.
 
-If you do not update your credit card information by the time listed in the email, your bid will be forfeited. If your bid is forfeited, you will not participate in future day’s auctions. If you wish to re-enter the auction, you can visit OneWeek to place a new bid. 
+If you do not update your credit card information by the time listed in the email, your bid will be forfeited. If your bid is forfeited, you will not participate in future day’s auctions. If you wish to re-enter the auction, you can visit One Week to place a new bid. 
 
 ### What if I bid too much?
 
-There’s no such thing. You should bid what you feel is reasonable and not a penny more. Unlike scalpers, we never want you to walk away feeling like you got ripped off. OneWeek is specifically designed to remove the ticket resellers from the process, to ensure that you get a fair price. 
+There’s no such thing. You should bid what you feel is reasonable and not a penny more. Unlike scalpers, we never want you to walk away feeling like you got ripped off. One Week is specifically designed to remove the ticket resellers from the process, to ensure that you get a fair price. 
 
 Still have questions? Please email us at [support@oneweektickets.com](mailto:support@oneweektickets.com).
 
