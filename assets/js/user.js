@@ -77,10 +77,14 @@ function getBids() {
 		console.log(result);
 		$(result).each(function(index) {
 			if (this.state == 'ACTIVE') {
-				var latest = index;
-				console.log("found it" + index);
+				latest = index;
+				console.log("found it" + latest);
 			}
 		});
+		if (latest == undefined) {
+			var latest = $(result).length -1;
+			
+		}
 		console.log(result[latest]);
 		$("#eventname").text(result[latest].name);
 		$("#bid").text(result[latest].quantity + " tickets at " + currency(result[latest].amount/100).format() + " each, plus tax");
@@ -140,7 +144,7 @@ function cancelBid(which) {
 	},
 	contentType: 'application/json',
 	success: async function (result) {
-		$('#eventstate').addClass("bg-light text-dark");
+	  $("#eventstate").addClass("bg-light-danger");
 		$('#eventstate').text("Bid Withdrawn");
         $('.cancelbtn').hide();
 	 },
