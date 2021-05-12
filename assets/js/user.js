@@ -74,37 +74,32 @@ function getBids() {
 	success: async function (result) {
 		//print out some <li>'s for each bid; date, time, amount per ticket, qty tickets, total (including service fees)
 		console.log(result);
-		$(result).each(function(index) {
-      var event = index + 1;
-			$('.event-' + event + ' > .bid').text(currency(this.amount/100).format());
-			$('.event-' + event + ' > .datetime').text(this.bidDay + " " + this.bidTime);
-			$('.event-' + event + ' > .name').text(this.name);			
-			$('.event-' + event + ' > .qty').text(this.quantity);
-      $('.event-' + event).data("event", event);
+		var latest = $(result).length -1;
+		console.log(result[latest]);
+		$("#eventname").text(result[latest].name);
+		$("#bid").text(result[latest].quantity + " tickets at " + currency(result[latest].amount/100).format() + " each, plus tax");
+		
 
-      $('.event-' + event + ' .cancelbtn').data("event", event);
-	  console.log($('.event-' + event + ' .cancelbtn').data("event") + " event");
-      switch (this.state) {
+      switch (result[latest].state) {
       case 'CANCEL':
         console.log("cancelled");
-    	$('.event-' + event).addClass("bg-light text-dark");
-        $('.event-' + event + ' > .state').text("Bid Withdrawn");
-        $('.event-' + event + ' > .actions > .cancelbtn').hide();
+        $('#eventstate').text("Bid Withdrawn");
+        $('.cancelbtn').hide();
         break;
       case 'ACTIVE':
-        $('.event-' + event + ' > .state').text("Bid Active, Not Won Yet");        
+        $('#eventstate').text("Bid Active, Not Won Yet");        
         break;
       case 'ENDED':
-                $('.event-' + event + ' > .state').text("Bid Lost");
+                $('#eventstate').text("Bid Lost");
         break;
       case 'PURCHASE_COMPLETE':
-                $('.event-' + event + ' > .state').text("Bid Won!");
+                $('#eventstate').text("Bid Won!");
         break;
         
         			
       }
-      $('.event-' + event).show();
-		})
+      
+		
 	 },
 	error: function () { 
 		$("#messageload").text("Oops!");

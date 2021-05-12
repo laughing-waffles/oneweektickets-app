@@ -26,18 +26,18 @@ title:            My Profile
         <li class="list-group-item px-0 py-3">
           <div class="row">
             <div class="col-8 col-lg-4 order-1">
-              <h5 class="mb-0 name">Rammstein</h5>
-              <p class="mb-0 small">May 20, 2022 · 6:00pm<br />Leipzig · Red Bull Arena</p>
+              <h5 class="mb-0 name" id="eventname">Rammstein</h5>
+              <p class="mb-0 small" id="eventdate">Not stored in DB; will be static<br />Leipzig · Red Bull Arena</p>
             </div>
             <div class="col-4 col-lg-4 text-end order-2 order-lg-4">
               <!-- <span class="badge bg-success me-lg-4 me-0">Ticket issued</span> -->
-              <span class="badge bg-light-warning text-dark me-lg-4 me-0 state">Bid not yet won</span>
+              <span class="badge bg-light-warning text-dark me-lg-4 me-0" id="eventstate">Bid not yet won</span>
               <span class="dropdown">
                 <a class="text-muted text-decoration-none" href="#" role="button" id="dropdown-{{ forloop.index }}" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fas fa-ellipsis-v"></i>
                 </a>
                 <span class="dropdown-menu dropdown-menu-right dropdown-menu-md-left" aria-labelledby="dropdown-{{ forloop.index }}" style="">
-                  <a class="dropdown-item" href="#!">Update bid</a>
+                  <a class="dropdown-item updatebtn" href="#!">Update bid</a>
                   <a class="dropdown-item cancelbtn" href="#!">Cancel bid</a>
                   <a class="dropdown-item" href="#!">View event</a>
                 </span>
@@ -46,7 +46,7 @@ title:            My Profile
 
             <div class="col-6 col-lg-4 order-4 order-lg-3 mt-1 mt-md-0">
               <h5 class="mb-0">Your current bid</h5>
-              <p class="mb-0 small"><span class="bid">$0.00</span> <a data-bs-toggle="collapse" href="#collapse-{{ forloop.index }}" role="button" aria-expanded="false" aria-controls="collapse-{{ forloop.index }}">Details</a></p>
+              <p class="mb-0 small"><span id="bid">$0.00</span> <a data-bs-toggle="collapse" href="#collapse-{{ forloop.index }}" role="button" aria-expanded="false" aria-controls="collapse-{{ forloop.index }}">Details</a></p>
             </div>
           </div>
           <div class="collapse" id="collapse-{{ forloop.index }}">
@@ -97,7 +97,7 @@ title:            My Profile
   </div>
   <div class="card">
     <div class="card-header bg-white p-4">
-      <h4 class="mb-0">Bid History</h4>
+      <h4 class="mb-0">Event History</h4>
     </div>
 
     <div class="table-responsive border-0">
