@@ -117,7 +117,8 @@ function getBids() {
 }
 
 $(".cancelbtn").click(function() {
-  cancelBid($(this).data("event"));
+  //cancelBid($(this).data("event"));
+  cancelBid(1);
 });
 function cancelBid(which) {
   var r = confirm("Are you sure you want to cancel your bid?\nThis will fully withdraw your bid.");
@@ -133,9 +134,9 @@ function cancelBid(which) {
 	},
 	contentType: 'application/json',
 	success: async function (result) {
-		$('.event-' + which).addClass("bg-light text-dark");
-		$('.event-' + which + ' > .state').text("Bid Withdrawn");
-        $('.event-' + which + ' > .actions > .cancelbtn').hide();
+		$('#eventstate').addClass("bg-light text-dark");
+		$('#eventstate').text("Bid Withdrawn");
+        $('.cancelbtn').hide();
 	 },
 	error: function () { 
 		$("#messageload").text("Oops!");
