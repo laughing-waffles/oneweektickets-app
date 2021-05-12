@@ -61,6 +61,7 @@ window.onload = async () => {
 
 
 function getBids() {
+	var latest;
 	$.ajax({ 
 	url: 'https://oneweek-tickets.uc.r.appspot.com/api/bid/1',
 	//TODO event-id(1) is hardcoded, should be dynamic = https://oneweektickets.com/api/bid/1
@@ -74,7 +75,12 @@ function getBids() {
 	success: async function (result) {
 		//print out some <li>'s for each bid; date, time, amount per ticket, qty tickets, total (including service fees)
 		console.log(result);
-		var latest = $(result).length -1;
+		$(result).each(function(index) {
+			if (this.state == 'ACTIVE') {
+				var latest = index;
+				console.log("found it" + index);
+			}
+		});
 		console.log(result[latest]);
 		$("#eventname").text(result[latest].name);
 		$("#bid").text(result[latest].quantity + " tickets at " + currency(result[latest].amount/100).format() + " each, plus tax");
