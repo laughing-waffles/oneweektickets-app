@@ -38,6 +38,8 @@ $("#listsub").text(currency($('#amt').val() * $('#qty').val()).format());
 $("#listfee").text(currency($('#amt').val()).multiply($('#qty').val()).multiply(.07).format());
 $("#listfee").data("raw",currency($('#amt').val()).multiply($('#qty').val()).multiply(.07));
 $("#listtotal").text(currency($('#listfee').data("raw")).add($('#listsub').data("raw")).format());
+$("#overview").slideDown();
+
 }
 $( "#qty" ).change(function() {
 	runMath();
@@ -79,6 +81,8 @@ const configureClient = async () => {
   });
 };
 window.onload = async () => {
+	if ($("#amt").val() == '') { $("#overview").hide(); } else { runMath(); }
+	
   await configureClient();
   const isAuthenticated = await auth0.isAuthenticated();
   if (isAuthenticated) {
