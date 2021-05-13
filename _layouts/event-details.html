@@ -57,138 +57,17 @@ tidio: true
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body text-dark">
-            <form action="#">
-              <style>
-                /* Chrome, Safari, Edge, Opera */
-                input::-webkit-outer-spin-button,
-                input::-webkit-inner-spin-button {
-                  -webkit-appearance: none;
-                  margin: 0;
-                }
-                /* Firefox */
-                input[type="number"] {
-                  -moz-appearance: textfield;
-                }
-              </style>
-              <div class="row">
-                <div class="col-12">
-                  <div class="collapse multi-collapse show" id="multiCollapseExample1">
-                    <div class="alert alert-light d-block d-sm-none border-bottom mb-5" role="alert">
-                      <p>Tickets to this event are offered at the price fans think is fair.</p>
-                      <hr />
-                      <ul class="list-unstyled lead mb-0">
-                        <li><i class="fas fa-check-circle text-primary"></i> Best price available</li>
-                        <li><i class="fas fa-check-circle text-primary"></i> Avoid scalpers and scams</li>
-                        <li><i class="fas fa-check-circle text-primary"></i> Pay what is fair</li>
-                      </ul>
-                      <div id="status" class="countdown font-12 text-danger"></div>
-                    </div>
-                    <div class="mb-3">
-                      <label for="qty">Number of tickets<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
-                      <select class="form-select" id="qty" aria-label="Quantity of tickets" required>
-                        <option value="1" selected>1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                      </select>
-                    </div>
-                    <div class="form-floating mb-3">
-                      <div class="input-group my-4">
-                        <label for="amt">Price per ticket<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
-                        <a href="#" class="ms-auto small" data-bs-toggle="tooltip" data-placement="right" title="You should bid what you think is reasonable to pay for one ticket to this event.">What should I bid?</a>
-                        <div class="input-group">
-                          <span class="input-group-text">$</span>
-                          <input type="number" id="amt" class="form-control" placeholder="" min="1" max="999" aria-label="Amount (to the nearest dollar)" required style="text-align: right;" />
-                          <span class="input-group-text">.00</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="mb-3" id="overview">
-                      <h2 class="mb-2">Overview</h2>
-                      <p class="">This is the offer you will submit for these tickets.</p>
-
-                      <div class="row justify-content-between">
-                        <div class="col-6" >
-                          <p>Quantity</p>
-                        </div>
-                        <div class="col-4" id="listqty">
-                          <p>1</p>
-                        </div>
-                      </div>
-
-                      <div class="row justify-content-between">
-                        <div class="col-6" >
-                          <p>Bid, per ticket</p>
-                        </div>
-                        <div class="col-4" id="listbid">
-                          <p>$0.00</p>
-                        </div>
-                      </div>
-
-                      <div class="row justify-content-between">
-                        <div class="col-6" >
-                          <p>Subtotal</p>
-                        </div>
-                        <div class="col-4" id="listsub">
-                          <p>$0.00</p>
-                        </div>
-                      </div>
-
-                      <div class="row justify-content-between">
-                        <div class="col-6" >
-                          <p>Service fee (7%) <a href="#" class="text-dark small" data-bs-toggle="tooltip" data-bs-placement="top" title="This fee is inclusive of taxes."><i class="far fa-question-circle"></i></a></p>
-                        </div>
-                        <div class="col-4" id="listfee">
-                          <p>$0.00</p>
-                        </div>
-                      </div>
-
-                      <div class="row justify-content-between">
-                        <div class="col-6" >
-                          <p>Shipping <a href="#" class="text-dark small" data-bs-toggle="tooltip" data-bs-placement="top" title="Your ticket will be available to pick up at the venue the day of the event."><i class="far fa-question-circle"></i></a></p>
-                        </div>
-                        <div class="col-4" id="listfee">
-                          <p>Free</p>
-                        </div>
-                      </div>
-
-                      <div class="row justify-content-between">
-                        <div class="col-6" >
-                          <p class="font-weight-bold"><strong>Total</strong></p>
-                        </div>
-                        <div class="col-4" id="listtotal">
-                          <p><strong>$0.00</strong></p>
-                        </div>
-                      </div>
-
-                    </div>
-
-                    <div class="form-check mb-3">
-                      <input class="form-check-input" type="checkbox" id="termsagreed" />
-                      <label class="form-check-label" for="termsagreed"> I agree to the <a href="{{'terms' | absolute_url}}" target="_block">terms</a>. </label>
-                    </div>
-                    <div class="d-grid gap-2">
-                      <button class="btn btn-primary" href="#bid-module" href="#bid-module" role="button" data-bs-slide-to="3" id="loginbtn">Login to place bid</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </form>
-            <script>
-              $(document).ready(function () {
-                $('[data-bs-toggle="tooltip"]').tooltip();
-                $(".tip-top").tooltip({ placement: "top" });
-                $(".tip-right").tooltip({ placement: "right" });
-                $(".tip-bottom").tooltip({ placement: "bottom" });
-                $(".tip-left").tooltip({ placement: "left" });
-              });
-            </script>
+            <div class="alert alert-light d-block d-sm-none border-bottom mb-5" role="alert">
+              <p>Tickets to this event are offered at the price fans think is fair.</p>
+              <hr />
+              <ul class="list-unstyled lead mb-0">
+                <li><i class="fas fa-check-circle text-primary"></i> Best price available</li>
+                <li><i class="fas fa-check-circle text-primary"></i> Avoid scalpers and scams</li>
+                <li><i class="fas fa-check-circle text-primary"></i> Pay what is fair</li>
+              </ul>
+              <div id="status" class="countdown font-12 text-danger"></div>
+            </div>    
+            {% include form-bid-flow.html %}
           </div>
         </div>
 

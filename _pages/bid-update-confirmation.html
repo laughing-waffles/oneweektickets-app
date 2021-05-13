@@ -1,5 +1,5 @@
 ---
-title:					  Bid Confirmation
+title:					  Bid Update Confirmation
 description:			
 layout:						default
 sitemap:					false
@@ -13,19 +13,11 @@ sitemap:					false
           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
           <polyline points="22 4 12 14.01 9 11.01"></polyline>
         </svg>
-        <h2>Your bid has been placed.</h2>
+        <h2>Your bid has been updated.</h2>
         <p>We’ll send you an email with more information tomorrow morning.</p>
         <p>If your bid is successful, your credit card will be charged and you’ll receive a receipt.</p>
-        <p class="mb-4">If your bid isn’t, then your bid will participate in the auction every day until the auction concludes. You can always come back and change your bid, or withdraw your bid altogether.</p>
-        <a href="{{'/u/account-settings/profile' | relative_url }}" class="btn btn-primary">Continue</a>
+        <a href="{{'/u/account-settings/profile' | relative_url }}" class="btn btn-primary" target="_parent">Continue</a>
       </div>
     </div>
   </div>
 </div>
-
-<script type="text/javascript">
-    if (window.location!==window.parent.location) {
-        location.href = "/bid-update-confirmation/";
-    }
-</script>
-	

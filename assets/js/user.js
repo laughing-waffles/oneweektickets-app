@@ -92,22 +92,22 @@ function getBids() {
 
       switch (result[latest].state) {
       case 'CANCEL':
-		  $("#eventstate").addClass("bg-light-danger");
+		  $("#eventstate").addClass("badge bg-dark-soft");
         $('#eventstate').text("Bid Withdrawn");
         $('.cancelbtn').hide();
         break;
       case 'ACTIVE':
-		  $("#eventstate").addClass("bg-light-warning");
+		  $("#eventstate").addClass("badge bg-warning-soft");
 		  
-       	 $('#eventstate').text("Bid Active, Not Won Yet");        
+       	 $('#eventstate').text("Active - Not Yet Won");        
         break;
       case 'ENDED':
-		  $("#eventstate").addClass("bg-light-dark");
+		  $("#eventstate").addClass("badge bg-danger-soft");
 		  
                 $('#eventstate').text("Bid Lost");
         break;
       case 'PURCHASE_COMPLETE':
-		  $("#eventstate").addClass("bg-light-success");
+		  $("#eventstate").addClass("badge bg-success-soft");
 		  
                 $('#eventstate').text("Bid Won!");
         break;

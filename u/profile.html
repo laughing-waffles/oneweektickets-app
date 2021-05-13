@@ -1,5 +1,5 @@
 ---
-title:            My Profile
+title:            Profile
 ---
 
 <style>
@@ -12,7 +12,7 @@ title:            My Profile
   <div class="card mb-4">
     <!-- card header -->
     <div class="card-header bg-white p-4 d-flex justify-content-between align-items-center">
-      <h4 class="mb-0">Active bids</h4>
+      <h4 class="mb-0">My Events</h4>
       <!-- error panel -->
       <div>
         <div id="messageload"></div>
@@ -25,33 +25,85 @@ title:            My Profile
       <ul class="list-group list-group-flush">
         <li class="list-group-item px-0 py-3">
           <div class="row">
-            <div class="col-8 col-lg-4 order-1">
-              <h5 class="mb-0 name" id="eventname">Rammstein</h5>
-              <p class="mb-0 small" id="eventdate">July 10, 2021 · 21:00<br />Leipzig · Red Bull Arena</p>
+
+            <!-- Event details -->
+            <div class="col-12 col-lg-3 mb-3">
+              <a href="/e/rammstein-648534279167">
+                <h5 class="name text-primary" id="eventname">Loading...</h5>
+              </a>
+              <p class="small" id="eventdate">July 10, 2021 · 21:00<br />Leipzig · Red Bull Arena</p>
             </div>
-            <div class="col-4 col-lg-4 text-end order-2 order-lg-4">
-              <!-- <span class="badge bg-success me-lg-4 me-0">Ticket issued</span> -->
-              <span class="badge text-dark me-lg-4 me-0" id="eventstate">Bid not yet won</span>
-              <span class="dropdown">
-                <a class="text-muted text-decoration-none" href="#" role="button" id="dropdown-{{ forloop.index }}" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fas fa-ellipsis-v"></i>
-                </a>
-                <span class="dropdown-menu dropdown-menu-right dropdown-menu-md-left" aria-labelledby="dropdown-{{ forloop.index }}" style="">
-                  <a class="dropdown-item updatebtn" href="/e/rammstein-648534279167">Update bid</a>
-                  <a class="dropdown-item cancelbtn" href="#">Cancel bid</a>
-                  <a class="dropdown-item" href="/e/rammstein-648534279167">View event</a>
-                </span>
-              </span>
+
+            <!-- Current bid -->
+            <div class="col-12 col-lg-3 mb-3">
+              <h5>Your current bid</h5>
+              <p class="small"><span id="bid">Loading...</span></p>
             </div>
-            <div class="col-6 col-lg-4 order-4 order-lg-3 mt-1 mt-md-0">
-              <h5 class="mb-0">Your current bid</h5>
-              <p class="mb-0 small"><span id="bid">$0.00</span></p>
+
+            <!-- Bid status -->
+            <div class="col-12 col-lg-3 mb-3">
+              <h5>Status</h5>
+              <p class="small">
+                <span class="badge bg-dark-soft" id="eventstate">Loading...</span>
+              </p>
+            </div>
+            
+            <!-- Actions -->
+            <div class="col-12 col-lg-3 mb-3">
+
+              <h5>Actions</h5>
+
+              <!-- Update bid button trigger modal -->
+              <button type="button" class="btn btn-primary btn-sm me-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Update bid
+              </button>
+
+              <!-- Cancel bid button trigger modal -->
+              <button type="button" class="btn btn-link btn-sm text-danger" data-bs-toggle="modal" data-bs-target="#cancelBid">
+                Cancel bid
+              </button>
+
+              <!-- Update bid modal -->
+              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="updateBid" aria-hidden="true">
+                <div class="modal-dialog modal-fullscreen-md-down modal-dialog-centered modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="updateBid">Update bid</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div>
+                        <iframe src="{{ 'u/account-settings/profile/update-bid/' | relative_url }}" width="100%" height="680" frameborder="0" allowtransparency="true"></iframe>  
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cancel bid modal -->
+              <div class="modal fade" id="cancelBid" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="cancelBidLabel" aria-hidden="true">
+                <div class="modal-dialog modal-fullscreen-md-down modal-dialog-centered modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="cancelBidLabel">Cancel bid</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Cancelling your bid means that you will no longer be participating in this event's ticket auction and will not will not receive a ticket. After cancelling, you may submit a new bid. If there are tickets remaining after the auction, you will be informed how you can buy a ticket for face-value.</p>
+                      <a class="btn btn-danger cancelbtn" href="#" data-bs-dismiss="modal">I understand, cancel my bid</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </li>
       </ul>
     </div>
   </div>
+
+  <!-- 
   <div class="card">
     <div class="card-header bg-white p-4">
       <h4 class="mb-0">Event History</h4>
@@ -118,6 +170,8 @@ title:            My Profile
       </table>
     </div>
   </div>
+   -->
+
 </div>
 
 <script src="/assets/js/user.js" deferred></script>

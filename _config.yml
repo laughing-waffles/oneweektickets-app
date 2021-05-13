@@ -23,6 +23,7 @@ gems:
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-target-blank
 include:
   - s
   - u
