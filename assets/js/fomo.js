@@ -58,6 +58,8 @@ $( "#amt" ).keyup(function() {
 $("#loginbtn").click(function() {
 	
 	if ($("#termsagreed").prop("checked") === true) {
+
+
 		login();		
 	}
 	else {
