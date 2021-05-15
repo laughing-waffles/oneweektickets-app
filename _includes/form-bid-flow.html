@@ -15,7 +15,7 @@
     <div class="col-12">
       <div class="collapse multi-collapse show" id="multiCollapseExample1">
         <div class="mb-3">
-          <label for="qty">Number of tickets<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+          <label for="qty">Number of tickets</label>
           <select class="form-select" id="qty" aria-label="Quantity of tickets" required>
             <option value="1" selected>1</option>
             <option value="2">2</option>
@@ -31,7 +31,7 @@
         </div>
         <div class="form-floating mb-3">
           <div class="input-group my-4">
-            <label for="amt">Price per ticket<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+            <label for="amt">Bid per ticket</label>
             <a href="#" class="ms-auto small" data-bs-toggle="tooltip" data-placement="right" title="You should bid what you think is reasonable to pay for one ticket to this event.">What should I bid?</a>
             <div class="input-group">
               <span class="input-group-text">$</span>
@@ -41,7 +41,7 @@
           </div>
         </div>
         <div class="mb-3" id="overview">
-          <h2 class="mb-2">Overview</h2>
+          <h2 class="mb-2">Your Bid</h2>
           <p class="">This is the offer you will submit for these tickets.</p>
 
           <div class="row justify-content-between">
@@ -72,8 +72,8 @@
           </div>
 
           <div class="row justify-content-between">
-            <div class="col-6" >
-              <p>Service fee (7%) <a href="#" class="text-dark small" data-bs-toggle="tooltip" data-bs-placement="top" title="This fee is inclusive of taxes."><i class="far fa-question-circle"></i></a></p>
+            <div class="col-7" >
+              <p>Taxes & Service Fees <a href="#" class="text-dark small" data-bs-toggle="tooltip" data-bs-placement="top" title="This fee is inclusive of taxes."><i class="far fa-question-circle"></i></a></p>
             </div>
             <div class="col-4" id="listfee">
               <p>$0.00</p>
@@ -105,7 +105,11 @@
           <label class="form-check-label" for="termsagreed"> I agree to the <a href="{{'terms' | absolute_url}}" target="_block">terms</a>. </label>
         </div>
         <div class="d-grid gap-2">
-          <button class="btn btn-primary" href="#bid-module" href="#bid-module" role="button" data-bs-slide-to="3" id="loginbtn">Login to place bid</button>
+          <button class="btn btn-primary loginbtn" href="#bid-module" href="#bid-module" role="button" data-bs-slide-to="3" data-logintype="signup">Sign up to place bid</button>
+        </div>
+        <!-- TODO: Center? -->
+        <div class="d-grid gap-2 mx-auto">
+          <a href="#" class="loginbtn" data-logintype="login">Already have an account? Login</a>
         </div>
       </div>
     </div>
