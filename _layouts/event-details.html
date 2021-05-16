@@ -5,6 +5,12 @@ tidio: true
 
 {% include navbar.html %}
 
+<script 
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js" 
+integrity="sha512-lteuRD+aUENrZPTXWFRPTBcDDxIGWe5uu0apPEn+3ZKYDwDaEErIK9rvR0QzUGmUQ55KFE2RqGTVoZsKctGMVw==" 
+crossorigin="anonymous">
+</script>
+
 <div
   style="
     background-image: linear-gradient(0deg, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%), url({{ page.hero }}); 
@@ -41,12 +47,16 @@ tidio: true
           <li><i class="fas fa-check-circle text-primary"></i> Automatic entry each day</li>
           <li><i class="fas fa-check-circle text-primary"></i> Change your bid at any time</li>
         </ul>
-        <div id="status" class="countdown font-12 text-danger"></div>
-
         <div class="d-grid gap-2">
           <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#slider-bid" aria-controls="slider-bid">
             Get Tickets
           </button>
+          <div id="clock1" class="countdown font-12 text-danger"></div>
+          <script>
+            $('#clock1').countdown('{{ page.auction-end }}', function(event) {
+              $(this).html(event.strftime('Auction ends in: %D days %H:%M:%S'));
+            });
+          </script>
         </div>
 
         <p class="text-center font-14 mt-5 mb-0"><a href="#faq">Not sure? Learn more</a></p>
@@ -57,16 +67,22 @@ tidio: true
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body text-dark">
-            <div class="alert alert-light d-block d-sm-none border-bottom mb-5" role="alert">
-              <p>Tickets to this event are offered at the price fans think is fair.</p>
-              <hr />
-              <ul class="list-unstyled lead mb-0">
-                <li><i class="fas fa-check-circle text-primary"></i> Best price available</li>
-                <li><i class="fas fa-check-circle text-primary"></i> Avoid scalpers and scams</li>
-                <li><i class="fas fa-check-circle text-primary"></i> Pay what is fair</li>
+            <div class="d-sm-none">
+              <h2 class="mb-2">Ticket Auction</h2>
+              <p>A set of tickets are released every day for the first 7 days that the tickets are available. Each day, the highest bids recieve tickets.</p>
+              <ul class="list-unstyled lead my-4">
+                <li><i class="fas fa-check-circle text-primary"></i> Enter the price you want to pay</li>
+                <li><i class="fas fa-check-circle text-primary"></i> Automatic entry each day</li>
+                <li><i class="fas fa-check-circle text-primary"></i> Change your bid at any time</li>
               </ul>
-              <div id="status" class="countdown font-12 text-danger"></div>
-            </div>    
+              <div id="clock2" class="countdown font-12 text-danger my-4"></div>
+              <script>
+                $('#clock2').countdown('{{ page.auction-end }}', function(event) {
+                  $(this).html(event.strftime('Auction ends in: %D days %H:%M:%S'));
+                });
+              </script>
+              <hr>
+            </div>
             {% include form-bid-flow.html %}
           </div>
         </div>
@@ -80,16 +96,9 @@ tidio: true
           <li><i class="fas fa-check-circle text-primary"></i> Automatic entry each day</li>
           <li><i class="fas fa-check-circle text-primary"></i> Change your bid at any time</li>
         </ul>
-
         <div class="alert alert-warning text-center" role="alert">
           <span id="clock"></span>
         </div>
-
-        <script 
-          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js" 
-          integrity="sha512-lteuRD+aUENrZPTXWFRPTBcDDxIGWe5uu0apPEn+3ZKYDwDaEErIK9rvR0QzUGmUQ55KFE2RqGTVoZsKctGMVw==" 
-          crossorigin="anonymous">
-        </script>
         <script>
           $('#clock').countdown('{{ page.auction-start }}', function(event) {
             $(this).html(event.strftime('On-sale: {{page.auction-start | date: "%b %d, %y at %H:%M" }}<br />%D days %H:%M:%S'));
