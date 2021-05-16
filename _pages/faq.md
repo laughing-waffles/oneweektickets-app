@@ -5,20 +5,15 @@ layout:						page
 tidio:            true
 ---
 
-
-### How does One Week prevent ticket resellers from buying all of the tickets?
-
-By using a blind auction! You enter the price that you think it’s worth paying to go to the show. Ticket resellers have an incentive to bid low so that they can turn around and make a massive profit when they (re)sell you the ticket. 
-
 ### How does the auction work?
 
-You and everyone else who wants to go to the show places a bid. The top 1/7th of bids each day have their bids exchanged for tickets.
+You place a bid for the amount you think it's worth to pay to go to this event. 
 
-To increase your opportunity of having a successful bid, we run this auction once a day for 7 days. If you bid on day 1, you’re bid will remain in the auction until you either get your ticket(s), or 7 days has passed.
+The auction runs once a day for 7 days, and your bid is automatically entered into each day's auction. If you are in the top 1/7th of bids for that day, your bid becomes your purchase of a ticket. 
 
 ### What happens if my bid is successful?
 
-If you bid an amount that was in the top 1/7th of bids for the day, you’ll receive an email from One Week. We’ll charge your credit card for the amount listed when you placed your bid, and you’ll receive instructions on how your tickets will be delivered. 
+If you bid an amount that was in the top 1/7th of bids for the day, we’ll charge your credit card for the amount listed when you placed your bid, and you’ll receive an email reciept with information on how your tickets will be delivered. 
 
 ### What happens if my bid wasn’t successful?
 
@@ -42,6 +37,10 @@ If you do not update your credit card information by the time listed in the emai
 ### What if I bid too much?
 
 There’s no such thing. You should bid what you feel is reasonable and not a penny more. Unlike scalpers, we never want you to walk away feeling like you got ripped off. One Week is specifically designed to remove the ticket resellers from the process, to ensure that you get a fair price. 
+
+### How does One Week prevent ticket resellers from buying all of the tickets?
+
+By using a blind auction! You enter the price that you think it’s worth paying to go to the show. Ticket resellers have an incentive to bid low so that they can turn around and make a massive profit when they (re)sell you the ticket. 
 
 Still have questions? Please email us at [support@oneweektickets.com](mailto:support@oneweektickets.com).
 

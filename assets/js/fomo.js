@@ -55,11 +55,12 @@ $( "#amt" ).keyup(function() {
 			doBounce($("#amt").parent(), 3, '10px', 300);   
 	}
 });
-$("#loginbtn").click(function() {
+var loginType;
+$(".loginbtn").click(function() {
 	
 	if ($("#termsagreed").prop("checked") === true) {
 
-
+    loginType = $(this).data("logintype");
 		login();		
 	}
 	else {
@@ -95,7 +96,8 @@ window.onload = async () => {
 }
 const login = async () => {
   await auth0.loginWithRedirect({
-	  redirect_uri: window.location.protocol + "//" + window.location.hostname +  (window.location.port ? ':' + window.location.port: '') + "/payment?amt=" + $('#listbid').data("raw") + "&qty=" + $('#listqty').data("raw")
+	  redirect_uri: window.location.protocol + "//" + window.location.hostname +  (window.location.port ? ':' + window.location.port: '') + "/payment?amt=" + $('#listbid').data("raw") + "&qty=" + $('#listqty').data("raw"),
+    screen_hint: loginType
   });
 };
 
