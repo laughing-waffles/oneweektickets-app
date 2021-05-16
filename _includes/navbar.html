@@ -31,7 +31,7 @@
           {% if page.url contains "account-settings" %}
           {% for item in site.data.nav.main-loggedin %}
           <li class="nav-item">
-            <a class="nav-link" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+            <a class="nav-link" href="{{ item.url | relative_url }}" {{ item.params }}>{{ item.title }}</a>
           </li>
           {% endfor %}
 
@@ -46,7 +46,7 @@
             <ul class="dropdown-menu dropdown-menu-arrow dropdown-menu-right dropdown-menu-xl-left" aria-labelledby="menu-{{ forloop.index }}">
               {% for entry in item.dropdown-items %}
               <li>
-                <a class="dropdown-list-group-item" href="{{ entry.url | relative_url }}">
+                <a class="dropdown-list-group-item" href="{{ entry.url | relative_url }}" {{ entry.params }}>
                   <div class="d-flex align-items-center">
                     <div class="d-flex align-items-center">
                       <span class="me-3">
@@ -65,7 +65,7 @@
           </li>
           {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="{{ item.url | relative_url}}">{{ item.title }}</a>
+            <a class="nav-link" href="{{ item.url | relative_url}}" {{ item.params }}>{{ item.title }}</a>
           </li>
           {% endif %}
           {% endfor %}
