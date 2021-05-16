@@ -5,25 +5,6 @@ layout:						default
 sitemap:					false
 ---
 
-<div class="bg-shape bg-dark">
-  <div class="container">
-    <div class="row">
-      <div class="col-xl-12 col-lg-12 col-md-12 col-12">
-        <div class="py-lg-10 pt-10 pb-8">
-          <h1 class="h2 text-white">Shop</h1>
-          <!-- breadcrumbs -->
-          <div class="custom-breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-              <li class="breadcrumb-item"><a href="shop.html">Shop</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Bid Cancelled</li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <div class="py-10">
   <div class="container">
@@ -35,23 +16,7 @@ sitemap:					false
         </svg>
         <h2>Your bid has been cancelled.</h2>
         <p>Your bid will no longer be considered for this event.</p>
-        <a href="{{'/u/account-settings/payment-history' | absolute_url }}" class="btn btn-primary">View account</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Footer -->
-<div class="footer py-3 bg-dark text-base">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <ul class="list-inline">
-          <li class="list-inline-item">© {{ site.time | date: '%Y' }} {{ site.title }}</li>
-          {% for item in site.data.nav.bottom-bar %}
-          <li class="list-inline-item"><a href="/login" class="text-reset">{{ item.title }}</a></li>
-          {% endfor %}
-        </ul>
+        <a href="{{'/u/account-settings/profile/' | absolute_url }}" class="btn btn-primary">Return to account</a>
       </div>
     </div>
   </div>
