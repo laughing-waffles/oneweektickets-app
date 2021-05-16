@@ -132,16 +132,16 @@ crossorigin="anonymous">
       <div class="row">
         <div class="accordion accordion-flush mb-5" id="accordionFlushExample">
 
-          {% for item in site.data.faq | limit: 3 %}
-          <div class="mt-5">
-            <h2 class="font-weight-bold">{{ item.question | markdownify }}</h2>
+          {% for item in site.data.faq limit: 3 %}
+          <div class="my-5">
+            <h4 class="font-weight-bold">{{ item.question | markdownify }}</h4>
             {{ item.answer | markdownify }}
           </div>
           {% endfor %}
 
           <h2 class="font-weight-bold">Frequently Asked Questions</h2>
 
-          {% for item in site.data.faq | offset: 3 %}
+          {% for item in site.data.faq offset: 3 %}
           <div class="accordion-item">
             <h2 class="accordion-header" id="flush-headingOne">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-{{ forloop.index }}" aria-expanded="false" aria-controls="flush-collapseOne">
