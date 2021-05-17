@@ -30,7 +30,7 @@ main-loggedin:
     url: /faq
     params: target="_blank"
   - title: Log out
-    url: https://auth.oneweektickets.com/logout?returnTo=https://www.oneweektickets.com/
+    url: https://auth.oneweektickets.com/v2/logout?returnTo=https://www.oneweektickets.com/
 footer:
   - column-h: Links
     links:
