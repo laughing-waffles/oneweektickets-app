@@ -23,16 +23,29 @@ if (nowNOW < $('.container').data("auctionstart")) {
   
   console.log("Showing countdown");
   
-  $('#auctionsoon #clock').countdown( $('.container').data("auctionstart")*1000, function(event) {
-	  var format = '%-H:%M:%S';
-	    if(event.offset.totalDays > 0) {
-	      format = '%-d day%!d ' + format;
-	    }
-	    if(event.offset.weeks > 0) {
-	      format = '%-w week%!w ' + format;
-	    }
-	    $(this).html(event.strftime(format));
-  }).on('finish.countdown', function(event) { 
+  $('#auctionsoon #clock').countdown( $('.container').data("auctionstart")*1000).on('update.countdown', function(event) {
+	var format = '<span>%-d</span> day%!d '
+		+ '<span>%H</span> hr%!d '
+		+ '<span>%M</span> min%!d '
+		+ '<span>%S</span> sec%!d';
+	if(event.offset.totalDays === 0) {
+		format = '<span>%H</span> hr '
+		+ '<span>%M</span> min%!d '
+		+ '<span>%S</span> sec%!d';
+	} 
+	if(event.offset.totalHours === 0) {
+		format = 
+		'<span>%M</span> min '
+		+ '<span>%S</span> sec%!d';
+	}
+	if(event.offset.totalMinutes === 0) {
+		format = '<span>%S</span> second%!d';
+	}
+	if(event.offset.totalSeconds === 0) {
+		format = '';
+	}
+  $(this).html(event.strftime(format));
+}).on('finish.countdown', function(event) { 
 	    $("#auctionsoon").hide();
       $("#auctionlive").removeClass("d-none").show();
 	
