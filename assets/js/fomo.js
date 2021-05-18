@@ -32,6 +32,15 @@ if (nowNOW < $('.container').data("auctionstart")) {
 	      format = '%-w week%!w ' + format;
 	    }
 	    $(this).html(event.strftime(format));
+  }).on('finish.countdown', function(event) { 
+	    $("#auctionsoon").hide();
+      $("#auctionlive").removeClass("d-none").show();
+	
+	
+      $('.auctionclock').countdown($('.container').data("auctionend")*1000, function(event) {
+        $(this).html(event.strftime('Auction ends in: %D days %H:%M:%S'));
+      });
+	  
   });
  $("#auctionsoon").removeClass("d-none").show();
   
