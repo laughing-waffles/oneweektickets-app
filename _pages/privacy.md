@@ -70,6 +70,6 @@ If our store is acquired or merged with another company, your information may be
 
 If you would like to: access, correct, amend or delete any personal information we have about you, register a complaint, or simply want more information contact our Privacy Compliance Officer at getintouch@oneweektickets.com or by mail at:
 
-One Week Tickets
-PO Box 6724
-Austin, TX 78762
+One Week Tickets  
+PO Box 6724  
+Austin, TX 78762  
