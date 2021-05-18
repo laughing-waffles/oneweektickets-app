@@ -9,7 +9,7 @@ title: Events
   <div class="col-xl-4 col-md-6 col-12">
     <div class="mb-4">
       <a href="{{ event.url | absolute_url }}" target="_blank" >
-        <img src="{{ event.hero | absolute_url }}" alt="" class="img-fluid w-100 border-top border-top-5 border-primary rounded-top" />
+        {% cloudinary {{ event.hero | absolute_url }}" alt="" class="img-fluid w-100 border-top border-top-5 border-primary rounded-top" %}
       </a>
       <div class="card-body p-4 border border-top-0 rounded-bottom bg-white">
         <a href="{{ event.url | absolute_url }}" target="_blank">
