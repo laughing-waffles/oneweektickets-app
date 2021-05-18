@@ -114,6 +114,9 @@ function getBids() {
         
         			
       }
+	  
+	  $("#myeventsloading").hide();
+	  $("#myevents").removeClass("d-none").show();
       
 		
 	 },
