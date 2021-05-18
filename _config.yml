@@ -48,11 +48,13 @@ defaults:
       layout: blog-single
       permalink: '/:title'
       is_post: true
+      sitemap: false
   - scope:
       path: _pages
     values:
       layout: page
       permalink: '/:basename/'
+      sitemap: false
   - scope:
       path: _events
     values:
