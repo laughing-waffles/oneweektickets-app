@@ -56,12 +56,7 @@ tidio: true
           <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#slider-bid" aria-controls="slider-bid">
             Get Tickets
           </button>
-          <div id="clock1" class="countdown font-12 text-danger"></div>
-          <script>
-            $('#clock1').countdown('{{ page.auction-end }}', function(event) {
-              $(this).html(event.strftime('Auction ends in: %D days %H:%M:%S'));
-            });
-          </script>
+          <div id="clock1" class="countdown font-12 text-danger auctionclock"></div>
         </div>
 
         <p class="text-center font-14 mt-5 mb-0"><a href="#faq">Not sure? Learn more</a></p>
@@ -80,12 +75,7 @@ tidio: true
                 <li><i class="fas fa-check-circle text-primary"></i> Automatic entry each day</li>
                 <li><i class="fas fa-check-circle text-primary"></i> Change your bid at any time</li>
               </ul>
-              <div id="clock2" class="countdown font-12 text-danger my-4"></div>
-              <script>
-                $('#clock2').countdown('{{ page.auction-end }}', function(event) {
-                  $(this).html(event.strftime('Auction ends in: %D days %H:%M:%S'));
-                });
-              </script>
+              <div id="clock2" class="countdown font-12 text-danger my-4 auctionclock"></div>
               <hr>
             </div>
             {% include form-bid-flow.html %}

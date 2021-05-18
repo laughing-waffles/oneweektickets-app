@@ -17,7 +17,7 @@ $('#status').countdown('{{ page.auction-end }}', {elapse: true})
 
 //determine what the state of the UI should be
 $( document ).ready(function() {
-
+	console.log("Is the event ready");
 var nowNOW = Math.round((new Date()).getTime() / 1000);
 if (nowNOW < $('.container').data("auctionstart")) {
   
