@@ -15,10 +15,42 @@ $('#status').countdown('{{ page.auction-end }}', {elapse: true})
 
 **/
 
-if (Date.now < $('.container').data("auctionstart")) {
-	console.log("Event not yet open");
+//determine what the state of the UI should be
+$( document ).ready(function() {
+
+var nowNOW = Math.round((new Date()).getTime() / 1000);
+if (nowNOW < $('.container').data("auctionstart")) {
+  
+  console.log("Showing countdown");
+  
+  $('#auctionsoon #clock').countdown( $('.container').data("auctionstart")*1000, function(event) {
+	  var format = '%-H:%M:%S';
+	    if(event.offset.totalDays > 0) {
+	      format = '%-d day%!d ' + format;
+	    }
+	    if(event.offset.weeks > 0) {
+	      format = '%-w week%!w ' + format;
+	    }
+	    $(this).html(event.strftime(format));
+  });
+ $("#auctionsoon").removeClass("d-none").show();
+  
+}
+if (nowNOW > $('.container').data("auctionstart") && nowNOW < $('.container').data("auctionend")) {
+	console.log("Auction is live!");
+    $("#auctionlive").removeClass("d-none").show();
+	
+    $('.auctionclock').countdown($('.container').data("auctionend")*1000, function(event) {
+      $(this).html(event.strftime('Auction ends in: %D days %H:%M:%S'));
+    });
 }
 
+if (nowNOW > $('.container').data("auctionend")) {
+	console.log("Auction is over");
+    $("#auctionended").removeClass("d-none").show();
+}
+	
+});
 
 //bid management UI
 
