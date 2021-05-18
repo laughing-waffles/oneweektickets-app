@@ -103,12 +103,23 @@ tidio: true
           <li><i class="fas fa-check-circle text-primary"></i> Change your bid at any time</li>
         </ul>
         <div class="alert alert-warning text-center" role="alert">
+			On-sale: {{page.auction-start | date: "%b %d at %-I:%M%P %Z" }}<br />
           <span id="clock"></span>
         </div>
         <script>
           $('#clock').countdown('{{ page.auction-start }}', function(event) {
-            $(this).html(event.strftime('On-sale: {{page.auction-start | date: "%b %d, %y at %-H:%M" }}<br />Opens in %D days %H:%M:%S'));
-          });
+			  var format = '%-H:%M:%S';
+			    if(event.offset.totalDays > 0) {
+			      format = '%-d day%!d ' + format;
+			    }
+			    if(event.offset.weeks > 0) {
+			      format = '%-w week%!w ' + format;
+			    }
+			    $(this).html(event.strftime(format));
+          }).on('finish.countdown', function(event) {
+  			//do something
+
+		  });
         </script>
 
            </span>
