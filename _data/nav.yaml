@@ -8,7 +8,7 @@ main:
       - title: FAQ
         subtitle: Frequently Asked Questions
         icon: fas fa-info-circle
-        url: /faq
+        url: /faq/
         params: target="_blank"
   - dropdown-title: Sell Tickets
     dropdown-items:
@@ -19,15 +19,15 @@ main:
       - title: Register
         subtitle: Get setup to sell
         icon: fas fa-comments
-        url: /request-demo
+        url: /request-demo/
       - title: FAQ
         subtitle: Frequently Asked Questions
         icon: fas fa-info-circle
-        url: /faq
+        url: /faq/
         params: target="_blank"
 main-loggedin:
   - title: Get help
-    url: /faq
+    url: /faq/
     params: target="_blank"
   - title: Log out
     url: https://auth.oneweektickets.com/v2/logout?returnTo=https://www.oneweektickets.com/
@@ -37,43 +37,43 @@ footer:
       - title: Home
         url: /
       - title: FAQ
-        url: /faq
+        url: /faq/
       - title: Request demo
-        url: /request-demo
+        url: /request-demo/
       - title: Feedback
         url: https://docs.google.com/forms/d/e/1FAIpQLSeDPsLOvDszweFjJk4ugbHJYWyrWec_LIjpQeQclQzS8Ty5uw/viewform?usp=sf_link
 bottom-bar:
   - title: Terms of Service
-    url: /terms
+    url: /terms/
   - title: Privacy Policy
-    url: /privacy
+    url: /privacy/
 account-settings-buyers:
   - title: My Profile
-    url: /u/account-settings/profile
+    url: /u/account-settings/profile/
   - title: Feedback
     url: https://docs.google.com/forms/d/e/1FAIpQLSeDPsLOvDszweFjJk4ugbHJYWyrWec_LIjpQeQclQzS8Ty5uw/viewform?usp=sf_link
     params: target="_blank"
 billing-settings-buyers:
   - title: Payment History
-    url: /u/account-settings/payment-history
+    url: /u/account-settings/payment-history/
 account-settings-sellers:
   - title: Events
-    url: /s/account-settings/events
+    url: /s/account-settings/events/
   - title: My Profile
-    url: /s/account-settings/profile
+    url: /s/account-settings/profile/
   - title: Subscriptions
-    url: /s/account-settings/subscriptions
+    url: /s/account-settings/subscriptions/
   - title: Security
-    url: /s/account-settings/security
+    url: /s/account-settings/security/
   - title: Notificaitons
-    url: /s/account-settings/notifications
+    url: /s/account-settings/notifications/
   - title: Users
-    url: /s/account-settings/users
+    url: /s/account-settings/users/
   - title: Feedback
     url: https://docs.google.com/forms/d/e/1FAIpQLSeDPsLOvDszweFjJk4ugbHJYWyrWec_LIjpQeQclQzS8Ty5uw/viewform?usp=sf_link
     params: target="_blank"
 billing-settings-sellers:
   - title: Plan & Payment
-    url: /s/account-settings/payment-plan
+    url: /s/account-settings/payment-plan/
   - title: Payment History
-    url: /s/account-settings/payment-history
+    url: /s/account-settings/payment-history/
