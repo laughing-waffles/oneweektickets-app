@@ -24,6 +24,5 @@ layout:						default
   }
   const urlParams = new URLSearchParams(window.location.search);
   $("#errordiv").text(urlParams.get('error_description'));
+  Sentry.captureMessage(urlParams.get('error_description'));
 </script>
-  
-  
