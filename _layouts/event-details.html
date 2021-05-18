@@ -25,7 +25,7 @@ tidio: true
  >
  {% endif %}
 
-  <div class="container">
+  <div class="container" date-auctionstart="{{ page.auction-start }}" date-auctionend="{{ page.auction-end }}">
 
     <div class="row align-items-end justify-content-between align-content-end min-vh-80">
       <div class="col-12 col-md-6 col-lg-6 py-md-5 mt-5 text-white">
@@ -116,10 +116,8 @@ tidio: true
 			      format = '%-w week%!w ' + format;
 			    }
 			    $(this).html(event.strftime(format));
-          }).on('finish.countdown', function(event) {
-  			//do something
-
-		  });
+          });
+		 
         </script>
 
            </span>

@@ -15,6 +15,9 @@ $('#status').countdown('{{ page.auction-end }}', {elapse: true})
 
 **/
 
+if (Date.now < $('.container').data("auctionstart")) {
+	console.log("Event not yet open");
+}
 
 
 //bid management UI
