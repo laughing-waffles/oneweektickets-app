@@ -44,7 +44,7 @@ tidio: true
 
       <div class="col-12 col-md-6 col-lg-5 col-xl-4 p-3 p-md-4 p-lg-8 rounded-top bg-white text-dark">
 
-        {% if page.status == 'auction' %}
+        <span id="auctionlive">
         <h2 class="mb-2 d-none d-sm-block">Ticket Auction</h2>
         <p class="d-none d-sm-block">A set of tickets are released every day for the first 7 days that the tickets are available. Each day, the highest bids recieve tickets.</p>
         <ul class="list-unstyled lead my-4 d-none d-sm-block">
@@ -92,7 +92,8 @@ tidio: true
           </div>
         </div>
 
-        {% elsif page.status == 'draft' %}
+	</span>
+	<span id="auctionsoon">
 
         <h2 class="mb-2 d-none d-sm-block">Ticket Auction</h2>
         <p class="d-none d-sm-block">A set of tickets are released every day for the first 7 days that the tickets are available. Each day, the highest bids recieve tickets.</p>
@@ -106,11 +107,12 @@ tidio: true
         </div>
         <script>
           $('#clock').countdown('{{ page.auction-start }}', function(event) {
-            $(this).html(event.strftime('On-sale: {{page.auction-start | date: "%b %d, %y at %H:%M" }}<br />%D days %H:%M:%S'));
+            $(this).html(event.strftime('On-sale: {{page.auction-start | date: "%b %d, %y at %-H:%M" }}<br />Opens in %D days %H:%M:%S'));
           });
         </script>
 
-        {% elsif page.status == 'optimized' %}
+           </span>
+		   <span id="auctionended">
 
         <div class="d-grid gap-2">
           <button class="btn btn-primary" type="button" data-bs-toggle="" data-bs-target="" aria-controls="">
@@ -118,7 +120,7 @@ tidio: true
           </button>
         </div>
 
-        {% endif %}
+</span>
       </div>
     </div>
   </div>
