@@ -45,68 +45,66 @@ tidio: true
       <div class="col-12 col-md-6 col-lg-5 col-xl-4 p-3 p-md-4 p-lg-8 rounded-top bg-white text-dark">
 
         <span id="auctionlive" class='d-none'>
-        <h2 class="mb-2 d-none d-sm-block">Ticket Auction</h2>
-        <p class="d-none d-sm-block">A set of tickets are released every day for the first 7 days that the tickets are available. Each day, the highest bids recieve tickets.</p>
-        <ul class="list-unstyled lead my-4 d-none d-sm-block">
-          <li><i class="fas fa-check-circle text-primary"></i> Enter the price you want to pay</li>
-          <li><i class="fas fa-check-circle text-primary"></i> Automatic entry each day</li>
-          <li><i class="fas fa-check-circle text-primary"></i> Change your bid at any time</li>
-        </ul>
-        <div class="d-grid gap-2">
-          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#slider-bid" aria-controls="slider-bid">
-            Get Tickets
-          </button>
-          <div id="clock1" class="countdown font-12 text-danger auctionclock"></div>
-        </div>
-
-        <p class="text-center font-14 mt-5 mb-0"><a href="#faq">Not sure? Learn more</a></p>
-
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="slider-bid" aria-labelledby="slider-bidLabel">
-          <div class="offcanvas-header bg-primary">
-            <h5 class="offcanvas-title text-white" id="slider-bidLabel">{{ page.title }}</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          <h2 class="mb-2 d-none d-sm-block">Ticket Auction</h2>
+          <p class="d-none d-sm-block">A set of tickets are released every day for the first 7 days that the tickets are available. Each day, the highest bids recieve tickets.</p>
+          <ul class="list-unstyled lead my-4 d-none d-sm-block">
+            <li><i class="fas fa-check-circle text-primary"></i> Enter the price you want to pay</li>
+            <li><i class="fas fa-check-circle text-primary"></i> Automatic entry each day</li>
+            <li><i class="fas fa-check-circle text-primary"></i> Change your bid at any time</li>
+          </ul>
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#slider-bid" aria-controls="slider-bid">
+              Get Tickets
+            </button>
+            <div id="clock1" class="countdown font-12 text-danger auctionclock"></div>
           </div>
-          <div class="offcanvas-body text-dark">
-            <div class="d-sm-none">
-              <h2 class="mb-2">Ticket Auction</h2>
-              <p>A set of tickets are released every day for the first 7 days that the tickets are available. Each day, the highest bids recieve tickets.</p>
-              <ul class="list-unstyled lead my-4">
-                <li><i class="fas fa-check-circle text-primary"></i> Enter the price you want to pay</li>
-                <li><i class="fas fa-check-circle text-primary"></i> Automatic entry each day</li>
-                <li><i class="fas fa-check-circle text-primary"></i> Change your bid at any time</li>
-              </ul>
-              <div id="clock2" class="countdown font-12 text-danger my-4 auctionclock"></div>
-              <hr>
+
+          <p class="text-center font-14 mt-5 mb-0"><a href="#faq">Not sure? Learn more</a></p>
+
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="slider-bid" aria-labelledby="slider-bidLabel">
+            <div class="offcanvas-header bg-primary">
+              <h5 class="offcanvas-title text-white" id="slider-bidLabel">{{ page.title }}</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            {% include form-bid-flow.html %}
+            <div class="offcanvas-body text-dark">
+              <div class="d-sm-none">
+                <h2 class="mb-2">Ticket Auction</h2>
+                <p>A set of tickets are released every day for the first 7 days that the tickets are available. Each day, the highest bids recieve tickets.</p>
+                <ul class="list-unstyled lead my-4">
+                  <li><i class="fas fa-check-circle text-primary"></i> Enter the price you want to pay</li>
+                  <li><i class="fas fa-check-circle text-primary"></i> Automatic entry each day</li>
+                  <li><i class="fas fa-check-circle text-primary"></i> Change your bid at any time</li>
+                </ul>
+                <div id="clock2" class="countdown font-12 text-danger my-4 auctionclock"></div>
+                <hr>
+              </div>
+              {% include form-bid-flow.html %}
+            </div>
           </div>
-        </div>
+        </span>
 
-	</span>
-	<span id="auctionsoon" class='d-none'>
+        <span id="auctionsoon" class='d-none'>
+          <h2 class="mb-2 d-none d-sm-block">Ticket Auction</h2>
+          <p class="d-none d-sm-block">A set of tickets are released every day for the first 7 days that the tickets are available. Each day, the highest bids recieve tickets.</p>
+          <ul class="list-unstyled lead my-4 d-none d-sm-block">
+            <li><i class="fas fa-check-circle text-primary"></i> Enter the price you want to pay</li>
+            <li><i class="fas fa-check-circle text-primary"></i> Automatic entry each day</li>
+          </ul>
+            <li><i class="fas fa-check-circle text-primary"></i> Change your bid at any time</li>
+          <div class="alert alert-warning text-center" role="alert">
+              On-sale: {{page.auction-start | date: "%b %d at %-I:%M%P %Z" }}<br />
+            <span id="clock"></span>
+          </div>
+        </span>
 
-        <h2 class="mb-2 d-none d-sm-block">Ticket Auction</h2>
-        <p class="d-none d-sm-block">A set of tickets are released every day for the first 7 days that the tickets are available. Each day, the highest bids recieve tickets.</p>
-        <ul class="list-unstyled lead my-4 d-none d-sm-block">
-          <li><i class="fas fa-check-circle text-primary"></i> Enter the price you want to pay</li>
-          <li><i class="fas fa-check-circle text-primary"></i> Automatic entry each day</li>
-          <li><i class="fas fa-check-circle text-primary"></i> Change your bid at any time</li>
-        </ul>
-        <div class="alert alert-warning text-center" role="alert">
-			On-sale: {{page.auction-start | date: "%b %d at %-I:%M%P %Z" }}<br />
-          <span id="clock"></span>
-        </div>
-		
-           </span>
-		   <span id="auctionended" class="d-none">
+        <span id="auctionended" class="d-none">
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="button" data-bs-toggle="" data-bs-target="" aria-controls="">
+              Get Tickets
+            </button>
+          </div>
+        </span>
 
-        <div class="d-grid gap-2">
-          <button class="btn btn-primary" type="button" data-bs-toggle="" data-bs-target="" aria-controls="">
-            Get Tickets
-          </button>
-        </div>
-
-</span>
       </div>
     </div>
   </div>
