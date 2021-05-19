@@ -54,10 +54,8 @@ function enterBid() {
 	console.log("prep bid");
 	const amountAsCent = Math.round(parseFloat(amt * 100));
 $.ajax({ 
-url: 'https://oneweek-tickets.uc.r.appspot.com/api/bid/1',
+url: 'https://oneweektickets.com/api/bid/1',
 //TODO event-id(1) is hardcoded, should be dynamic = https://oneweektickets.com/api/bid/1
-//TODO redirection to oneweektickets.com/api does not work, needs to be fixed
-//'https://oneweektickets.com/api/event/' + urlParams.get('event'),
 type: 'post',
 beforeSend: function (xhr) {
     xhr.setRequestHeader('Authorization', 'Bearer ' + $("body").data('auth'));

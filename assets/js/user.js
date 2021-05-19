@@ -63,10 +63,8 @@ window.onload = async () => {
 function getBids() {
 	var latest;
 	$.ajax({ 
-	url: 'https://oneweek-tickets.uc.r.appspot.com/api/bid/1',
+	url: 'https://oneweektickets.com/api/bid/1',
 	//TODO event-id(1) is hardcoded, should be dynamic = https://oneweektickets.com/api/bid/1
-	//TODO redirection to oneweektickets.com/api does not work, needs to be fixed
-	//'https://oneweektickets.com/api/event/' + urlParams.get('event'),
 	type: 'GET',
 	beforeSend: function (xhr) {
 	    xhr.setRequestHeader('Authorization', 'Bearer ' + $("body").data('auth'));
@@ -142,10 +140,8 @@ function cancelBid(which) {
   var r = confirm("Are you sure you want to cancel your bid?\nThis will fully withdraw your bid.");
   if (r == true) {
 	$.ajax({ 
-	url: 'https://oneweek-tickets.uc.r.appspot.com/api/bid/cancel/' + which,
+	url: 'https://oneweektickets.com/api/bid/cancel/' + which,
 	//TODO event-id(1) is hardcoded, should be dynamic = https://oneweektickets.com/api/bid/1
-	//TODO redirection to oneweektickets.com/api does not work, needs to be fixed
-	//'https://oneweektickets.com/api/event/' + urlParams.get('event'),
 	type: 'POST',
 	beforeSend: function (xhr) {
 	    xhr.setRequestHeader('Authorization', 'Bearer ' + $("body").data('auth'));
