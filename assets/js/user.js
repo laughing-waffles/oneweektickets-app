@@ -112,7 +112,15 @@ function getBids() {
         
         			
       }
-      
+	  
+	  $("#myeventsloading").hide();
+	  if ($(result).length == 0) {
+		  $("#myeventsnone").removeClass("d-none").show();
+		  
+		  }
+	  else {
+	  $("#myevents").removeClass("d-none").show();
+  }
 		
 	 },
 	error: function () { 
