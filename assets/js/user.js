@@ -85,7 +85,8 @@ function getBids() {
 		}
 		console.log(result[latest]);
 		$("#eventname").text(result[latest].name);
-		$("#bid").text(result[latest].quantity + " tickets at " + currency(result[latest].amount/100).format() + " each, plus tax");
+    if (result[latest].quantity > 1) { plural = "s"; each = " each"; } else { plural = ''; each = ""; }
+		$("#bid").text(result[latest].quantity + " ticket" + plural + " at " + currency(result[latest].amount/100).format() + each + ", plus tax");
 		
 
       switch (result[latest].state) {
