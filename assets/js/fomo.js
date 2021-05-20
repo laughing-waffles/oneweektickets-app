@@ -99,12 +99,8 @@ $("#amt").keyup(function () {
 });
 var loginType;
 $(".loginbtn").click(function () {
-	if ($("#termsagreed").prop("checked") === true) {
 			loginType = $(this).data("logintype");
 			login();
-	} else {
-			doBounce($("#termsagreed").parent(), 3, "10px", 300);
-	}
 	event.preventDefault();
 	event.stopPropagation();
 });

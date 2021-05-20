@@ -14,6 +14,17 @@
   <div class="row">
     <div class="col-12">
       <div class="collapse multi-collapse show" id="multiCollapseExample1">
+
+        <div class="row text-centered bg-success-soft">
+          <span class="">
+            <i class="fas fa-ticket-alt"></i>
+            <strong><em>Verified</em></strong>Auction
+          </span>
+        </div>
+
+
+
+
           <label for="qty">Number of tickets</label>
           <select class="form-select" id="qty" aria-label="Quantity of tickets" required>
             <option value="1" selected>1 Ticket</option>
@@ -72,19 +83,40 @@
 
           <div class="row justify-content-between">
             <div class="col-7" >
-              <p>Taxes & Service Fees <a href="#" class="text-dark small" data-bs-toggle="tooltip" data-bs-placement="top" title="This fee is inclusive of taxes."><i class="far fa-question-circle"></i></a></p>
+              <p>
+                Taxes & Service Fees
+                <a data-bs-toggle="collapse" href="#collapseFees" role="button" aria-expanded="false" aria-controls="collapseFees">
+                  <span class="rotate"><i class="fas fa-chevron-right "></i></span>
+                </a>
             </div>
             <div class="col-4" id="listfee">
               <p>$0.00</p>
+            </div>
+            <div class="collapse" id="collapseFees">
+              <div class="card card-body bg-light">
+                <p class="mb-0"><small>text</p></small>
+                <p class="mb-0"><small>text</small></p>
+              </div>
             </div>
           </div>
 
           <div class="row justify-content-between">
             <div class="col-6" >
-              <p>Shipping <a href="#" class="text-dark small" data-bs-toggle="tooltip" data-bs-placement="top" title="Your ticket will be available to pick up at the venue the day of the event."><i class="far fa-question-circle"></i></a></p>
+              <p>
+                Delivery 
+                <a data-bs-toggle="collapse" href="#collapseDelivery" role="button" aria-expanded="false" aria-controls="collapseDelivery">
+                  <i class="fas fa-chevron-right rotate"></i>
+                </a>
+              </p>
             </div>
             <div class="col-4" id="listfee">
               <p>Free</p>
+            </div>
+            <div class="collapse" id="collapseDelivery">
+              <div class="card card-body bg-light">
+                <p class="mb-0"><small>Will-Call Pickup</p></small>
+                <p class="mb-0"><small>Your ticket will be available to pick up at the venue the day of the event.</small></p>
+              </div>
             </div>
           </div>
 
@@ -99,22 +131,19 @@
 
         </div>
 
-        <div class="form-check mb-3">
-          <input class="form-check-input" type="checkbox" id="termsagreed" />
-          <label class="form-check-label" for="termsagreed"> I agree to the <a href="{{'terms' | absolute_url}}" target="_block">terms</a>. </label>
-        </div>
+        <p>By continuing past this page, you agree to our <a href="{{'terms' | absolute_url}}" target="_block">terms</a>.</p>
+
         <div class="d-grid gap-2">
-          <button class="btn btn-primary loginbtn" href="#bid-module" href="#bid-module" role="button" data-bs-slide-to="3" data-logintype="signup">Sign up to place bid</button>
-        </div>
-        <!-- TODO: Center? -->
-        <div class="d-grid gap-2 mx-auto">
-          <a href="#" class="loginbtn" data-logintype="login">Already have an account? Login</a>
+          <button class="btn btn-primary loginbtn" href="#bid-module" role="button" data-bs-slide-to="3" data-logintype="signup"><i class="fas fa-lock"></i> Sign up to place bid</button>
+          <button class="btn btn-link loginbtn" href="#" class="loginbtn" data-logintype="login">Already have an account? Login</button>
         </div>
       </div>
     </div>
   </div>
 </form>
+
 <script>
+  // Define tooltip positions 
   $(document).ready(function () {
     $('[data-bs-toggle="tooltip"]').tooltip();
     $(".tip-top").tooltip({ placement: "top" });
@@ -123,6 +152,28 @@
     $(".tip-left").tooltip({ placement: "left" });
   });
 </script>
+<script >
+  // Rotate carrot on-click in bid summary pannel 
+  // Based on http://jsfiddle.net/koala_dev/3v2egwfs/7/
+  $(document).ready(function () {
+    $(".rotate").click(function(){
+    $(this).toggleClass("down")  ; 
+  })
+});
+</script>
+
+<style>
+  .rotate{
+    -moz-transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+  }
+  .rotate.down{
+    -moz-transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    transform:rotate(90deg);
+  }
+</style>
 
 <script src="{{ '/' | absolute_url }}{% ministamp assets/js/fomo.js assets/js/fomo.js %}"></script>
 <script src="https://cdn.auth0.com/js/auth0-spa-js/1.14/auth0-spa-js.production.js"></script>

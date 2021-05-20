@@ -29,7 +29,7 @@ tidio: true
 	  
     <div class="row align-items-end justify-content-between align-content-end min-vh-80">
       <div class="col-12 col-md-6 col-lg-6 py-md-5 mt-5 text-white">
-        <p1 style="mb-0 font-size-14 text-uppercase fw-light">{{ page.event-date | date: "%B %e, %Y" }} <span>&#183;</span> {{page.doors}}</p1>
+        <p style="mb-0 font-size-14 text-uppercase fw-light">{{ page.event-date | date: "%B %e, %Y" }} <span>&#183;</span> {{page.doors}}</p>
         <h1 class="mb-3 display-5 text-white">
           {{ page.title }}
         </h1>
@@ -56,8 +56,227 @@ tidio: true
             <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#slider-bid" aria-controls="slider-bid">
               Get Tickets
             </button>
-            <div id="clock1" class="countdown font-12 text-danger auctionclock"></div>
+
+            <!-- Button trigger modal -->
+            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalBid">
+              Get Tickets (modal)
+            </button>
+
+
+
+            <div id="clock1" class="countdown font-12 text-danger text-center auctionclock"></div>
           </div>
+
+
+
+
+
+          <!-- Modal -->
+          <div class="modal fade" id="modalBid" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="modalBidLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl modal-fullscreen-md-down">
+              <div class="modal-content rounded-0">
+                <div class="modal-body p-0">
+                  <div class="container-fluid p-0">
+                    <div class="row g-0">
+                      <div class="col-md-8 p-5">
+                        <div class="row text-center border-1 border-bottom border-light mb-4 pb-4">
+                          <h5>{{ page.title }}</h5>
+                          <p class="small">{{ page.event-date | date: "%B %e, %Y" }} <span>&#183;</span> {{page.doors}}</p>
+                        </div>
+
+                        <div class="row justify-content-between border-1 border-bottom border-light mb-4 pb-4">
+                          <div class="col col-md-9">
+                            <p class="fs-3 fw-bold">Tickets</p>
+                            <p class="fs-4 fw-bold mb-0">General Admission</p>
+                            <p class="small">
+                              <span class="badge rounded-pill bg-success-soft">
+                                <i class="fas fa-ticket-alt"></i>
+                                <strong><em>Verified</em></strong>Auction
+                              </span>
+                              ending in 2 days
+                            </p>
+                            <a class="text-reset small" data-bs-toggle="collapse" href="#collapseTicketsHelp" role="button" aria-expanded="false" aria-controls="collapseTicketsHelp">
+                              What does this mean?
+                            </a>
+                            <div class="collapse" id="collapseTicketsHelp">
+                              <div class="card card-body border-0 p-0">
+                                One Week helps you get a ticket to the show, without having to pay exorbitant prices from ticket resellers. We’re cutting out the middleman.
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col col-md-3">
+                            <select class="form-select" id="qty" aria-label="Quantity of tickets" required>
+                              <option value="1" selected>1 Ticket</option>
+                              <option value="2">2 Tickets</option>
+                              <option value="3">3 Tickets</option>
+                              <option value="4">4 Tickets</option>
+                              <option value="5">5 Tickets</option>
+                              <option value="6">6 Tickets</option>
+                              <option value="7">7 Tickets</option>
+                              <option value="8">8 Tickets</option>
+                              <option value="9">9 Tickets</option>
+                              <option value="10">10 Tickets</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="row justify-content-between mb-4 pb-4">
+                          <div class="col col-md-9">
+                            <p class="fs-3 fw-bold">Price</p>
+                            <p class="fs-4 fw-bold mb-0">Pay what you want</p>
+                            <a class="text-reset small" data-bs-toggle="collapse" href="#collapsePriceHelp" role="button" aria-expanded="false" aria-controls="collapsePriceHelp">
+                              How much should I bid?
+                            </a>
+                            <div class="collapse" id="collapsePriceHelp">
+                              <div class="card card-body border-0 p-0">
+                                You should bid what you think is reasonable to pay for one ticket to this event.
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col col-md-3">
+                            <div class="input-group">
+                              <span class="input-group-text bg-white border-end-0">$</span>
+                              <input type="number" id="amt" class="form-control border-start-0" placeholder="" min="1" max="999" aria-label="Amount (to the nearest dollar)" />
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+
+
+
+                      <div class="col-md-4 ms-auto bg-light p-0">
+
+                        <div class="row g-0">
+                          <div class="position-relative">
+                            <img src="{{ page.hero | absolute_url }}" alt="{{ page.title }}" class="img-fluid mb-5" />  
+                            <div class="position-absolute top-0 end-0">
+                              <button type="button" data-bs-dismiss="modal" aria-label="Close">
+                                <i class="fas fa-times text-light font-30"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row g-0 p-3">
+
+                          <h2 class="mb-2">Your Bid</h2>
+                          <p class="">This is the offer you will submit for these tickets.</p>
+                
+                          <div class="row justify-content-between g-0">
+                            <div class="col-6" >
+                              <p>Quantity</p>
+                            </div>
+                            <div class="col-4" id="listqty">
+                              <p>1</p>
+                            </div>
+                          </div>
+                
+                          <div class="row justify-content-between g-0">
+                            <div class="col-6" >
+                              <p>Bid, per ticket</p>
+                            </div>
+                            <div class="col-4" id="listbid">
+                              <p>$0.00</p>
+                            </div>
+                          </div>
+                
+                          <div class="row justify-content-between g-0">
+                            <div class="col-6" >
+                              <p>Subtotal</p>
+                            </div>
+                            <div class="col-4" id="listsub">
+                              <p>$0.00</p>
+                            </div>
+                          </div>
+                
+                          <div class="row justify-content-between g-0">
+                            <div class="col-7" >
+                              <a class="text-reset" data-bs-toggle="collapse" href="#collapseFees" role="button" aria-expanded="false" aria-controls="collapseFees">
+                                Taxes & Service Fees <i class="fas fa-chevron-right rotate"></i>
+                              </a>
+                            </div>
+                            <div class="col-4" id="listfee">
+                              <p>$0.00</p>
+                            </div>
+                            <div class="collapse" id="collapseFees">
+                              <p class="mb-0 small">text</p>
+                              <p class="mb-0 small">text</p>
+                            </div>
+                          </div>
+                
+                          <div class="row justify-content-between g-0">
+                            <div class="col-6" >
+                              <a class="text-reset" data-bs-toggle="collapse" href="#collapseDelivery" role="button" aria-expanded="false" aria-controls="collapseDelivery">
+                                Delivery <i class="fas fa-chevron-right rotate"></i>
+                              </a>
+                            </div>
+                            <div class="col-4" id="listfee">
+                              <p>Free</p>
+                            </div>
+                            <div class="collapse" id="collapseDelivery">
+                              <p class="mb-0 small">Will-Call Pickup</p>
+                              <p class="mb-0 small">Your ticket will be available to pick up at the venue the day of the event.</p>
+                            </div>
+                          </div>
+                
+                          <div class="row justify-content-between g-0">
+                            <div class="col-6" >
+                              <p class="fw-bold">Total</p>
+                            </div>
+                            <div class="col-4" id="listtotal">
+                              <p class="fw-bold">$0.00</p>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="modal-footer">
+
+                      <p class="me-auto">Powered by <strong><em>OneWeek</strong>Tickets</em></p>
+
+
+                  <button class="btn btn-link loginbtn" href="#" class="loginbtn" data-logintype="login">Already have an account? Login</button>
+                  <button class="btn btn-primary loginbtn" href="#bid-module" role="button" data-bs-slide-to="3" data-logintype="signup"><i class="fas fa-lock"></i> Sign up to place bid</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
           <p class="text-center font-14 mt-5 mb-0"><a href="#faq">Not sure? Learn more</a></p>
 
@@ -117,7 +336,7 @@ tidio: true
       <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="alert alert-info" role="alert">
           <p>
-            <strong>What am I bidding on?</strong> The {{ page.title }} show at the {{ page.venue }} on {{ page.event-date }} is selling tickets using One Week. One Week helps <u>you</u> get a ticket to the show, without having to pay
+            <span class="fw-bold">What am I bidding on?</span> The {{ page.title }} show at the {{ page.venue }} on {{ page.event-date }} is selling tickets using One Week. One Week helps <u>you</u> get a ticket to the show, without having to pay
             exorbitant prices from ticket resellers. We’re cutting out the middleman.
           </p>
         </div>
