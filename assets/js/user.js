@@ -92,7 +92,9 @@ function getBids() {
       case 'CANCEL':
 		  $("#eventstate").addClass("badge bg-dark-soft");
         $('#eventstate').text("Bid Withdrawn");
-        $('.cancelbtn').hide();
+        $('.cancelopt').hide();
+        $('.cancelopt').text("Place new bid");
+        
         break;
       case 'ACTIVE':
 		  $("#eventstate").addClass("badge bg-warning-soft");
@@ -101,12 +103,14 @@ function getBids() {
         break;
       case 'ENDED':
 		  $("#eventstate").addClass("badge bg-danger-soft");
-		  
+		  $('.cancelopt').hide();
+      $('.updateopt').hide();
                 $('#eventstate').text("Bid Lost");
         break;
       case 'PURCHASE_COMPLETE':
 		  $("#eventstate").addClass("badge bg-success-soft");
-		  
+		  $('.cancelopt').hide();
+      $('.updateopt').hide();
                 $('#eventstate').text("Bid Won!");
         break;
         
