@@ -3,11 +3,12 @@ name: Jekyll Deploy
 on:
   push:
     branches:
-      - main
+      - production
+      - staging
 
 jobs:
   jekyll:
-    name: Build and deploy Jekyll site
+    name: Build and deploy site
     runs-on: ubuntu-latest
 
     steps:
@@ -17,7 +18,8 @@ jobs:
     - name: Build
       uses: jerryjvl/jekyll-build-action@v1
 
-    - name: Upload to GCP Bucket
+    - name: Upload to Production GCP Bucket
+	    if github.ref == 'refs/heads/production'
       uses: weslenng/gcp-storage-sync@master
       with:
         args: -d
@@ -25,6 +27,16 @@ jobs:
         GCP_SERVICE_ACCOUNT_KEY_FILE: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY_FILE }}
         GCP_STORAGE_BUCKET: ${{ secrets.GCP_STORAGE_BUCKET }}
         SOURCE_DIR: "_site"
+ 
+    - name: Upload to Staging GCP Bucket
+      if github.ref == 'refs/heads/staging'
+      uses: weslenng/gcp-storage-sync@master
+      with:
+       args: -d
+      env:
+       GCP_SERVICE_ACCOUNT_KEY_FILE: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY_FILE }}
+       GCP_STORAGE_BUCKET: ${{ secrets.GCP_STORAGE_BUCKET_STAGING }}
+       SOURCE_DIR: "_site"
  
 
 
