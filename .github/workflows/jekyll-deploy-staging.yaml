@@ -3,7 +3,7 @@ name: Jekyll Deploy
 on:
   push:
     branches:
-      - production
+      - staging
 
 jobs:
   jekyll:
@@ -23,7 +23,7 @@ jobs:
         args: -d
       env:
         GCP_SERVICE_ACCOUNT_KEY_FILE: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY_FILE }}
-        GCP_STORAGE_BUCKET: ${{ secrets.GCP_STORAGE_BUCKET }}
+        GCP_STORAGE_BUCKET: ${{ secrets.GCP_STORAGE_BUCKET_STAGING }}
         SOURCE_DIR: "_site"
  
 
