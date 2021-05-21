@@ -30,8 +30,6 @@ jobs:
         bundle install --jobs 4 --retry 3
     - name: Build Jekyll site
       run:  bundle exec jekyll build --config _config.yml,_config-staging.yml
-    - name: Remove .html suffixes except for index.html
-      run: find _site -name "*.html" -not -name "index.html" | while read f; do mv "$f" "${f%.html}"
     - name: Upload to GCP Bucket
       uses: weslenng/gcp-storage-sync@master
       with:
