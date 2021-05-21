@@ -13,12 +13,11 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-
-      - restore_cache:
-          key: jekyll-{{ .Branch }}-{{ checksum "Gemfile" }}
-      - run:
-          name: Update gems
-          command: gem update --system
+    - restore_cache:
+      key: jekyll-{{ .Branch }}-{{ checksum "Gemfile" }}
+    - run:
+      name: Update gems
+      command: gem update --system
       - run:
           name: Install dependencies
           command: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
