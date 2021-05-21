@@ -13,10 +13,25 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-
-    - name: Build
-      uses: jerryjvl/jekyll-build-action@v1
-
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.0.0
+    - name: Ruby gem cache
+      uses: actions/cache@v1
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
+    - name: Install dependencies
+      run: |
+        bundle config path vendor/bundle
+        bundle install --jobs 4 --retry 3
+    - name: Build Jekyll site
+      run:  bundle exec jekyll build --config _config.yml,_config-staging.yml
+    - name: Remove .html suffixes except for index.html
+      run: find _site -name "*.html" -not -name "index.html" | while read f; do mv "$f" "${f%.html}"
     - name: Upload to GCP Bucket
       uses: weslenng/gcp-storage-sync@master
       with:
