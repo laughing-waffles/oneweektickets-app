@@ -4,7 +4,7 @@
 
 <!-- Modal -->
 <div class="modal text-dark" id="modal-event-details" tabindex="-1" role="dialog" aria-labelledby="modal-event-details" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-xl m-sm-auto m-0" role="document">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl modal-fullscreen-lg-down" role="document">
     <div class="modal-content">
       <div class="modal-header border-0">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -45,7 +45,26 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-primary" data-bs-target="#modalBid" data-bs-toggle="modal" data-bs-dismiss="modal">Get Tickets</button>
+        <div class="container-fluid p-0">
+          <div class="row justify-content-between">
+            <div class="col-12 col-lg-5 col-xl-4 order-lg-2">
+              <div class="d-grid gap-2">
+                <!-- <button class="btn btn-link loginbtn" href="#" class="loginbtn" data-logintype="login">Already have an account? Login</button> -->
+                <button class="btn btn-primary" data-bs-target="#modalBid" data-bs-toggle="modal" data-bs-dismiss="modal">Get Tickets</button>
+              </div>
+            </div>
+            <div class="col-12 col-lg-7 col-xl-8 order-lg-1 mt-2">
+              <p class="me-auto text-center text-lg-start mb-0">
+                Powered by <em><strong>OneWeek</strong>Tickets</em>
+                <span class="badge rounded-pill bg-success-soft">
+                  <!-- <i class="fas fa-ticket-alt"></i> -->
+                  <i class="fas fa-lock"></i>
+                  <strong><em>Verified</em></strong>Auction
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
