@@ -31,7 +31,8 @@ tidio: true
         {% endfor %}
         <p class="my-3 lead">{{ page.city }} <span>&#183;</span> {{ page.venue }}</p>
         <p>
-          {{ content | truncatewords: 20 }} {% include modal-event-details.html %}
+          {{ content | truncatewords: 20 }}
+          {% include modal-event-details.html %}
         </p>
       </div>
 
@@ -52,7 +53,7 @@ tidio: true
             <li><i class="fas fa-check-circle text-primary"></i> Change your bid at any time</li>
           </ul>
           <div class="d-grid gap-2">
-            {% include form-bid-flow.html button-text="Get Tickets" %}
+            {% include modal-event-bid-flow.html button-text="Get Tickets" %}
           </div>
           <p class="text-center font-14 mt-5 mb-0"><a href="#faq">Not sure? Learn more</a></p>
         </span>
