@@ -25,7 +25,9 @@ tidio: true
           {{ page.title }}
         </h1>
         {% for performer in page.performers %}
-        <span class="badge border border-light text-light mb-1">{{ performer.name }}</span>
+        <a href="#" class="text-primary" data-bs-toggle="modal" data-bs-target="#modal-event-details">
+          <span class="badge border border-light text-light mb-1">{{ performer.name }}</span>
+        </a>
         {% endfor %}
         <p class="my-3 lead">{{ page.city }} <span>&#183;</span> {{ page.venue }}</p>
         <p>
@@ -43,16 +45,14 @@ tidio: true
 
         <!-- Display if the auction is live -->
         <span id="auctionlive" class="d-none">
-          <h2 class="mb-2 d-none d-sm-block">Ticket Auction</h2>
-          <p class="d-none d-sm-block small">A set of tickets are released every day for the first 7 days that the tickets are available. Each day, the highest bids recieve tickets.</p>
-          <ul class="list-unstyled my-4 d-none d-sm-block">
-            <li><i class="fas fa-check-circle text-primary"></i> Enter the price you want to pay</li>
-            <li><i class="fas fa-check-circle text-primary"></i> Automatic entry each day</li>
-            <li><i class="fas fa-check-circle text-primary"></i> Change your bid at any time</li>
-          </ul>
-          <div class="d-grid gap-2">
-            {% include modal-event-bid-flow.html button-text="Get Tickets" %}
-          </div>
+          <span class="d-none d-md-block">
+            <h2 class="mb-2 d-none d-sm-block">Ticket Auction</h2>
+            {% include auction-usp-explainer.html %}
+          </span>
+
+          {% assign event = page.event-data %}
+          {% include modal-event-bid-flow.html button-text="Get Tickets" %}
+
           <p class="text-center font-14 mt-5 mb-0"><a href="#faq">Not sure? Learn more</a></p>
         </span>
 
