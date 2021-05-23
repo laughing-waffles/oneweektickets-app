@@ -26,25 +26,23 @@
             <div class="col-12 col-lg-7 col-xl-8 p-3 p-lg-5">
               <div class="row text-center border-1 border-bottom border-light mb-4 pb-2">
                 <div class="position-relative">
-                  <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 bg-light-primary rounded-circle font-18 p-3 m-2 d-lg-none" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <button type="button" class="btn-close btn-close position-absolute top-0 end-0 p-2 d-lg-none" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <h5>{{ page.title }}</h5>
-                <p class="small">{{ page.event-date | date: "%B %e, %Y" }} <span>&#183;</span> {{page.doors}}</p>
+                <h4>{{ page.title }}</h4>
+                <p class="small">{{ page.event-date | date: "%B %e, %Y" }} <span>&#183;</span> {{page.doors}} <span>&#183;</span> {{ page.city }} <span>&#183;</span> {{ page.venue }}</p>
               </div>
 
               <div class="row justify-content-between mb-4 pb-2">
                 <div class="col-12 col-lg-9">
                   <p class="h4 fw-bold">Tickets</p>
                   <p class="h5 fw-bold mb-0">General Admission</p>
-                  <p class="small mb-0">
-                    <div id="clock1" class="countdown small text-danger auctionclock"></div>
-                    <a class="text-reset small" data-bs-toggle="collapse" href="#collapseTicketsHelp" role="button" aria-expanded="false" aria-controls="collapseTicketsHelp">
-                      What does this mean? <i class="far fa-question-circle small"></i>
-                    </a>
-                    <div class="collapse" id="collapseTicketsHelp">
-                      <p class="small">One Week helps you get a ticket to the show, without having to pay exorbitant prices from ticket resellers. We’re cutting out the middleman.</p>
-                    </div>
-                  </p>
+                  <div id="clock1" class="countdown small text-danger auctionclock"></div>
+                  <a class="text-reset small" data-bs-toggle="collapse" href="#collapseTicketsHelp" role="button" aria-expanded="false" aria-controls="collapseTicketsHelp">
+                    What does this mean? <i class="far fa-question-circle small"></i>
+                  </a>  
+                  <div class="collapse" id="collapseTicketsHelp">
+                    <p class="small">One Week helps you get a ticket to the show, without having to pay exorbitant prices from ticket resellers. We’re cutting out the middleman.</p>
+                  </div>
                 </div>
 
                 <div class="col-12 col-lg-3">
@@ -88,12 +86,12 @@
             <div class="col-12 col-lg-5 col-xl-4 bg-light p-0">
               <div class="row g-0 d-none d-lg-block">
                 <img src="{{ page.hero | absolute_url }}" alt="{{ page.title }}" class="img-fluid mb-5" />
-                <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 bg-light-primary rounded-circle font-18 p-3 m-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 p-3 m-2" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
 
               <div class="row g-0 p-3 small">
-                <h2 class="mb-2">Your Bid</h2>
-                <p class="">This is the offer you will submit for these tickets.</p>
+                <h4 class="mb-2">Your Bid</h4>
+                <p>This is the offer you will submit for these tickets.</p>
 
                 <div class="row justify-content-between g-0">
                   <div class="col-6">
@@ -179,7 +177,7 @@
                 Powered by <em><strong>OneWeek</strong>Tickets</em>
                 <span class="badge rounded-pill bg-success-soft">
                   <!-- <i class="fas fa-ticket-alt"></i> -->
-                  <i class="fas fa-lock"></i>
+                  <i class="fas fa-check-circle"></i>
                   <strong><em>Verified</em></strong>Auction
                 </span>
               </p>

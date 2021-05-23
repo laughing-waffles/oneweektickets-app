@@ -29,7 +29,7 @@ tidio: true
         {% endfor %}
         <p class="my-3 lead">{{ page.city }} <span>&#183;</span> {{ page.venue }}</p>
         <p>
-          {{ content | truncatewords: 20 }}
+          {{ content | truncatewords: 20 }} 
           {% include modal-event-details.html %}
         </p>
       </div>
@@ -44,8 +44,8 @@ tidio: true
         <!-- Display if the auction is live -->
         <span id="auctionlive" class="d-none">
           <h2 class="mb-2 d-none d-sm-block">Ticket Auction</h2>
-          <p class="d-none d-sm-block">A set of tickets are released every day for the first 7 days that the tickets are available. Each day, the highest bids recieve tickets.</p>
-          <ul class="list-unstyled lead my-4 d-none d-sm-block">
+          <p class="d-none d-sm-block small">A set of tickets are released every day for the first 7 days that the tickets are available. Each day, the highest bids recieve tickets.</p>
+          <ul class="list-unstyled my-4 d-none d-sm-block">
             <li><i class="fas fa-check-circle text-primary"></i> Enter the price you want to pay</li>
             <li><i class="fas fa-check-circle text-primary"></i> Automatic entry each day</li>
             <li><i class="fas fa-check-circle text-primary"></i> Change your bid at any time</li>
