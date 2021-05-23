@@ -11,7 +11,6 @@ const configureClient = async () => {
   });
 };
 window.onload = async () => {
-  $("#messageload").text("Logging you in...");
   await configureClient();
   const isAuthenticated = await auth0.isAuthenticated();
 
@@ -32,7 +31,6 @@ window.onload = async () => {
     }
 
     console.log(JSON.stringify(await auth0.getUser()));
-    $("#messageload").text("");
     $("body").data("auth", await auth0.getTokenSilently());
     var userInfo = await auth0.getUser();
 
@@ -118,7 +116,6 @@ function getBids() {
       }
     },
     error: function () {
-      $("#messageload").text("Oops!");
       $("#errorload").text("API error");
     },
   });
