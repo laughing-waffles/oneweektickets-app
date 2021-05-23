@@ -139,10 +139,6 @@ compress_html:
   blanklines: false
   ignore:
     envs: []
-minibundle:
-  minifier_commands:
-    css: _bin/remove_whitespace
-    js: node_modules/.bin/uglifyjs
 pagination:
   enabled: false
   per_page: 9
