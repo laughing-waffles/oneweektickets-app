@@ -89,8 +89,9 @@ $("#qty").change(function () {
   runMath();
 });
 $("#amt").keyup(function () {
-  if ($("#amt").val() !== "") {
+  if ($("#amt").val() !== "" && Math.floor($("#amt").val()) !== "0") {
     runMath();
+    console.log('run math');
   } else {
     event.preventDefault();
     event.stopPropagation();
@@ -99,10 +100,16 @@ $("#amt").keyup(function () {
 });
 var loginType;
 $(".loginbtn").click(function () {
+   if ($("#amt").val() !== "" && Math.floor($("#amt").val()) !== "0") {
   loginType = $(this).data("logintype");
   login();
   event.preventDefault();
   event.stopPropagation();
+} else {
+  event.preventDefault();
+  event.stopPropagation();
+  doBounce($("#amt").parent(), 3, "10px", 300);
+}
 });
 
 let auth0 = null;
