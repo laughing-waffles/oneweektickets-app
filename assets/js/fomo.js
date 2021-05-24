@@ -80,8 +80,10 @@ function runMath() {
   $("#listbid").data("raw", currency($("#amt").val()));
   $("#listsub").text(currency($("#amt").val() * $("#qty").val()).format());
   $("#listsub").data("raw", currency($("#amt").val() * $("#qty").val()).format());
-  $("#listfee").text(currency($("#amt").val()).multiply($("#qty").val()).multiply(0.07).format());
-  $("#listfee").data("raw", currency($("#amt").val()).multiply($("#qty").val()).multiply(0.07));
+  $("#listfee").text(currency($("#amt").val()).multiply($("#qty").val()).multiply(0.235).format());
+  $("#listfee").data("raw", currency($("#amt").val()).multiply($("#qty").val()).multiply(0.235));
+  $("#listservice").text(currency($("#amt").val()).multiply($("#qty").val()).multiply(0.15).format());
+  $("#listtax").text(currency($("#amt").val()).multiply($("#qty").val()).multiply(0.085).format());
   $("#listtotal").text(currency($("#listfee").data("raw")).add($("#listsub").data("raw")).format());
   $("#overview").slideDown();
 }
