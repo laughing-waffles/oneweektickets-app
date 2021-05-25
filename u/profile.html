@@ -7,27 +7,34 @@ title:            Profile
     display: none;
   }
 </style>
-<div id="myeventsloading">Put a spinner here, don't change the ID
-        <div id="messageload"></div>
-        <div id="errorload"></div>
-</div>
-<div id="myeventsnone" class="d-none">You haven't bid on any events yet.</div>
-<div class="col-lg-9 col-md-8 col-12 d-none" id="myevents">
+
+<div class="col-lg-9 col-md-8 col-12">
   <div class="card mb-4">
     <!-- card header -->
     <div class="card-header bg-white p-4 d-flex justify-content-between align-items-center">
       <h4 class="mb-0">My Events</h4>
-      <!-- error panel -->
-      <div>
-       
-      </div>
     </div>
 
     <!-- card body -->
     <div class="card-body p-4">
       <ul class="list-group list-group-flush">
         <li class="list-group-item px-0 py-3">
-          <div class="row">
+
+          <!-- error / loading panel -->
+          <div class="row" id="myeventsloading">
+            <div class="d-flex justify-content-center">
+              <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </div>
+            <div id="messageload"></div>
+            <div id="errorload"></div>
+          </div>
+          <div id="myeventsnone" class="d-none">
+            You haven't bid on any events yet.
+          </div>          
+
+          <div class="row d-none" id="myevents">
 
             <!-- Event details -->
             <div class="col-12 col-lg-3 mb-3">
@@ -57,34 +64,14 @@ title:            Profile
               <h5>Actions</h5>
 
               <!-- Update bid button trigger modal -->
-              <button type="button" class="btn btn-primary btn-sm me-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                Update bid
-              </button>
 
               <!-- Cancel bid button trigger modal -->
-              <button type="button" class="btn btn-link btn-sm text-danger" data-bs-toggle="modal" data-bs-target="#cancelBid">
+              <button type="button" class="btn btn-link btn-sm text-danger cancelopt" data-bs-toggle="modal" data-bs-target="#cancelBid">
                 Cancel bid
               </button>
 
-              <!-- Update bid modal -->
-              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="updateBid" aria-hidden="true">
-                <div class="modal-dialog modal-fullscreen-md-down modal-dialog-centered modal-dialog-scrollable">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="updateBid">Update bid</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <div>
-                        <iframe src="{{ 'u/account-settings/profile/update-bid/' | relative_url }}" width="100%" height="680" frameborder="0" allowtransparency="true"></iframe>  
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
               <!-- Cancel bid modal -->
-              <div class="modal fade" id="cancelBid" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="cancelBidLabel" aria-hidden="true">
+              <div class="modal" id="cancelBid" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="cancelBidLabel" aria-hidden="true">
                 <div class="modal-dialog modal-fullscreen-md-down modal-dialog-centered modal-dialog-scrollable">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -98,84 +85,14 @@ title:            Profile
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </li>
       </ul>
     </div>
   </div>
-
-  <!-- 
-  <div class="card">
-    <div class="card-header bg-white p-4">
-      <h4 class="mb-0">Event History</h4>
-    </div>
-
-    <div class="table-responsive border-0">
-      <table class="table mb-0 text-nowrap">
-        <thead class="bg-light">
-          <tr>
-            <th scope="col" class="py-2 border-bottom-0">Event Name</th>
-            <th scope="col" class="py-2 border-bottom-0">Date</th>
-            <th scope="col" class="py-2 border-bottom-0">Location</th>
-            <th scope="col" class="py-2 border-bottom-0">Paid</th>
-            <th scope="col" class="py-2 border-bottom-0">Receipt</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="align-middle">Rammstein</td>
-            <td class="align-middle">12-07-2020</td>
-            <td class="align-middle">Berlin</td>
-            <td class="align-middle">$125.00</td>
-            <td class="align-middle">
-              <a href="#!"><i class="fas fa-download"></i></a>
-            </td>
-          </tr>
-          <tr>
-            <td class="align-middle">Breaking Benjamin</td>
-            <td class="align-middle">11-07-2020</td>
-            <td class="align-middle">Memphis</td>
-            <td class="align-middle">$83.00</td>
-            <td class="align-middle">
-              <a href="#!"><i class="fas fa-download"></i></a>
-            </td>
-          </tr>
-          <tr>
-            <td class="align-middle">Diimond Meeks</td>
-            <td class="align-middle">10-07-2020</td>
-            <td class="align-middle">Los Angeles</td>
-            <td class="align-middle">$37.00</td>
-            <td class="align-middle">
-              <a href="#!"><i class="fas fa-download"></i></a>
-            </td>
-          </tr>
-          <tr>
-            <td class="align-middle">Galactic</td>
-            <td class="align-middle">09-07-2020</td>
-            <td class="align-middle">New Orleans</td>
-            <td class="align-middle">$42.00</td>
-            <td class="align-middle">
-              <a href="#!"><i class="fas fa-download"></i></a>
-            </td>
-          </tr>
-          <tr>
-            <td class="align-middle">Widespread Panic</td>
-            <td class="align-middle">09-07-2020</td>
-            <td class="align-middle">Austin</td>
-            <td class="align-middle">$98.00</td>
-            <td class="align-middle">
-              <a href="#!"><i class="fas fa-download"></i></a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-   -->
-
 </div>
 
-<script src="{{ '/' | absolute_url }}{% ministamp assets/js/user.js assets/js/user.js %}"></script>
+<script src="{{ '/' | absolute_url }}{% ministamp assets/js/user.js assets/js/user.min.js %}"></script>
+<script src="{{ '/' | absolute_url }}{% ministamp assets/js/fomo.js assets/js/fomo.min.js %}"></script>
 <script src="https://cdn.auth0.com/js/auth0-spa-js/1.14/auth0-spa-js.production.js"></script>

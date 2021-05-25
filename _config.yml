@@ -33,6 +33,8 @@ exclude:
   - .jekyll-cache
   - Gemfile
   - Gemfile.lock
+  - /assets/js
+  - /assets/css
 collections:
   events:
     output: true

@@ -1,7 +1,7 @@
 ---
 title:						Frequently Asked Questions
 description:			
-layout:						page
+layout:						post
 tidio:            true
 ---
 
