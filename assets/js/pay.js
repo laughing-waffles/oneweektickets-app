@@ -40,11 +40,13 @@ const updateUI = async () => {
 
 function enterBid() {
   $("#messageload").text("Preparing your bid...");
-
+  if (location.host == "127.0.0.1:4001") { var environ = "local"; }
+  if (location.host == "staging.oneweektickets.com") { var environ = "staging"; }
+  if (environ == undefined) { var environ = "prod"; }
   console.log("prep bid");
   const amountAsCent = Math.round(parseFloat(amt * 100));
   $.ajax({
-    url: "https://oneweektickets.com/api/bid/1",
+    url: "https://oneweektickets.com/api/bid/1?env=" + environ,
     //TODO event-id(1) is hardcoded, should be dynamic = https://oneweektickets.com/api/bid/1
     type: "post",
     beforeSend: function (xhr) {
