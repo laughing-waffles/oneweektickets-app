@@ -2,6 +2,7 @@
 title:						Refund Policy
 description:			The details of this website's refund policy are defined here.
 layout:						legal
+sitemap:          false
 ---
 
 All sales are final. 
