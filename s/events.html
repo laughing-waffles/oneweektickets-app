@@ -178,69 +178,107 @@ title:            Events
               <div class="alert alert-warning d-block d-sm-none" role="alert">
                 Sales analytics available on screens 576px wide and larger.
               </div>
-              <div class="d-none d-sm-block">
-                <canvas id="myChart{{ forloop.index }}"></canvas>
-                <script>
-                  var ctx = document.getElementById("myChart{{ forloop.index }}").getContext("2d");
-                  var myChart = new Chart(ctx, {
-                    data: {
-                      labels: ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7"],
-                      datasets: [
-                        {
-                          label: 'Tickets Sold',
-                          data: [54,	49,	46,	43,	40,	37,	35],
-                          backgroundColor: ['rgba(36,161,72,.5)'],
-                          type: 'bar',
-                          yAxisID: 'y',
-                          order: 2
-                        },
-                        {
-                          label: 'Bids Lost',
-                          data: [321, 292, 273, 257, 237, 224, 211],
-                          backgroundColor: ['rgba(234,67,54,.5)'],
-                          type: 'bar',
-                          yAxisID: 'y',
-                          order: 1
-                        },
-                        {
-                          label: 'Revenue',
-                          data: [1745.89, 1587.60, 1485.17, 1396.71, 1289.63, 1215.14, 1145.31],
-                          backgroundColor: ['rgba(23,162,184,.5)'],
-                          borderColor: ['rgba(23,162,184,.5)'],
-                          type: 'line',
-                          yAxisID: 'y1',
-                          order: 0
-                        }
-                      ],
-                    },
-                    options: {
-                      plugins: {
-                        title: {
-                          display: true,
-                          text: 'Sales Report'
-                        },
+              <div class="row d-none d-sm-block">
+                <div class="col-2">
+                  <canvas id="chartSaleTotal{{ forloop.index }}"></canvas>
+                  <script>
+                    var ctx = document.getElementById("chartSaleTotal{{ forloop.index }}").getContext("2d");
+                    var chartSaleTotal = new Chart(ctx, {
+                      data: {
+                        labels: ["Total"],
+                        datasets: [
+                          {
+                            label: 'Quantity',
+                            data: [1745],
+                            backgroundColor: ['rgba(23,162,184,.5)'],
+                            borderColor: ['rgba(23,162,184,.5)'],
+                            type: 'bar',
+                            yAxisID: 'y1',
+                            order: 0
+                          }
+                        ],
                       },
-                      responsive: true,
-                      scales: {
-                        x: {
-                          stacked: true,
+                      options: {
+                        plugins: {
+                          title: {
+                            display: true,
+                            text: 'Total Sold'
+                          },
                         },
-                        y: {
-                          position: 'left',
-                          beginAtZero: true,
-                          stacked: true,
-                        },
-                        y1: {
-                          position: 'right',
-                          beginAtZero: true,
-                          grid: {
-                            drawOnChartArea: false,
+                        responsive: true,
+                        scales: {
+                          x: {
+                            stacked: true,
                           },
                         },
                       },
-                    },
-                  });
-                </script>
+                    });
+                  </script>
+                </div>
+                <div class="col-10">
+                  <canvas id="chartSaleHistory{{ forloop.index }}"></canvas>
+                  <script>
+                    var ctx = document.getElementById("chartSaleHistory{{ forloop.index }}").getContext("2d");
+                    var chartSaleHistory = new Chart(ctx, {
+                      data: {
+                        labels: ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7"],
+                        datasets: [
+                          {
+                            label: 'Tickets Sold',
+                            data: [54,	49,	46,	43,	40,	37,	35],
+                            backgroundColor: ['rgba(36,161,72,.5)'],
+                            type: 'bar',
+                            yAxisID: 'y',
+                            order: 2
+                          },
+                          {
+                            label: 'Bids Lost',
+                            data: [321, 292, 273, 257, 237, 224, 211],
+                            backgroundColor: ['rgba(234,67,54,.5)'],
+                            type: 'bar',
+                            yAxisID: 'y',
+                            order: 1
+                          },
+                          {
+                            label: 'Revenue',
+                            data: [1745.89, 1587.60, 1485.17, 1396.71, 1289.63, 1215.14, 1145.31],
+                            backgroundColor: ['rgba(23,162,184,.5)'],
+                            borderColor: ['rgba(23,162,184,.5)'],
+                            type: 'line',
+                            yAxisID: 'y1',
+                            order: 0
+                          }
+                        ],
+                      },
+                      options: {
+                        plugins: {
+                          title: {
+                            display: true,
+                            text: 'Sales Report'
+                          },
+                        },
+                        responsive: true,
+                        scales: {
+                          x: {
+                            stacked: true,
+                          },
+                          y: {
+                            position: 'left',
+                            beginAtZero: true,
+                            stacked: true,
+                          },
+                          y1: {
+                            position: 'right',
+                            beginAtZero: true,
+                            grid: {
+                              drawOnChartArea: false,
+                            },
+                          },
+                        },
+                      },
+                    });
+                  </script>
+                </div>
               </div>
             </div>
           </div>          
