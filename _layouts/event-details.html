@@ -2,7 +2,17 @@
 layout: default
 tidio: true
 ---
+{% for each_event in site.data.eventsapi %}
+  {% if each_event.id == page.id %}
+    {% assign this_event = each_event %}
+  {% endif %}
+{% endfor %}
 
+{% if site.data.eventsapi %}
+
+HEY!!!!
+
+{% endif %}
 
 <div
   class="border-top-3 border-top border-primary"
@@ -22,7 +32,7 @@ tidio: true
       <div class="col-12 col-md-6 col-lg-6 py-md-5 mt-5 text-white">
         <p style="mb-0 font-size-14 text-uppercase fw-light">{{ page.event-date | date: "%B %e, %Y" }} <span>&#183;</span> {{page.doors}}</p>
         <h1 class="mb-3 display-5 text-white">
-          {{ page.title }}
+          {{ this_event.title }} {{ site.data.eventsapi }}222
         </h1>
         {% for performer in page.performers %}
         <a href="#" class="text-primary" data-bs-toggle="modal" data-bs-target="#modal-event-details">
