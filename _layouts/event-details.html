@@ -26,7 +26,7 @@ tidio: true
   <div class="container" data-auctionstart='{{ this_event.auction-start | date: "%s"}}' data-auctionend='{{ page.auction-end | date: "%s" }}'>
     <div class="row align-items-end justify-content-between align-content-end min-vh-90">
       <div class="col-12 col-md-6 col-lg-6 py-md-5 mt-5 text-white">
-        <p style="mb-0 font-size-14 text-uppercase fw-light">{{ this_event.eventDate | date: "%B %e, %Y" }} <span>&#183;</span> {{this_event.doorsOpen}}</p>
+        <p style="mb-0 font-size-14 text-uppercase fw-light">{{ this_event.eventDate | date: "%B %e, %Y" }} <span>&#183;</span> {{this_event.doorsOpen | date: "%l:%M%P"}}</p>
         <h1 class="mb-3 display-5 text-white">
           {{ this_event.title }}
         </h1>
@@ -71,7 +71,7 @@ tidio: true
             <li><i class="fas fa-check-circle text-primary"></i> Change your bid at any time</li>
           </ul>
           <div class="alert alert-warning text-center" role="alert">
-            On-sale: {{this_event.auction-start | date: "%b %d at %-I:%M%P %Z" }}<br />
+            On-sale: {{this_event.auctionStart | date: "%b %d at %-I:%M%P %Z" }}<br />
             <span id="clock"></span>
           </div>
         </span>
@@ -97,7 +97,7 @@ tidio: true
       <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="alert alert-info" role="alert">
           <p>
-            <span class="fw-bold">What am I bidding on?</span> The {{ this_event.title }} show at the {{ this_event.venue }} on {{ this_event.event-date }} is selling tickets using One Week. One Week helps <u>you</u> get a ticket to the show, without having
+            <span class="fw-bold">What am I bidding on?</span> The {{ this_event.title }} show at the {{ this_event.venueName }} on {{ this_event.eventDate }} is selling tickets using One Week. One Week helps <u>you</u> get a ticket to the show, without having
             to pay exorbitant prices from ticket resellers. We’re cutting out the middleman.
           </p>
         </div>
