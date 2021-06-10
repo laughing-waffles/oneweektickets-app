@@ -3,7 +3,7 @@ layout: default
 tidio: true
 ---
 {% for each_event in site.data.eventsapi %}
-  {% if each_event.id == page.id %}
+  {% if each_event.id == page.event-id %}
     {% assign this_event = each_event %}
   {% endif %}
 {% endfor %}
