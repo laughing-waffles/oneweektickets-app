@@ -16,17 +16,17 @@ tidio: true
     background-image: 
       linear-gradient(0deg, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%), 
       url(
-        {% if jekyll.environment == 'production' %}https://res.cloudinary.com/judsonlmoore-com/image/fetch/c_fill,g_auto,f_auto,q_auto,w_1800/{% endif %}{{ this_event.hero | absolute_url }}
+        {% if jekyll.environment == 'production' %}https://res.cloudinary.com/judsonlmoore-com/image/fetch/c_fill,g_auto,f_auto,q_auto,w_1800/{% endif %}{{ this_event.heroImage | absolute_url }}
         );
     background-size: cover;
     background-position: center;
     "
 >
 
-  <div class="container" data-auctionstart='{{ this_event.auction-start | date: "%s"}}' data-auctionend='{{ this_event.auction-end | date: "%s" }}'>
+  <div class="container" data-auctionstart='{{ this_event.auction-start | date: "%s"}}' data-auctionend='{{ page.auction-end | date: "%s" }}'>
     <div class="row align-items-end justify-content-between align-content-end min-vh-90">
       <div class="col-12 col-md-6 col-lg-6 py-md-5 mt-5 text-white">
-        <p style="mb-0 font-size-14 text-uppercase fw-light">{{ this_event.event-date | date: "%B %e, %Y" }} <span>&#183;</span> {{this_event.doors}}</p>
+        <p style="mb-0 font-size-14 text-uppercase fw-light">{{ this_event.eventDate | date: "%B %e, %Y" }} <span>&#183;</span> {{this_event.doorsOpen}}</p>
         <h1 class="mb-3 display-5 text-white">
           {{ this_event.title }}
         </h1>
@@ -35,7 +35,7 @@ tidio: true
           <span class="badge border border-light text-light mb-1">{{ performer.name }}</span>
         </a>
         {% endfor %}
-        <p class="my-3 lead">{{ this_event.city }} <span>&#183;</span> {{ this_event.venue }}</p>
+        <p class="my-3 lead">{{ this_event.venueCity }} <span>&#183;</span> {{ this_event.venueName }}</p>
         <p>
           {{ content | truncatewords: 20 }} 
           {% include modal-event-details.html %}
