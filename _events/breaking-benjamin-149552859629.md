@@ -1,34 +1,7 @@
 ---
 event-id:             '149552859629'            # unique 12-digit ID number
 status:               auction                 # draft, auction, optimized
-auction-end:          '2022/06/06 06:00:00'
-title:						    Breaking Benjamin
-description:			    Purchase tickets to see Breaking Benjamin live in Memphis on May 21, 2021.
-event-date:           Aug 2, 2021
-doors:                6:00pm
-show:                 7:00pm
-end:                  11:00pm
-venue:                Thompson-Boling Arena
-address:              1600 Phillip Fulmer Way
-city:                 Knoxville
-postal:               37996
-state:                TN
-country:              United States
-google-maps:          https://goo.gl/maps/6datg4dpmkTSHjPBA
 hero:                 /assets/images/events/breaking-benjamin-149552859629/breaking-benjamin-hero.jpeg
-performers: 
-  - name:             Breaking Benjamin
-    role:             Headliner               # can be anything
-    thumbnail:        /assets/images/events/breaking-benjamin-149552859629/breaking-benjamin.jpeg
-  - name:             Three Days Grace
-    role:             Support                 # can be anything
-    thumbnail:        /assets/images/events/breaking-benjamin-149552859629/three-days-grace.jpg
-  - name:             Red
-    role:             Support                 # can be anything
-    thumbnail:        /assets/images/events/breaking-benjamin-149552859629/red.jpg
-  - name:             Saving Abel
-    role:             Opening                 # can be anything
-    thumbnail:        /assets/images/events/breaking-benjamin-149552859629/saving-abel.jpg
 tickets-available:    9547.0                 # must be with decimal for math to work
 tickets-sold:         1973.0                 # must be with decimal for math to work
 revenue:              118380.0               # must be with decimal for math to work
