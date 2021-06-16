@@ -22,17 +22,17 @@ title:            Profile
 
           <!-- error / loading panel -->
           <div class="row" id="myeventsloading">
-            <div class="d-flex justify-content-center">
-              <div class="spinner-border" role="status">
-                <span class="sr-only">Loading...</span>
-              </div>
+            <div class="animate-wrapper">
+              <div class="animate-text animate"></div>
+              <div class="animate-text animate"></div>
+              <div class="animate-text animate"></div>
             </div>
             <div id="messageload"></div>
             <div id="errorload"></div>
+            <div id="myeventsnone" class="d-none">
+              You haven't bid on any events yet.
+            </div>
           </div>
-          <div id="myeventsnone" class="d-none">
-            You haven't bid on any events yet.
-          </div>          
 
           <div class="row d-none" id="myevents">
 
