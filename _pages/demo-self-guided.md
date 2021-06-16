@@ -8,7 +8,7 @@ steps:
     text: |
       Thank you for taking time to participate in the One Week Tickets self-exploration demo! Your feedback is highly valuable to us as we prepare to launch this new and innovative approach to selling event tickets.
 
-      We are eager to tell you all about our company, our background, and the problems we are trying to solve in the modern era of online event selling and buying, but telling you too much before you take this demo would bias your feedback. Therefor, please run through the demo first, writing down your feedback and thoughts along the way, and then at the end, we will tell you what our goal was and you can help us understand if you think we are on the right track or not.          
+      We are eager to tell you all about our company, our background, and the problems we are trying to solve in the modern era of online event selling and buying, but telling you too much before you take this demo would bias your feedback. Therefore, please run through the demo first, writing down your feedback and thoughts along the way, and then at the end, we will tell you what our goal was and you can help us understand if you think we are on the right track or not.          
   - title: Tips for taking the demo
     text: |
       We need your feedback for how we can improve! Help us understand what you like and what you don't like. We need to know it all: the good, the bad, and the ugly. 
@@ -24,6 +24,7 @@ steps:
       You have received an email announcement from Rammstein with their 2022 tour dates. Find the date you want to attend and click the link to continue. Reminder: You are looking for May 20, 2022 in the city of Leipzig (Germany) at the Red Bull Arena.
 
       [Click here to read the email](https://www.oneweektickets.com/demo/){:target="_blank"}
+      (Page will open in a new window; return here to continue)
   - title: On the event details page
     text: |
       Describe what you see and what you understand about buying these tickets. How does that make you feel? Confused? Excited? Stressed? Let us know everything racing through your mind.
