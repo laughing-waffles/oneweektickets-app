@@ -24,7 +24,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll/minibundle
-  - jekyll-get-json
 include:
   - s
   - u
@@ -177,6 +176,3 @@ autopages:
     slugify:
       mode: default
       case: true
-jekyll_get_json:
-  - data: eventsapi
-    json: 'https://oneweektickets.com/api/events'
