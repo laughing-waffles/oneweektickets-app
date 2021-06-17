@@ -25,6 +25,7 @@ plugins:
   - jekyll-sitemap
   - jekyll/minibundle
   - jekyll-get-json
+  - jekyll-gzip
 include:
   - s
   - u
@@ -180,3 +181,5 @@ autopages:
 jekyll_get_json:
   - data: eventsapi
     json: 'https://oneweektickets.com/api/events'
+gzip:
+  replace_files: true

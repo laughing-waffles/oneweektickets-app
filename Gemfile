@@ -10,6 +10,7 @@ group :jekyll_plugins do
     gem 'jekyll-cloudinary'
     gem 'jekyll-sitemap'
     gem 'jekyll-minibundle'
+    gem 'jekyll-gzip'
 end
 gem "webrick", "~> 1.7"
 
