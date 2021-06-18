@@ -25,12 +25,8 @@ jobs:
         GCP_SERVICE_ACCOUNT_KEY_FILE: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY_FILE }}
         GCP_STORAGE_BUCKET: ${{ secrets.GCP_STORAGE_BUCKET }}
         SOURCE_DIR: "_site"
+ 
 
-    - name: Set up Cloud SDK
-      uses: google-github-actions/setup-gcloud@master
-      with:
-        project_id: oneweek-tickets
-        service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY_FILE }}
-        export_default_credentials: true
-    - name: Invalidate cache ASYNC
-      run: gcloud compute url-maps invalidate-cdn-cache oneweektickets-lb --path "/*" --async
+
+
+
