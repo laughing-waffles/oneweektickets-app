@@ -31,8 +31,8 @@
                 <div class="position-relative">
                   <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 p-3 m-2 bg-light-secondary icon-shape icon-xl rounded-circle d-lg-none" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <h4>{{ this_event.title }}</h4>
-                <p class="small">{{ this_event.eventDate | date: "%B %e, %Y" }} <span>&#183;</span> {{ this_event.doorsOpen }} <span>&#183;</span> {{ this_event.venueCity }} <span>&#183;</span> {{ this_event.venueName }}</p>
+                <h4>{{ page.title }}</h4>
+                <p class="small">{{ page.event-date | date: "%B %e, %Y" }} <span>&#183;</span> {{page.doors}} <span>&#183;</span> {{ page.city }} <span>&#183;</span> {{ page.venue }}</p>
               </div>
     
               <form class="row g-3 needs-validation" novalidate>
@@ -70,9 +70,9 @@
 
                 <div class="row justify-content-between mb-4 pb-2">
                   <div class="col-12 col-lg-8">
-                    <p class="h4 fw-bold">Your bid</p>
+                    <p class="h4 fw-bold">Price</p>
                     <p class="h5 fw-bold mb-0">
-                      Enter the amount you want to pay for each ticket
+                      Pay what you want
                     </p>
                     <a class="text-reset small" data-bs-toggle="collapse" href="#collapsePriceHelp" role="button" aria-expanded="false" aria-controls="collapsePriceHelp">
                       How much should I bid? <i class="far fa-question-circle small"></i>
@@ -96,7 +96,7 @@
 
             <div class="col-12 col-lg-5 col-xl-4 bg-light p-0">
               <div class="row g-0 d-none d-lg-block">
-                {% cloudinary {{ this_event.heroImage }} | absolute_url alt="{{ this_event.title }}" class="img-fluid mb-5" %}
+                {% cloudinary {{ page.hero }} alt="{{ page.title }}" class="img-fluid mb-5" %}
                 <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 p-3 m-2 bg-light-secondary icon-shape icon-xl rounded-circle" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
 
