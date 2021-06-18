@@ -11,6 +11,11 @@ layout: compress
         Sentry.init({
           dsn: "https://d3595e496abd44cfbc41d944f46bf434@o586189.ingest.sentry.io/5738068",
           tracesSampleRate: 1.0,
+          environment: "{{ jekyll.environment }}",
+              {% if jekyll.environment == 'production' %}
+              release: "1wkticket@{{ "now" | date: "%Y-%m-%d-%H-%M" }}"
+              {% endif %}
+              
         });
       });
     </script>
@@ -32,9 +37,6 @@ layout: compress
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     {% seo %}
-
-    <!-- Libs JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.0/chart.min.js" integrity="sha512-RGbSeD/jDcZBWNsI1VCvdjcDULuSfWTtIva2ek5FtteXeSjLfXac4kqkDRHVGf1TwsXCAqPTF7/EYITD0/CTqw==" crossorigin="anonymous"></script>
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="{% ministamp /assets/css/theme.css /assets/css/theme.min.css %}" />
@@ -82,21 +84,8 @@ layout: compress
       integrity="sha512-cJMgI2OtiquRH4L9u+WQW+mz828vmdp9ljOcm/vKTQ7+ydQUktrPVewlykMgozPP+NUBbHdeifE6iJ6UVjNw5Q=="
       crossorigin="anonymous">
     </script>
-    <script 
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js" 
-      integrity="sha512-sR3EKGp4SG8zs7B0MEUxDeq8rw9wsuGVYNfbbO/GLCJ59LBE4baEfQBVsP2Y/h2n8M19YV1mujFANO1yA3ko7Q==" 
-      crossorigin="anonymous">
-    </script>
-    <script 
-      src="https://unpkg.com/currency.js@~2.0.3/dist/currency.min.js">
-    </script>
 
-    <!-- Clipboard -->
-    <script 
-      src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js" 
-      integrity="sha512-sIqUEnRn31BgngPmHt2JenzleDDsXwYO+iyvQ46Mw6RL+udAUZj2n/u/PGY80NxRxynO7R9xIGx5LEzw4INWJQ==" 
-      crossorigin="anonymous">
-    </script>
+
 
     <!-- Theme JS -->
     <script src="{% ministamp /assets/js/theme.js /assets/js/theme.min.js %}"></script> 
