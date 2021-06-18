@@ -99,7 +99,7 @@ defaults:
     values:
       sitemap: false
 cloudinary:
-  cloud_name: judsonlmoore-com
+  cloud_name: oneweektickets
   only_prod: true
   verbose: false
   presets:
