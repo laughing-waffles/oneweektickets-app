@@ -20,7 +20,7 @@ jobs:
     - name: Upload to GCP Bucket
       uses: weslenng/gcp-storage-sync@master
       with:
-        args: -d -z css,js,html
+        args: -d
       env:
         GCP_SERVICE_ACCOUNT_KEY_FILE: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY_FILE }}
         GCP_STORAGE_BUCKET: ${{ secrets.GCP_STORAGE_BUCKET }}
