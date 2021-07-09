@@ -9,6 +9,9 @@ group :jekyll_plugins do
     gem 'rouge'
     gem 'jekyll-cloudinary'
     gem 'jekyll-sitemap'
+    gem 'jekyll-gzip'
     gem 'jekyll-minibundle'
 end
 gem "webrick", "~> 1.7"
+
+gem "jekyll-get-json", "~> 1.0"
