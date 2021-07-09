@@ -176,3 +176,6 @@ autopages:
     slugify:
       mode: default
       case: true
+jekyll_get_json:
+  - data: eventsapi
+    json: 'https://oneweektickets.com/api/events'
