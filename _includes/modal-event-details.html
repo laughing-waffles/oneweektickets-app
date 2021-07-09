@@ -15,7 +15,7 @@
             <div class="col-md-4 col-12">
 
               <div class="row">
-                {% for performer in this_event.performers %}
+                {% for performer in page.performers %}
                 <div class="col-lg-6 col-md-12 col-6">
                   <div class="card mb-4">
                     <div class="card-body text-center py-3">
@@ -32,12 +32,12 @@
 
             </div>
             <div class="col-md-8 col-12">
-              <h3 class="mb-3 h4">{{ this_event.title }}</h3>
+              <h3 class="mb-3 h4">{{ page.title }}</h3>
               <p class="small mb-2">
-                <span><i class="fas fa-calendar-alt me-2 text-danger"></i></span>{{ this_event.eventDate | date: "%B %e, %Y" }} {{ this_event.doorsOpen | date: "%l:%M%P" }}
+                <span><i class="fas fa-calendar-alt me-2 text-danger"></i></span>{{ page.event-date }} {{ page.doors }}
               </p>
               <p class="small mb-4">
-                <span><i class="fas fa-map-marker-alt me-2 text-danger"></i></span>{{ this_event.venueName }}, {{ this_event.venueCity }}, {{ this_event.venueState }} <a href="{{ this_event.googleMaps }}" target="_blank">Google Maps <i class="fas fa-external-link-square-alt"></i></a>
+                <span><i class="fas fa-map-marker-alt me-2 text-danger"></i></span>{{ page.venue }}, {{ page.city }}, {{ page.state }} <a href="{{ page.google-maps }}" target="_blank">Google Maps <i class="fas fa-external-link-square-alt"></i></a>
               </p>
               {{ content }}
             </div>
