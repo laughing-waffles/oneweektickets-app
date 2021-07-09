@@ -37,7 +37,6 @@ window.onload = async () => {
     $("#img-uploaded").attr("src", userInfo.picture);
     $("#img-uploaded2").attr("src", userInfo.picture);
     $("#insert-name").text(userInfo.name);
-    Sentry.setUser({ email: userInfo.email });
 
     getBids();
   } else {

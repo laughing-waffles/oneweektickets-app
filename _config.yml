@@ -24,8 +24,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll/minibundle
-  - jekyll-get-json
-  - jekyll-gzip
 include:
   - s
   - u
@@ -99,7 +97,7 @@ defaults:
     values:
       sitemap: false
 cloudinary:
-  cloud_name: oneweektickets
+  cloud_name: judsonlmoore-com
   only_prod: true
   verbose: false
   presets:
@@ -178,8 +176,3 @@ autopages:
     slugify:
       mode: default
       case: true
-jekyll_get_json:
-  - data: eventsapi
-    json: 'https://oneweektickets.com/api/events'
-gzip:
-  replace_files: true
