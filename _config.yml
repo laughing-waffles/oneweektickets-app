@@ -181,5 +181,6 @@ autopages:
 jekyll_get_json:
   - data: eventsapi
     json: 'https://oneweektickets.com/api/events'
-gzip:
-  replace_files: true
+#Disabled, but we should re-enable - just need to sort out the proxy passing the correct content-type (gzip)
+#gzip:
+# replace_files: true
