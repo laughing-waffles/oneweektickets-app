@@ -21,6 +21,7 @@ jobs:
       uses: weslenng/gcp-storage-sync@master
       with:
         args: -d
+        args: -z css,js,html
       env:
         GCP_SERVICE_ACCOUNT_KEY_FILE: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY_FILE }}
         GCP_STORAGE_BUCKET: ${{ secrets.GCP_STORAGE_BUCKET }}
