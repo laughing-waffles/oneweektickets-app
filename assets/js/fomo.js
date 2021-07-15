@@ -45,7 +45,7 @@ $(document).ready(function () {
         $("#auctionlive").removeClass("d-none").show();
 
         $(".auctionclock").countdown($(".container").data("auctionend") * 1000, function (event) {
-          $(this).html(event.strftime("%D daily auctions remaining.<br>Enter in the next %H:%M:%S for today's auction."));
+          $(this).html(event.strftime("%-D daily auctions remaining.<br>Enter in the next %H:%M:%S for today's auction."));
         });
       });
     $("#auctionsoon").removeClass("d-none").show();
@@ -55,7 +55,7 @@ $(document).ready(function () {
     $("#auctionlive").removeClass("d-none").show();
 
     $(".auctionclock").countdown($(".container").data("auctionend") * 1000, function (event) {
-      $(this).html(event.strftime("%D daily auctions remaining.<br>Enter in the next %H:%M:%S for today's auction."));
+      $(this).html(event.strftime("%-D daily auctions remaining.<br>Enter in the next %H:%M:%S for today's auction."));
     });
   }
 
@@ -143,7 +143,7 @@ window.onload = async () => {
 };
 const login = async () => {
   await auth0.loginWithRedirect({
-    redirect_uri: window.location.protocol + "//" + window.location.hostname + (window.location.port ? ":" + window.location.port : "") + "/payment?amt=" + $("#listbid").data("raw") + "&qty=" + $("#listqty").data("raw"),
+    redirect_uri: window.location.protocol + "//" + window.location.hostname + (window.location.port ? ":" + window.location.port : "") + "/payment/?amt=" + $("#listbid").data("raw") + "&qty=" + $("#listqty").data("raw"),
     screen_hint: loginType,
   });
 };
