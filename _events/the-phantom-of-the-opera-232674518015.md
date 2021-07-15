@@ -1,5 +1,5 @@
 ---
-id:                   232674518015            # unique 12-digit ID number
+event-id:                   '232674518015'            # unique 12-digit ID number
 status:               optimized               # draft, auction, optimized
 auction-end:          '2021/09/14 19:00:00'
 title:						    The Phantom of the Opera

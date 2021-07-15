@@ -24,8 +24,8 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll/minibundle
-  - jekyll-gzip
   - jekyll-get-json
+  - jekyll-gzip
 include:
   - s
   - u
@@ -99,7 +99,7 @@ defaults:
     values:
       sitemap: false
 cloudinary:
-  cloud_name: judsonlmoore-com
+  cloud_name: oneweektickets
   only_prod: true
   verbose: false
   presets:
@@ -181,6 +181,5 @@ autopages:
 jekyll_get_json:
   - data: eventsapi
     json: 'https://oneweektickets.com/api/events'
-#Disabled, but we should re-enable - just need to sort out the proxy passing the correct content-type (gzip)
 #gzip:
-# replace_files: true
+#  replace_files: true

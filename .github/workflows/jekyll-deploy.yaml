@@ -20,12 +20,11 @@ jobs:
     - name: Upload to GCP Bucket
       uses: weslenng/gcp-storage-sync@master
       with:
-        args: -d -c
+        args: -d
       env:
         GCP_SERVICE_ACCOUNT_KEY_FILE: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY_FILE }}
         GCP_STORAGE_BUCKET: ${{ secrets.GCP_STORAGE_BUCKET }}
         SOURCE_DIR: "_site"
-
     - name: Set up Cloud SDK
       uses: google-github-actions/setup-gcloud@master
       with:
