@@ -45,7 +45,7 @@ $(document).ready(function () {
         $("#auctionlive").removeClass("d-none").show();
 
         $(".auctionclock").countdown($(".container").data("auctionend") * 1000, function (event) {
-          $(this).html(event.strftime("%D daily auctions remaining.<br>Enter in the next %H:%M:%S for today's auction."));
+          $(this).html(event.strftime("%-D daily auctions remaining.<br>Enter in the next %H:%M:%S for today's auction."));
         });
       });
     $("#auctionsoon").removeClass("d-none").show();
@@ -55,7 +55,7 @@ $(document).ready(function () {
     $("#auctionlive").removeClass("d-none").show();
 
     $(".auctionclock").countdown($(".container").data("auctionend") * 1000, function (event) {
-      $(this).html(event.strftime("%D daily auctions remaining.<br>Enter in the next %H:%M:%S for today's auction."));
+      $(this).html(event.strftime("%-D daily auctions remaining.<br>Enter in the next %H:%M:%S for today's auction."));
     });
   }
 
