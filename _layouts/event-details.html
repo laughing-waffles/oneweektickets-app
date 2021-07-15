@@ -24,7 +24,7 @@ tidio: true
 >
 {% assign secondstoadd = this_event.auctionLength | times: 24 | times: 60 | times: 60 %}
 
-  <div class="container" data-auctionstart='{{ this_event.auctionStart | date: "%s"}}' data-auctionend='{{ this_event.auctionStart | date: "%s" | plus: secondstoadd | date: "%s" }}'>
+  <div class="container" data-auctionstart='{{ this_event.auctionStart | date: "%s"}}' data-auctionend='{{ this_event.auctionStart | date: "%s" | plus: secondstoadd | date: "%s" }}' data-eventid='{{ this_event.id }}'>
     <div class="row align-items-end justify-content-between align-content-end min-vh-90">
       <div class="col-12 col-md-6 col-lg-6 py-md-5 mt-5 text-white">
         <p style="mb-0 font-size-14 text-uppercase fw-light">{{ this_event.eventDate | date: "%B %e, %Y" }} <span>&#183;</span> {{this_event.doorsOpen | date: "%l:%M%P"}}</p>

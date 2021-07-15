@@ -2,6 +2,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 var amt = urlParams.get("amt");
 var qty = urlParams.get("qty");
+var eventid = urlParams.get("event");
 
 let auth0 = null;
 let stripe;
@@ -46,8 +47,7 @@ function enterBid() {
   console.log("prep bid");
   const amountAsCent = Math.round(parseFloat(amt * 100));
   $.ajax({
-    url: "https://oneweektickets.com/api/bid/1?env=" + environ,
-    //TODO event-id(1) is hardcoded, should be dynamic = https://oneweektickets.com/api/bid/1
+    url: "https://oneweektickets.com/api/bid/" + eventid + "?env=" + environ,
     type: "post",
     beforeSend: function (xhr) {
       xhr.setRequestHeader("Authorization", "Bearer " + $("body").data("auth"));
