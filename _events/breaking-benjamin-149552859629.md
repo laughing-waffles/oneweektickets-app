@@ -1,5 +1,5 @@
 ---
-id:                   149552859629            # unique 12-digit ID number
+event-id:                   '149552859629'            # unique 12-digit ID number
 status:               auction                 # draft, auction, optimized
 auction-end:          '2022/06/06 06:00:00'
 title:						    Breaking Benjamin
