@@ -1,30 +1,48 @@
 main:
-  - dropdown-title: Buy Tickets
-    dropdown-items:
-      - title: Login
-        subtitle: See your bids and purchases
-        icon: fas fa-sign-in-alt
-        url: /u/account-settings/login-gateway/
-      - title: FAQ
-        subtitle: Frequently Asked Questions
-        icon: fas fa-info-circle
-        url: /faq/
-        params: target="_blank"
-  - dropdown-title: Sell Tickets
-    dropdown-items:
-      - title: Login
-        subtitle: Manage your events
-        icon: fas fa-sign-in-alt
-        url: /s/account-settings/login-gateway/
-      - title: Register
-        subtitle: Get setup to sell
-        icon: fas fa-comments
-        url: /request-demo/
-      - title: FAQ
-        subtitle: Frequently Asked Questions
-        icon: fas fa-info-circle
-        url: /faq/
-        params: target="_blank"
+  - title: Performing Arts
+    url: how-to-price-performing-arts-tickets
+  - title: Museums & Attractions
+    url: how-to-price-museum-and-attractions-tickets
+  - title: Live Music
+    url: how-to-price-concert-tickets
+  - title: Festivals 
+    url: how-to-price-festival-tickets
+  - title: Client Login
+    url: /s/account-settings/login-gateway/
+  - title: Request Demo
+    url: /request-demo/
+
+
+  # - dropdown-title: Buy Tickets
+  #   dropdown-items:
+  #     - title: Login
+  #       subtitle: See your bids and purchases
+  #       icon: fas fa-sign-in-alt
+  #       url: /u/account-settings/login-gateway/
+  #     - title: FAQ
+  #       subtitle: Frequently Asked Questions
+  #       icon: fas fa-info-circle
+  #       url: /faq/
+  #       params: target="_blank"
+  # - dropdown-title: Sell Tickets
+  #   dropdown-items:
+  #     - title: Login
+  #       subtitle: Manage your events
+  #       icon: fas fa-sign-in-alt
+  #       url: /s/account-settings/login-gateway/
+  #     - title: Register
+  #       subtitle: Get setup to sell
+  #       icon: fas fa-comments
+  #       url: /request-demo/
+  #     - title: FAQ
+  #       subtitle: Frequently Asked Questions
+  #       icon: fas fa-info-circle
+  #       url: /faq/
+  #       params: target="_blank"
+
+
+
+
 main-loggedin:
   - title: Get help
     url: /faq/
