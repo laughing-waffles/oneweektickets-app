@@ -3,8 +3,8 @@ layout: use-case-single
 title: Concert Tickets
 description: Price discovery and optimization for concert tickets
 summary: 
-image_hero: /assets/images/festival.jpg
-image_body: /assets/images/festival2.jpg
+image_hero: /assets/images/how_to_concert_hero.jpg
+image_body: /assets/images/how_to_concert_body.jpg
 challange: 
 strategy:
 

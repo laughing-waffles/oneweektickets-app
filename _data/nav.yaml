@@ -1,16 +1,15 @@
 main:
   - title: Performing Arts
-    url: how-to-price-performing-arts-tickets
+    url: how-to-price-performing-arts-tickets/
   - title: Museums & Attractions
-    url: how-to-price-museum-and-attractions-tickets
+    url: how-to-price-museum-and-attractions-tickets/
   - title: Live Music
-    url: how-to-price-concert-tickets
+    url: how-to-price-concert-tickets/
   - title: Festivals 
-    url: how-to-price-festival-tickets
+    url: how-to-price-festival-tickets/
   - title: Client Login
     url: /s/account-settings/login-gateway/
-  - title: Request Demo
-    url: /request-demo/
+
 
 
   # - dropdown-title: Buy Tickets
