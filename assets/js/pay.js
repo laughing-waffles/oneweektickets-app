@@ -19,6 +19,8 @@ const configureClient = async () => {
 };
 window.onload = async () => {
   $("#messageload").text("Logging you in...");
+  $('.loadicons').hide();
+  $('#sending').show();
   await configureClient();
   const isAuthenticated = await auth0.isAuthenticated();
   const query = window.location.search;
@@ -29,18 +31,24 @@ window.onload = async () => {
   } else {
     $("#messageload").text("Oops!");
     $("#errorload").html("You didn't get logged in. Please <a href='javascript:window.history.back();'>go back</a> and try again.");
+    $('.loadicons').hide();
+    $('#onerror').show();
   }
 };
 
 const updateUI = async () => {
   console.log("authenticated!");
   $("#messageload").text("Logged in!");
+  $('.loadicons').hide();
+  $('#receiving').show();
   $("body").data("auth", await auth0.getTokenSilently());
   enterBid();
 };
 
 function enterBid() {
   $("#messageload").text("Preparing your bid...");
+  $('.loadicons').hide();
+  $('#sending').show();
   if (location.host == "127.0.0.1:4001") { var environ = "local"; }
   if (location.host == "staging.oneweektickets.com") { var environ = "staging"; }
   if (environ == undefined) { var environ = "prod"; }
@@ -58,6 +66,8 @@ function enterBid() {
       if (result.state == "BID_UPDATED") {
         window.location.replace("/bid-confirmation/");
       } else {
+        $('.loadicons').hide();
+        $('#onsuccess').show();
         $("#messageload").text("Sending you to the secure payment portal...");
 
         //TODO this should be done earlier
@@ -74,12 +84,16 @@ function enterBid() {
           console.log(stripeResponse.error.message);
           $("#messageload").text("Oops!");
           $("#errorload").text(stripeResponse.error.message);
+          $('.loadicons').hide();
+          $('#onerror').show();
         }
       }
     },
     error: function () {
       $("#messageload").text("Oops!");
       $("#errorload").text("API error");
+      $('.loadicons').hide();
+      $('#onerror').show();
     },
   });
 }
