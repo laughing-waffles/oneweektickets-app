@@ -12,42 +12,53 @@ layout: page
           <div class="col-lg-10 col-md-12 col-12">
             <!-- row -->
             <div class="row">
-              <div class="col-lg-4 col-md-5 col-12 mb-6">
+              <div class="col-lg-4 col-md-5 col-12 mb-6 d-none d-md-block">
                 <!-- card -->
-                <div class="card border-0 rounded-3 bg-primary">
-                  <!-- card body -->
-                  <div class="card-body p-4">
-                    {% if page.blurb_image %}
-                    <img src="{{ page.blurb_image }}" alt="" class="color-white-filter mb-4" />
-                    {% endif %}
-                    {% if page.blurb1_title %}
-                    <!-- featuers -->
-                    <div class="text-white mb-3">
-                      <span class="mb-1 d-block">{{ page.blurb1_title }}</span>
-                      <h4 class="text-white">{{ page.blurb1_body }}</h4>
-                    </div>
-                    {% endif %}
-                    {% if page.blurb2_title %}
-                    <!-- featuers -->
-                    <div class="text-white mb-3">
-                      <span class="mb-1 d-block">{{ page.blurb2_title }}</span>
-                      <h4 class="text-white">{{ page.blurb2_body }}</h4>
-                    </div>
-                    {% endif %}
-                    {% if page.blurb3_title %}
-                    <!-- featuers -->
-                    <div class="text-white mb-3">
-                      <span class="mb-1 d-block">{{ page.blurb3_title }}</span>
-                      <h4 class="text-white">{{ page.blurb3_body }}</h4>
-                    </div>
-                    {% endif %}
-                    {% if page.blurb4_title %}
-                    <!-- featuers -->
-                    <div class="text-white">
-                      <span class="mb-1 d-block">{{ page.blurb4_title }}</span>
-                      <h4 class="text-white">{{ page.blurb4_body }}</h4>
-                    </div>
-                    {% endif %}
+                <div class="card border-0 rounded-3 bg-light p-2 p-lg-3" style="position: sticky; top: 100px;">
+                  <div id="form">
+                    <form
+                      action="https://oneweektickets.us1.list-manage.com/subscribe/post?u=f0d949cdf0a6a387f7b55a173&amp;id=4f123ead61"
+                      method="post"
+                      id="mc-embedded-subscribe-form"
+                      name="mc-embedded-subscribe-form"
+                      class="row g-2"
+                      target="_blank"
+                      novalidate=""
+                    >
+                      <div class="mb-3">
+                        <label class="form-label" htmlfor="fname">First name<span class="text-danger">*</span></label>
+                        <input class="form-control" type="text" name="FNAME" id="mce-FNAME" placeholder="First Name" required="" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label" htmlfor="lname">Last name<span class="text-danger">*</span></label>
+                        <input class="form-control" type="text" name="LNAME" id="mce-LNAME" placeholder="Last Name" required="" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label" htmlfor="email">Email<span class="text-danger">*</span></label>
+                        <input class="form-control" type="email" name="EMAIL" id="mce-EMAIL" placeholder="Email Address" required="" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label" for="orgtype">Organization type<span class="text-danger">*</span></label>
+                        <select class="form-select" name="ORGTYPE" id="mce-ORGTYPE">
+                          <option selected="">Select one... </option>
+                          <option defaultvalue="Artist">Artist </option>
+                          <option defaultvalue="Venue">Venue </option>
+                          <option defaultvalue="Promoter">Promoter </option>
+                          <option defaultvalue="Agent / Manager">Agent / Manager </option>
+                          <option defaultvalue="Other">Other </option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label" htmlfor="MMERGE6">Organization website</label>
+                        <input class="form-control" type="url" name="MMERGE6" id="mce-MMERGE6" placeholder="https://www..." required="" />
+                      </div>
+                      <div id="mce-responses" class="clear">
+                        <div class="response" id="mce-error-response" style="display: none;"></div>
+                        <div class="response" id="mce-success-response" style="display: none;"></div>
+                      </div>
+                      <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_f0d949cdf0a6a387f7b55a173_4f123ead61" tabindex="-1" defaultvalue="" /></div>
+                      <div class="mb-3 mt-2 d-grid"><button type="submit" class="btn btn-primary" defaultvalue="Request a call" name="subscribe" id="mc-embedded-subscribe">Request Demo</button></div>
+                    </form>
                   </div>
                 </div>
               </div>
@@ -57,8 +68,7 @@ layout: page
                   <span class="text-primary">Summary</span>
                   {% if page.summary_title %}
                   <h1 class="mt-3">{{ page.summary_title }}</h1>
-                  {% endif %}
-                  {% if page.summary_body %}
+                  {% endif %} {% if page.summary_body %}
                   <p>{{ page.summary_body | markdownify }}</p>
                   {% endif %}
                 </div>
@@ -71,7 +81,7 @@ layout: page
                 </div>
                 <!-- Strategy -->
                 <div class="ps-md-4 pe-md-8 mb-4">
-                  <span class="text-primary">Strategy</span>
+                  <span class="text-primary">Solution</span>
                   <h2 class="mt-3">{{ page.strategy_title }}</h2>
                   <p class="mt-3 mb-4">
                     {{ page.strategy_body | markdownify }}
@@ -104,7 +114,7 @@ layout: page
                   </ul>
                   <!-- para -->
                   <p class="mt-3">
-                    {{ page.results_body }}
+                    {{ page.results_body | markdownify }}
                   </p>
                 </div>
                 <div class="ps-md-4 mb-4">
@@ -135,7 +145,6 @@ layout: page
           </div>
         </div>
         <div class="row mt-6">
-
           {% for landing-page in site.landing-pages limit:3 %}
           <div class="col-xl-4 col-lg-4 col-md-6 col-12">
             <!-- card -->
@@ -162,7 +171,6 @@ layout: page
             </div>
           </div>
           {% endfor %}
-
         </div>
       </div>
     </div>
