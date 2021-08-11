@@ -8,13 +8,13 @@ layout: page
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-10 col-md-12 col-12">
-        <h3 class="text-white mb-4">Featured Stories</h3>
+        <h3 class="text-white mb-4">Use cases for One Week Tickets</h3>
         {% for landing-page in site.landing-pages %}
         <!-- card -->
         <div class="card border-0 rounded-3 bg-transparent mb-4 mb-md-8">
           <a href="{{ landing-page.url | absolute_url }}">
-            <div class="bg-cover py-14 d-md-none rounded-top" style="background-image: url({{ landing-page.image_hero | absolute_url }});"></div>
-            <img src="{{ landing-page.image_hero | absolute_url }}" alt="" class="img-fluid rounded-3 d-none d-md-block w-100" />
+            <div class="bg-cover py-14 d-md-none rounded-top" style="background-image: url({{ landing-page.image | absolute_url }});"></div>
+            <img src="{{ landing-page.image | absolute_url }}" alt="" class="img-fluid rounded-3 d-none d-md-block w-100" />
           </a>
           <!-- row -->
           <div class="row mt-md-n15 mt-n8 ms-md-4">
