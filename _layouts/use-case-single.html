@@ -1,0 +1,206 @@
+---
+layout: page
+---
+
+<!-- page content -->
+<div class="py-lg-12 py-10">
+  <div class="container">
+    <!-- dashboard nav -->
+    <div class="pb-12">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 col-md-12 col-12">
+            <!-- row -->
+            <div class="row">
+              <div class="col-lg-4 col-md-5 col-12 mb-6">
+                <!-- card -->
+                <div class="card border-0 rounded-3 bg-primary">
+                  <!-- card body -->
+                  <div class="card-body p-4">
+                    {% if page.blurb_image %}
+                    <img src="{{ page.blurb_image }}" alt="" class="color-white-filter mb-4" />
+                    {% endif %}
+                    {% if page.blurb1_title %}
+                    <!-- featuers -->
+                    <div class="text-white mb-3">
+                      <span class="mb-1 d-block">{{ page.blurb1_title }}</span>
+                      <h4 class="text-white">{{ page.blurb1_body }}</h4>
+                    </div>
+                    {% endif %}
+                    {% if page.blurb2_title %}
+                    <!-- featuers -->
+                    <div class="text-white mb-3">
+                      <span class="mb-1 d-block">{{ page.blurb2_title }}</span>
+                      <h4 class="text-white">{{ page.blurb2_body }}</h4>
+                    </div>
+                    {% endif %}
+                    {% if page.blurb3_title %}
+                    <!-- featuers -->
+                    <div class="text-white mb-3">
+                      <span class="mb-1 d-block">{{ page.blurb3_title }}</span>
+                      <h4 class="text-white">{{ page.blurb3_body }}</h4>
+                    </div>
+                    {% endif %}
+                    {% if page.blurb4_title %}
+                    <!-- featuers -->
+                    <div class="text-white">
+                      <span class="mb-1 d-block">{{ page.blurb4_title }}</span>
+                      <h4 class="text-white">{{ page.blurb4_body }}</h4>
+                    </div>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-8 col-md-7 col-12">
+                <!-- summary -->
+                <div class="ps-md-4 pe-md-8 mb-4">
+                  <span class="text-primary">Summary</span>
+                  {% if page.summary_title %}
+                  <h1 class="mt-3">{{ page.summary_title }}</h1>
+                  {% endif %}
+                  {% if page.summary_body %}
+                  <p>{{ page.summary_body | markdownify }}</p>
+                  {% endif %}
+                </div>
+                <!-- Challenge -->
+                <div class="ps-md-4 pe-md-8 mb-4">
+                  <span class="text-primary">Challenge</span>
+                  <p class="mt-3 mb-0">
+                    {{ page.challange_body | markdownify }}
+                  </p>
+                </div>
+                <!-- Strategy -->
+                <div class="ps-md-4 pe-md-8 mb-4">
+                  <span class="text-primary">Strategy</span>
+                  <h2 class="mt-3">{{ page.strategy_title }}</h2>
+                  <p class="mt-3 mb-4">
+                    {{ page.strategy_body | markdownify }}
+                  </p>
+                  <!-- row -->
+                  <div class="row">
+                    <div class="col">
+                      <h4>{{ page.strategy_col1_title }}</h4>
+                      <p class="mb-0">{{ page.strategy_col1_body }}</p>
+                    </div>
+                    <div class="col">
+                      <h4>{{ page.strategy_col2_title }}</h4>
+                      <p class="mb-0">{{ page.strategy_col2_body }}</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- img -->
+                <div class="ps-md-4 mb-4">
+                  {% cloudinary {{page.image_body }} class="img-fluid rounded-3" %}
+                </div>
+                <!-- Results -->
+                <div class="ps-md-4 pe-md-8 mb-4">
+                  <span class="text-primary">Results</span>
+                  <h3 class="mt-3">{{ page.results_title }}</h3>
+                  <!-- list -->
+                  <ul class="list-unstyled">
+                    {% for item in page.results_list %}
+                    <li>- {{ item }}</li>
+                    {% endfor %}
+                  </ul>
+                  <!-- para -->
+                  <p class="mt-3">
+                    {{ page.results_body }}
+                  </p>
+                </div>
+                <div class="ps-md-4 mb-4">
+                  <!-- para -->
+                  <div class="border-top border-bottom py-5">
+                    <span class="h2 mb-3 d-block"><i class="fas fa-quote-left text-secondary"></i></span>
+                    <p class="font-35 text-secondary font-weight-bolder font-italic lh-md">
+                      {{ page.quote_body }}
+                    </p>
+                    <span class="font-weight-medium font-18">- {{ page.quote_source }}</span>
+                  </div>
+                </div>
+                <!-- para -->
+                <div class="ps-md-4 pe-md-8 mb-4">
+                  {{ page.conclusion | markdownify }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-12">
+          <div class="col-md-8 col-12">
+            <h2>Don't stop, we have more...</h2>
+          </div>
+          <div class="col-md-4 col-12 text-md-end">
+            <a href="{{ 'how-to-price-event-tickets' | absolute_url }}" class="btn btn-secondary">View All Cases</a>
+          </div>
+        </div>
+        <div class="row mt-6">
+
+          {% for landing-page in site.landing-pages limit:3 %}
+          <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+            <!-- card -->
+            <div class="card border-0 rounded-3 bg-transparent mb-4 mb-md-8">
+              <!-- card img -->
+              <a href="{{ landing-page.url | absolute_url }}">
+                <div class="bg-cover py-18 rounded-3" style="background-image: url({{ landing-page.image | absolute_url }});"></div>
+              </a>
+              <!-- row -->
+              <div class="row mt-md-n15 mt-n8 ms-md-2">
+                <div class="col-lg-10 col-md-12 col-12">
+                  <div class="card border-0 rounded-3 bg-primary">
+                    <!-- card body -->
+                    <div class="card-body p-4">
+                      <!-- <img src="../assets/images/logo-airbnb.svg" alt="" class="color-white-filter mb-4" /> -->
+                      <a href="{{ landing-page.url | absolute_url }}">
+                        <h3 class="text-white mb-4">{{ landing-page.title }}</h3>
+                      </a>
+                      <a href="{{ landing-page.url | absolute_url }}" class="text-white">Read Full Case Study</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Subscribe form -->
+<div class="pb-12 pt-6 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="offset-lg-3 col-lg-6 col-md-12 col-12">
+        <div class="mb-5 text-center">
+          <h2 class="h1 mb-3">
+            Ready to improve your ticket pricing?
+          </h2>
+          <p>
+            We will get in touch with you soon to schedule a demo.
+          </p>
+        </div>
+      </div>
+      <div class="offset-lg-2 col-lg-8 col-md-12 col-12">
+        <form class="row">
+          <div class="mb-3 mb-2 mb-lg-0 col-lg-5 col-md-5 col-12">
+            <label for="name" class="sr-only">name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Name" required="" />
+          </div>
+          <div class="mb-3 mb-2 mb-lg-0 col-lg-5 col-md-5 col-12">
+            <label for="email" class="sr-only"></label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="" />
+          </div>
+          <div class="col-lg-2 col-md-2 col-12">
+            <button class="btn btn-warning" type="submit">Submit</button>
+          </div>
+          <div class="col-12 mt-2">
+            <small class="text-muted">We will never send you spam.</small>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
