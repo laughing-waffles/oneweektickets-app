@@ -36,9 +36,9 @@ strategy_col2_body: |
   For sellers with an existing ticketing platform and a development team, our API can be utilized for running the auction and triggering email events that fire on any ticketing platform the seller chooses to integrate with. 
 results_title: What you can expect
 results_list:
+  - Increase revenue 
   - Improve price discovery
   - Increase volume of tickets sold
-  - Increase revenue 
   - Decrease incentives of the secondary market 
   - Delight fans while increasing your margins
   - Protect your bottom-line with a minimum ticket price
