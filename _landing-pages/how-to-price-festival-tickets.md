@@ -22,12 +22,12 @@ summary_body: |
   
   <b>But what if there was a better way?</b>
 
-  OneWeek Tickets is a ticket sales platform that helps venues, artists, and promoters optimize concert ticket pricing. We maximize concert ticket sales volume and revenues with auction-based price discovery for any event.
+  OneWeek Tickets is a ticket sales platform that helps venues, artists, and promoters optimize festival ticket pricing. We maximize festival ticket sales volume and revenues with auction-based price discovery for any event.
 challange_body: |
   Regardless of the price or percent of tickets you've sold in previous festival years, you've left money on the table. For GA tickets, and especially VIP packages, there is a market fight to scoop up tickets to your event. How can you ensure you're setting the fairest price for everyone involved, as well as maximizing your revenue and sales volume?
 strategy_title: Pay what you want
 strategy_body: |
-  Academic and economic research finds that auction pricing in the primary market significantly improves price discovery, <b>roughly doubles promoter revenues</b> and minimizes the incentive of secondary market players to scoop up low-priced tickets and resell them on the secondary market. 
+  Academic and economic research finds that auction pricing in the primary market significantly improves price discovery, <b>roughly doubles promoter revenues</b>, and minimizes the incentive of secondary market players to scoop up low-priced tickets and resell them on the secondary market. 
 
   OneWeek Tickets is different because our auction design utilizes a 7-day recurring blind auction, providing data to sellers and opportunities to buyers to engage in a conversation which results in the optimal market price to be discovered for any event.
 strategy_col1_title: Hosted solution
@@ -38,9 +38,9 @@ strategy_col2_body: |
   For sellers with an existing ticketing platform and a development team, our API can be utilized for running the auction and triggering email events that fire on any ticketing platform the seller chooses to integrate with. 
 results_title: What you can expect
 results_list:
+  - Increase revenue 
   - Improve price discovery
   - Increase volume of tickets sold
-  - Increase revenue 
   - Decrease incentives of the secondary market 
   - Delight fans while increasing your margins
   - Protect your bottom-line with a minimum ticket price
