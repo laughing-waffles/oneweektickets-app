@@ -17,12 +17,11 @@ layout: page
                 <div class="card border-0 rounded-3 bg-light p-2 p-lg-3" style="position: sticky; top: 100px;">
                   <div id="form">
                     <form
-                      action="https://oneweektickets.us1.list-manage.com/subscribe/post?u=f0d949cdf0a6a387f7b55a173&amp;id=4f123ead61"
+                      action="https://formspree.io/f/xdoypaze"
                       method="post"
                       id="mc-embedded-subscribe-form"
                       name="mc-embedded-subscribe-form"
                       class="row g-2"
-                      target="_blank"
                       novalidate=""
                     >
                       <div class="mb-3">
@@ -49,8 +48,8 @@ layout: page
                         </select>
                       </div>
                       <div class="mb-3">
-                        <label class="form-label" htmlfor="MMERGE6">Organization website</label>
-                        <input class="form-control" type="url" name="MMERGE6" id="mce-MMERGE6" placeholder="https://www..." required="" />
+                        <label class="form-label" htmlfor="WEBSITE">Organization website</label>
+                        <input class="form-control" type="url" name="WEBSITE" id="mce-WEBSITE" placeholder="https://www..." required="" />
                       </div>
                       <div id="mce-responses" class="clear">
                         <div class="response" id="mce-error-response" style="display: none;"></div>
@@ -177,38 +176,4 @@ layout: page
   </div>
 </div>
 
-<!-- Subscribe form -->
-<div class="pb-12 pt-6 bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="offset-lg-3 col-lg-6 col-md-12 col-12">
-        <div class="mb-5 text-center">
-          <h2 class="h1 mb-3">
-            Ready to improve your ticket pricing?
-          </h2>
-          <p>
-            We will get in touch with you soon to schedule a demo.
-          </p>
-        </div>
-      </div>
-      <div class="offset-lg-2 col-lg-8 col-md-12 col-12">
-        <form class="row">
-          <div class="mb-3 mb-2 mb-lg-0 col-lg-5 col-md-5 col-12">
-            <label for="name" class="sr-only">name</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Name" required="" />
-          </div>
-          <div class="mb-3 mb-2 mb-lg-0 col-lg-5 col-md-5 col-12">
-            <label for="email" class="sr-only"></label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="" />
-          </div>
-          <div class="col-lg-2 col-md-2 col-12">
-            <button class="btn btn-warning" type="submit">Submit</button>
-          </div>
-          <div class="col-12 mt-2">
-            <small class="text-muted">We will never send you spam.</small>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
+{% include sub-footer.html %}
