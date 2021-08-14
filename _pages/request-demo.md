@@ -27,12 +27,11 @@ layout:						default
           </div>
           <div id="form">
             <form
-              action="https://oneweektickets.us1.list-manage.com/subscribe/post?u=f0d949cdf0a6a387f7b55a173&amp;id=4f123ead61"
+              action="https://formspree.io/f/mleaognl"
               method="post"
               id="mc-embedded-subscribe-form"
               name="mc-embedded-subscribe-form"
               class="row g-2"
-              target="_blank"
               novalidate
             >
               <div class="form-floating mb-3 col-6">
