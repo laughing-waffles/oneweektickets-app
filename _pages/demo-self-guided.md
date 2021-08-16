@@ -1,12 +1,12 @@
 ---
 title:						Demo
-description:			A self-guided demo of One Week Tickets
+description:			A self-guided demo of OneWeek Tickets
 layout:						default
 sitemap:          false
 steps:
   - title: Welcome
     text: |
-      Thank you for taking time to participate in the One Week Tickets self-exploration demo! Your feedback is highly valuable to us as we prepare to launch this new and innovative approach to selling event tickets.
+      Thank you for taking time to participate in the OneWeek Tickets self-exploration demo! Your feedback is highly valuable to us as we prepare to launch this new and innovative approach to selling event tickets.
 
       We are eager to tell you all about our company, our background, and the problems we are trying to solve in the modern era of online event selling and buying, but telling you too much before you take this demo would bias your feedback. Therefor, please run through the demo first, writing down your feedback and thoughts along the way, and then at the end, we will tell you what our goal was and you can help us understand if you think we are on the right track or not.          
   - title: Tips for taking the demo
@@ -67,7 +67,7 @@ steps:
       [Open your profile page to do start this step](https://www.oneweektickets.com/u/account-settings/profile/){:target="_blank"}
   - title: Last step
     text: |
-      Logout of One Week Tickets.
+      Logout of OneWeek Tickets.
   - title: Conclusion
     text: |
       Our aim is to help ticket sellers with the difficult task of price-discovery (ie: knowing how much they should sell their product for). Our approach ensures that seller's can maximize their revenues, but not at the expense of ticket buyers. By utilizing the 7-day rolling auction design, we help buyers buy tickets at a fair price, while maximizing revenues for the seller. Simultanious to this, we also squeeze out any potential profit margins for the secondary-market, which exploits under-priced tickets by buying low and selling them at a huge markup to real fans. 
