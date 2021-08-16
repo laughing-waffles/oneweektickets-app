@@ -1,6 +1,6 @@
 ---
-title:						Request a demo of One Week Tickets
-description:			Get in touch with our sales team for a demo of One Week Tickets
+title:						Request a demo of OneWeek Tickets
+description:			Get in touch with our sales team for a demo of OneWeek Tickets
 layout:						default
 ---
 
@@ -12,7 +12,7 @@ layout:						default
         <div class="p-xl-12 py-4 pr-xl-9 p-lg-8">
           <div class="d-flex justify-content-between mb-7 align-items-center">
             <a href="/">
-              <h1 class="d-block text-black m-0 h3 font-weight-bolder">One Week</h1>
+              <h1 class="d-block text-black m-0 h3 font-weight-bolder">OneWeek</h1>
             </a>
             <span class="font-14 font-weight-bold text-dark">Call Us: +1 310.571.5210</span>
           </div>
