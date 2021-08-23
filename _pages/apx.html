@@ -2,6 +2,7 @@
 layout: default
 sitemap: false
 ---
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
 
 <!-- header -->
 <div class="header fixed-top border-top-3 border-top border-primary">
@@ -25,9 +26,6 @@ sitemap: false
             <a class="nav-link d-lg-none" href="#">
               Menu
             </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#1">Top</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#2">Introduction</a>
@@ -60,16 +58,11 @@ sitemap: false
       <div class="col-xl-6 col-lg-8 col-md-8 col-12">
         <div class=" ">
           <h1 class="text-white mb-3 display-4 font-weight-bold">
-            Product Demo
+            An overview of OneWeek Tickets
           </h1>
           <p class="mb-4 pe-lg-12 text-white lead">
-            OneWeek Tickets helps you price event tickets.<br>On this page you can demo the platform.
+            OneWeek Tickets helps price event tickets.
           </p>
-          <a href="#5" class="btn btn-primary me-3">Launch Demo</a>
-          <a class="icon-shape rounded-circle btn-play icon-md bg-secondary text-white me-1 text-decoration-none font-12" href="#5">
-            <i class="fas fa-play"></i>
-          </a>
-          <a href="#2" class="text-white">Watch Introduction Video</a>
         </div>
       </div>
     </div>
@@ -85,7 +78,7 @@ sitemap: false
             Introduction
           </h2>
           <p class="px-lg-10 lead">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna lectus, mattis n rem ipsum dolor sit amet consectetur.
+             In this 3 minute video, hear from our co-founder, Judson Moore, on why we built OneWeek and how it works.
           </p>
         </div>
       </div>
@@ -109,7 +102,7 @@ sitemap: false
             Problem
           </h2>
           <p class="px-lg-10 lead">
-            How do I determine what I should charge for a live event? Traditional sources of data for determining ticket prices leads to significant revenue leakage.
+            How do artists determine what they should charge for a live event? Traditional sources of data for determining ticket prices leads to significant revenue leakage.
           </p>
         </div>
         <!-- conters -->
@@ -144,7 +137,7 @@ sitemap: false
       <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-12">
         <div class="mb-8 text-center">
           <h2 class="mb-3 h1">
-            Solution
+            Our Solution
           </h2>
           <p class="px-lg-10 lead">
             Ask people what they are willing to pay. OneWeek Tickets conducts price discovery through a first-price sealed-bid auction. Ticket buyers bid what they are willing to pay and don’t know what others bid.
@@ -176,29 +169,27 @@ sitemap: false
             Demo
           </h2>
           <p class="px-lg-10 lead">
-            Coach works with the world’s top entrepreneurs, CEOs and companies to dramatically grow their business, develop their people, and elevate their own performance.
+            We have a demo event set up so that you can see what it's like to bid on an event.
           </p>
         </div>
         <!-- conters -->
         <div class="row">
           <div class="col-lg-4 col-md-4 col-12">
-            <h3>Scenario</h3>
-            <p>The end of the pandemic is in-sight and you are eager for some live entertainment! 
-            Today, you will be looking to purchase tickets for yourself and a friend to see the 
-            popular German rock band, Rammstein. You want to see them on May 20, 2022 in the city 
-            of Leipzig (Germany) at the Red Bull Arena. Have fun!</p>
+            <a href="https://staging.oneweektickets.com/e/rammstein-648534279167/" class="btn btn-primary btn-lg" target="_blank">Open Demo Event</a>
+            <br />     <br />
+            <p>This button will open the demo event in a new window. You'll want to reference this page as you go through the demo.</p>
           </div>
           <div class="col-lg-4 col-md-4 col-12">
-            <p>You have received an email announcement from Rammstein with their 2022 tour dates. 
-            Find the date you want to attend and click the link to continue. Reminder: You are 
-            looking for May 20, 2022 in the city of Leipzig (Germany) at the Red Bull Arena.</p>
+            <p>When placing your bid, you'll be prompted to sign up for an account. Use the following email address:</p>
+            <pre id="testemail">test@test.com</pre>
+            <button class="btn btn-outline-green btn-sm copybtn" data-clipboard-target="#testemail">Copy</button>
+            
           </div>
           <div class="col-lg-4 col-md-4 col-12">
-            <a href="{{ /demo/ | absolute_url }}" target="_blank">Click here to read the email</a>
-            <p>For payment, use this card information:</p>
+            <p>For payment, you can use this demo card</p>
             <ol>
-              <li>Email: the same email address</li>
-              <li>Number: 4242 4242 4242 4242</li>
+              <li>Number: <span id="ccnum">4242 4242 4242 4242</span>             <button class="btn btn-outline-green btn-sm copybtn" data-clipboard-target="#ccnum">Copy</button>
+</li>
               <li>Expire: 12/34</li>
               <li>CVC: 123</li>
               <li>Name on card: test</li>
@@ -220,7 +211,7 @@ sitemap: false
             Screenshots
           </h2>
           <p class="px-lg-10 lead">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+            A visual walkthrough of the bidding flow for a fan purchasing a ticket to an event.
           </p>
         </div>
       </div>
@@ -245,11 +236,6 @@ sitemap: false
         <div class="col-4 col-md-2 mb-2 mb-lg-2">
           <img src="/assets/images/ios-iphone12-mockup.png" alt="" class="img-fluid rounded h-100 w-100" />
         </div>
-      </div>
-      <div class="col-xl-5 col-lg-12 col-md-12 col-12 mt-3 mt-xl-0">
-        <p class="mb-9">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        </p>
       </div>
     </div>
   </div>
@@ -285,3 +271,20 @@ sitemap: false
 </div>
 
 {% include footer.html %}
+<script>
+  function makeid(length) {
+      var result           = '';
+      var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+      var charactersLength = characters.length;
+      for ( var i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * 
+   charactersLength));
+     }
+     return result;
+  }
+  $( document ).ready(function() {
+    new ClipboardJS('.copybtn');
+    $("#testemail").text(makeid(5) + "@oneweek.test");
+  });
+
+  </script>
