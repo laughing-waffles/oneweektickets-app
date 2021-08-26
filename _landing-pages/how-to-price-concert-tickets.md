@@ -5,15 +5,6 @@ description: Price discovery and optimization for concert tickets
 summary: 
 image: /assets/images/how_to_concert_hero.jpg
 image_body: /assets/images/how_to_concert_body.png
-# blurb_image: ../assets/images/logo-airbnb.svg
-blurb1_title: Customer
-blurb1_body: Various Clients
-blurb2_title: Year
-blurb2_body: 2021
-blurb3_title: Coaching
-blurb3_body: Business Development
-blurb4_title: Headquarters
-blurb4_body: Austin, TX
 summary_title: Research-based price optimization
 summary_body: |
   Promoters are often forced to rely on historical data or “gut feel” when it comes to determining ticket prices.
