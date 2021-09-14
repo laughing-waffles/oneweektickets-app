@@ -64,7 +64,7 @@ steps:
     text: |
       Let's pretend that you didn't win tickets yet (forget about that last email) and you've decided that you don't want to attend this event. What would you do now? How can this be better?
 
-      [Open your profile page to do start this step](https://www.oneweektickets.com/u/account-settings/profile/){:target="_blank"}
+      [Open your profile page to do start this step](https://www.oneweektickets.com/u/account-settings/profile/){:target="_blank"}{:rel="nofollow}
   - title: Last step
     text: |
       Logout of OneWeek Tickets.
