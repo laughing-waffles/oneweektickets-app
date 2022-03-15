@@ -6,30 +6,21 @@ on:
       - production
 
 jobs:
-  jekyll:
-    name: Build and deploy Jekyll site
+  build_and_deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-
-    - name: Build
-      uses: jerryjvl/jekyll-build-action@v1
-
-    - name: Upload to GCP Bucket
-      uses: weslenng/gcp-storage-sync@master
-      with:
-        args: -d
-      env:
-        GCP_SERVICE_ACCOUNT_KEY_FILE: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY_FILE }}
-        GCP_STORAGE_BUCKET: ${{ secrets.GCP_STORAGE_BUCKET }}
-        SOURCE_DIR: "_site"
-    - name: Set up Cloud SDK
-      uses: google-github-actions/setup-gcloud@master
-      with:
-        project_id: oneweek-tickets
-        service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY_FILE }}
-        export_default_credentials: true
-    - name: Invalidate cache ASYNC
-      run: gcloud compute url-maps invalidate-cdn-cache oneweektickets-lb --path "/*" --async
+      - name: GitHub Checkout
+        uses: actions/checkout@v1
+      - name: Bundler Cache
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+      - name: Build & Deploy to GitHub Pages
+        uses: joshlarsen/jekyll4-deploy-gh-pages@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
+          GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
