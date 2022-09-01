@@ -11,7 +11,7 @@ Though we had lots of support and encouragement along the way from industry expe
 
 **Clearly something needs to change** in the ticketing space, but at this time, OneWeek Tickets is not the solution that the market seeks. Perhaps one day, if not us, then someone will crack this problem.
 
-Even John Oliver's show, (Last Week Tonight)[https://youtu.be/-_Y7uqqEFnY], covered the topic a few weeks ago of how **secondary market exchanges lead to unfair ticket pricing** which disadvantages artists, promoters, and fans alike.
+Even John Oliver's show, [Last Week Tonight](https://youtu.be/-_Y7uqqEFnY), covered the topic a few weeks ago of how **secondary market exchanges lead to unfair ticket pricing** which disadvantages artists, promoters, and fans alike.
 
 <div class="ratio ratio-16x9 my-5">
   <iframe src="https://www.youtube.com/embed/-_Y7uqqEFnY" title="YouTube video" allowfullscreen></iframe>
