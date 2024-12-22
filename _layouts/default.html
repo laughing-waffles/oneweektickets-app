@@ -5,21 +5,6 @@ layout: compress
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="https://js.sentry-cdn.com/d3595e496abd44cfbc41d944f46bf434.min.js" crossorigin="anonymous"></script>
-    <script>
-      Sentry.onLoad(function () {
-        Sentry.init({
-          dsn: "https://d3595e496abd44cfbc41d944f46bf434@o586189.ingest.sentry.io/5738068",
-          tracesSampleRate: 1.0,
-          environment: "{{ jekyll.environment }}",
-              {% if jekyll.environment == 'production' %}
-              release: "1wkticket@{{ "now" | date: "%Y-%m-%d-%H-%M" }}"
-              {% endif %}
-              
-        });
-      });
-    </script>
-
     {% if jekyll.environment == 'production' %}
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-57FN2K5SH7"></script>
     <script>
@@ -39,14 +24,14 @@ layout: compress
     {% seo %}
 
     <!-- Theme CSS -->
-    <link rel="stylesheet" href="{% ministamp /assets/css/theme.css /assets/css/theme.min.css %}" />
+    <link rel="stylesheet" href="{{ '/assets/css/theme.css' | absolute_url }}" />
 
     <!-- Site Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{% ministamp /apple-touch-icon.png /apple-touch-icon.png %}" />
-    <link rel="icon" type="image/png" sizes="32x32" href="{% ministamp /favicon-32x32.png /favicon-32x32.png %}" />
-    <link rel="icon" type="image/png" sizes="16x16" href="{% ministamp /favicon-16x16.png /favicon-16x16.png %}" /> 
-    <link rel="manifest" href="{% ministamp /site.webmanifest /site.webmanifest %}" />
-    <link rel="mask-icon" href="{% ministamp /safari-pinned-tab.svg /safari-pinned-tab.svg %}" color="#39b54b" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" /> 
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#39b" />
     <meta name="msapplication-TileColor" content="#00a300" />
     <meta name="theme-color" content="#ffffff" />
 
@@ -86,7 +71,7 @@ layout: compress
     </script>
 
     <!-- Theme JS -->
-    <script src="{% ministamp /assets/js/theme.js /assets/js/theme.min.js %}"></script> 
+    <script src="{{ '/assets/js/theme.js' | absolute_url }}"></spt> 
 
   </body>
 </html>

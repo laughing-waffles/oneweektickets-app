@@ -21,20 +21,20 @@ kramdown:
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll/minibundle
-  - jekyll-get-json
-  - jekyll-gzip
+  # - jekyll/minibundle
+  # - jekyll-get-json
+  # - jekyll-gzip
 include:
-  - s
-  - u
-  - manage
+  # - s
+  # - u
+  # - manage
   - _pages
 exclude:
   - .jekyll-cache
   - Gemfile
   - Gemfile.lock
-  - /assets/js
-  - /assets/css
+  # - /assets/js
+  # - /assets/css
 collections:
   events:
     output: true
@@ -132,6 +132,6 @@ compress_html:
   blanklines: false
   ignore:
     envs: []
-jekyll_get_json:
-  - data: eventsapi
-    json: 'https://oneweektickets.com/api/events'
+# jekyll_get_json:
+#   - data: eventsapi
+#     json: 'https://oneweektickets.com/api/events'
