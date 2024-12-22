@@ -18,8 +18,6 @@ kramdown:
   syntax_highlighter_opts:
     block:
       line_numbers: true
-gems:
-  - jekyll-paginate-v2
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
@@ -106,21 +104,6 @@ defaults:
       path: "emails/*"
     values:
       sitemap: false
-cloudinary:
-  cloud_name: oneweektickets
-  only_prod: true
-  verbose: false
-  presets:
-    default:
-      gravity: auto
-      crop: fill
-      focus: auto
-      min_width: 256
-      max_width: 1024
-      figure: never
-      steps: 5
-      attributes:
-        loading: lazy
 compress_html:
   clippings: all
   comments:
@@ -149,45 +132,6 @@ compress_html:
   blanklines: false
   ignore:
     envs: []
-pagination:
-  enabled: false
-  per_page: 9
-  permalink: '/page-:num/'
-  title: ':title'
-  limit: 0
-  sort_field: date
-  sort_reverse: true
-  trail:
-    before: 2
-    after: 2
-autopages:
-  enabled: false
-  categories:
-    layouts:
-      - autopage.html
-    title: 'Posts in category :cat'
-    permalink: '/category/:cat'
-    slugify:
-      mode: default
-      case: true
-  tags:
-    layouts:
-      - autopage.html
-    title: 'Posts tagged with :tag'
-    permalink: '/tag/:tag'
-    slugify:
-      mode: default
-      case: true
-  collections:
-    layouts:
-      - autopage.html
-    title: 'Posts in collection :coll'
-    permalink: '/collection/:coll'
-    slugify:
-      mode: default
-      case: true
 jekyll_get_json:
   - data: eventsapi
     json: 'https://oneweektickets.com/api/events'
-#gzip:
-#  replace_files: true

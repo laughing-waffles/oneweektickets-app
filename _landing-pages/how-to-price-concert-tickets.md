@@ -5,7 +5,7 @@ description: Price discovery and optimization for concert tickets
 summary: 
 image: /assets/images/how_to_concert_hero.jpg
 image_body: /assets/images/how_to_concert_body.png
-summary_title: Research-based price optimization
+summary_title: "Research-based price optimization"
 summary_body: |
   Promoters are often forced to rely on historical data or “gut feel” when it comes to determining ticket prices.
 
