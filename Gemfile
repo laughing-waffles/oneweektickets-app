@@ -7,9 +7,9 @@ group :jekyll_plugins do
     gem 'kramdown'
     gem 'rouge'
     gem 'jekyll-sitemap'
-    gem 'jekyll-gzip'
-    gem 'jekyll-minibundle'
+    # gem 'jekyll-gzip'
+    # gem 'jekyll-minibundle'
 end
 gem "webrick", "~> 1.7"
 
-gem "jekyll-get-json", "~> 1.0"
+# gem "jekyll-get-json", "~> 1.0"

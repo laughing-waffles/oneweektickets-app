@@ -19,11 +19,3 @@ sitemap:          false
   </div>
 </div>
 
-<script>
-  function goBack() {
-    window.history.back();
-  }
-  const urlParams = new URLSearchParams(window.location.search);
-  $("#errordiv").text(urlParams.get('error_description'));
-  Sentry.captureMessage(urlParams.get('error_description'));
-</script>
