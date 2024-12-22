@@ -1,0 +1,19 @@
+{% if jekyll.environment == 'development' %}
+<img 
+    src="{{ include.src | absolute_url }}" 
+    data-echo="{{ include.src | absolute_url }}" 
+    width="{{ include.width | default: 500 }}"
+    height="{{ include.height | default: auto }}"
+    class="{{ include.class | default: 'img-fluid' }} img-fluid"
+    alt="{{ include.alt }}"
+/>
+{% else %}
+<img 
+    src="https://images.weserv.nl/?url={{ include.src | absolute_url }}&w={{ include.width | default: 500 }}&output=webp&q=65" 
+    data-echo="https://images.weserv.nl/?url={{ include.src | absolute_url }}&w=50&output=webp&q=20" 
+    width="{{ include.width | default: 500 }}"
+    height="{{ include.height | default: auto }}"
+    class="{{ include.class | default: 'img-fluid' }} img-fluid"
+    alt="{{ include.alt }}"
+/>
+{% endif %}
